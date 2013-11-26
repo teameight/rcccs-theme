@@ -1,0 +1,45 @@
+/* Headings */
+/*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+h1, .alpha   { 
+	line-height: 1.2;
+	font-size: 1.84em;
+	font-weight: 700;
+}
+
+h2, .beta    { 
+	line-height: 1.2;
+	font-size: 1.78em;
+	font-weight: 300;
+
+	#homepage .block-headline & {
+		font-size: 1.315em;
+	}
+}
+
+h3, .gamma   { 
+	line-height: 1.2;
+	font-size: 1.473em;
+	font-weight: 300;
+}
+
+h4, .delta   {
+	line-height: 1.2;
+	font-size: 1.052em;
+	font-weight: 300;
+}
+
+h5, .epsilon { 
+	font-size: .773em;
+	font-weight: 400;
+}
+
+h6, .zeta    { 
+	
+}
+
+/* Subheadings */
+.subheading {
+	font-family: $font-secondary;
+	font-weight: normal;
+	font-style: italic;
+}

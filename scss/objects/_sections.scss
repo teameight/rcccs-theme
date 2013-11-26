@@ -1,0 +1,23 @@
+.section {
+	padding: $pad*4 0;
+}
+
+.section-title {
+	margin-bottom: $space-half;
+}
+
+.staff-img {
+	width: 20%;
+	float: left;
+	text-align: center;
+	padding: $pad;
+
+	img {
+		width: 100%;
+		border-radius: 50%;
+	}
+
+	span {
+		font-size: .773em;
+	}
+}

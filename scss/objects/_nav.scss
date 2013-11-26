@@ -1,0 +1,62 @@
+/*------------------------------------*\
+    $NAVIGATION
+\*------------------------------------*/
+
+.nav {
+	clear: both;
+	overflow: hidden;
+	max-height: 0;
+	border-top: 1px solid $offwhite;
+	text-align: center;
+	
+	a {
+		display: block;
+		padding: $pad;
+		color: $offwhite;
+		text-transform: uppercase;
+
+		&:hover, &:active {
+			color: $gray;
+		}
+	}
+
+	&.active {
+		max-height: 40em;
+	}
+
+	ul {
+		display: inline-block;
+		text-align: center;
+	}
+
+		max-height: none;
+		clear: none;
+
+		li {
+			float: left;
+		}
+
+		a {
+			border: 0;
+		}
+		
+}
+
+//Pagination
+.pagination {
+	overflow: hidden;
+
+	li {
+		float: left;
+		@extend a.more;
+		// border-right: 1px solid $gray-light-2;
+
+		&.label {
+			margin-right: $space;
+		}
+	}
+
+	a {
+		padding: $pad/4;
+	}
+}

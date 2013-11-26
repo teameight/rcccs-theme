@@ -1,0 +1,50 @@
+/* Links */ 
+a {
+	color: $gray-dark;
+	text-decoration: none;
+	outline: 0;
+	
+	&:hover, &:focus {
+		color: $gray;
+	}
+
+	&.more, &.cat {
+		font-size: .7368em;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+
+	&.cat {
+		color: $offwhite;
+		border-radius: 3px;
+		display: inline-block;
+		padding: .205em;
+		float: right;
+		clear: right;
+
+		&.stories {
+			@include category(stories);
+		}
+		&.news {
+			@include category(news);
+		}
+		&.resources {
+			@include category(resources);
+		}
+		&.staff {
+			@include category(staff);
+		}
+
+		.g1 > & {
+			float: left;
+			clear: left;
+			margin-bottom: $space;
+		}
+	}
+
+	&.more {
+		margin-top: $space-double;
+		display: block;
+		float: left;
+	}
+}

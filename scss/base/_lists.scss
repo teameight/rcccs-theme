@@ -1,0 +1,30 @@
+ol, ul {
+	margin: $space;
+	padding: 0;
+	list-style: none;
+}
+
+/* Definition Lists */
+dl {
+	@extend a.more;
+	overflow: hidden;
+	margin: 0 0 $space;
+	color: $blue;
+	text-transform: none;
+	float: left;
+	width: 100%;
+}
+
+dt {
+	font-weight: bold;
+
+	&:first-child {
+		text-transform: uppercase;
+		border-top: 1px solid $blue;
+	}
+}
+
+dd {
+	margin-left: 0;
+	font-weight: 300;
+}

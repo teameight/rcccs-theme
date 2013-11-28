@@ -40,9 +40,9 @@
 			background-color: darken($gray, 10%);
 		}
 	} @else if $cat == staff {
-		background-color: $green;
+		background-color: $green-dark;
 		&:hover {
-			background-color: darken($green, 10%);
+			background-color: darken($green-dark, 10%);
 		}
 	}
 }

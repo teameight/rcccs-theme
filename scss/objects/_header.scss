@@ -10,7 +10,7 @@
 	margin: 0 auto;
 
 	@media all and (min-width: $bp-med) {
-		.max-width: 9rem;
+//		max-width: 9rem;
 	}
 }
 
@@ -41,4 +41,37 @@
 .subhead {
 	text-align: center;
 	padding: $pad*3 0;
+
+    &.stories {
+        background-color: $purple;
+    }
+    &.news {
+        background-color: $red;
+        color: $offwhite;
+    }
+    &.resources {
+        background-color: $gray;
+    }
+    &.staff {
+        background-color: $green-dark;
+        color: $offwhite;
+    }
+    &.community {
+        @extend .bg;
+    }
+}
+
+h2, time {
+    &.stories {
+        color: $purple;
+    }
+    &.news {
+        color: $red;
+    }
+    &.resources {
+        color: $gray;
+    }
+    &.staff {
+        color: $green-dark;
+    }
 }

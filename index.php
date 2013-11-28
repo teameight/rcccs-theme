@@ -33,11 +33,19 @@ get_header();
                 </div>
                 <div class="gi">
                     <h2 class="alpha">The Community Blog</h2>
-                    <div class="block block-headline">
-                        <time datetime="2013-04-06T12:32+00:00">2 weeks ago</time>						<a href="#"></a><a class="cat stories">Personal Stories</a>
-                        <a href="#"><h2 class="headline alpha">Headline: Lorem Ipsum Dolor Amet Sit</h2></a>
-                    </div>					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-                    <a class="more">Read More &gt;&gt;</a>				</div>
+                    <ul class="post-list">
+                    <?php
+                        $args = array(
+                            'category_name'     => 'community',
+                            'posts_per_page'    => 5
+                        );
+                        $query = new WP_Query($args);
+                        if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+                            get_template_part( 'partials/content', 'excerpt' );
+                        endwhile; endif; wp_reset_query();
+                    ?>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

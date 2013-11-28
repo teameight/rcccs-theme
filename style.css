@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Radley:400italic);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700|Radley:400italic);
 /*!
 Theme Name: RCCCS 2013
 Theme URI: http://github.com/teameight/rcccs-theme
@@ -153,28 +154,30 @@ header, footer, nav, section, article, hgroup, figure {
       width: 320px; } }
 
 /* BG Colors */
-.bg {
+.bg, .subhead.community {
   background-color: #c3d3b6; }
 
 .bg-2 {
-  background-color: #e0ddad;
-  color: #b1ab43; }
+  background-color: #edebb0;
+  color: #d1cb33; }
 
 .bg-3 {
   background-color: #a3adb8;
   color: #f9faee; }
 
+/* Service Colors */
 body {
   background: white;
   font: 19px "Source Sans Pro", "Helvetica", "Arial", sans-serif;
   -webkit-text-size-adjust: 100%;
-  color: #4d4d4d; }
+  color: #696c6f; }
 
 /* Links */
 a {
-  color: #4d4d4d;
+  color: #696c6f;
   text-decoration: none;
-  outline: 0; }
+  outline: 0;
+  cursor: pointer; }
   a:hover, a:focus {
     color: #84868d; }
   a.more, dl, .pagination li, a.cat {
@@ -193,21 +196,21 @@ a {
       a.cat.stories:hover {
         background-color: #8693a2; }
     a.cat.news {
-      background-color: #a59798; }
+      background-color: #8c8384; }
       a.cat.news:hover {
-        background-color: #8d7c7d; }
+        background-color: #726a6b; }
     a.cat.resources {
       background-color: #84868d; }
       a.cat.resources:hover {
         background-color: #6b6d73; }
     a.cat.staff {
-      background-color: #c3d3b6; }
+      background-color: #8c9685; }
       a.cat.staff:hover {
-        background-color: #a9c096; }
+        background-color: #727d6b; }
     .g1 > a.cat {
       float: left;
       clear: left;
-      margin-bottom: 1rem; }
+      margin-bottom: 0.5rem; }
   a.more, dl, .pagination li {
     margin-top: 2rem;
     display: block;
@@ -355,7 +358,7 @@ input[type=text], input[type=search], input[type=url], input[type=number], texta
 
 button, input[type="submit"] {
   padding: 0.5rem;
-  background: #4d4d4d;
+  background: #696c6f;
   border: 1px solid #84868d;
   cursor: pointer; }
 
@@ -380,7 +383,7 @@ input[type="search"]::-webkit-search-decoration {
 .inline-form input[type=submit], .inline-form button, .inline-form .btn {
   font-size: 0.875em;
   padding: 0.65rem 1.3rem;
-  background: #4d4d4d;
+  background: #696c6f;
   position: absolute;
   top: 0;
   right: 0;
@@ -650,9 +653,6 @@ td {
   text-align: center;
   width: 50%;
   margin: 0 auto; }
-  @media all and (min-width: 720px) {
-    .logo {
-      .max-width: 9rem; } }
 
 .nav-toggle {
   float: right;
@@ -677,6 +677,25 @@ td {
 .subhead {
   text-align: center;
   padding: 3rem 0; }
+  .subhead.stories {
+    background-color: #a3adb8; }
+  .subhead.news {
+    background-color: #8c8384;
+    color: #f9faee; }
+  .subhead.resources {
+    background-color: #84868d; }
+  .subhead.staff {
+    background-color: #8c9685;
+    color: #f9faee; }
+
+h2.stories, time.stories {
+  color: #a3adb8; }
+h2.news, time.news {
+  color: #8c8384; }
+h2.resources, time.resources {
+  color: #84868d; }
+h2.staff, time.staff {
+  color: #8c9685; }
 
 /*------------------------------------*\
     $NAVIGATION
@@ -738,7 +757,7 @@ td {
 .nav-footer {
   margin: -1rem -1rem 1rem; }
   .nav-footer li {
-    border-bottom: 1px solid #4d4d4d; }
+    border-bottom: 1px solid #696c6f; }
     @media all and (min-width: 720px) {
       .nav-footer li {
         border: 0;
@@ -797,7 +816,7 @@ td {
 
 /* Eyebrow */
 .eyebrow {
-  background: #4d4d4d;
+  background: #696c6f;
   color: white;
   padding: 0.2em;
   display: inline-block;
@@ -1086,7 +1105,7 @@ td {
   margin-bottom: 0.5rem;
   position: relative;
   display: table;
-  background: #e0ddad; }
+  background: #edebb0; }
   .block-slide-txt .slide-thumb {
     display: table-cell;
     width: 50%;
@@ -1210,9 +1229,9 @@ td {
     float: right; }
   .acc-handle:hover {
     color: white;
-    background: #4d4d4d; }
+    background: #696c6f; }
   .acc-handle.active {
-    background: #4d4d4d; }
+    background: #696c6f; }
     .acc-handle.active:after {
       content: "-"; }
 
@@ -1234,7 +1253,7 @@ td {
     .tabs a:hover, .tabs a:focus {
       background: #dddddd; }
     .tabs a.active {
-      background: #4d4d4d;
+      background: #696c6f;
       color: white; }
 
 .section {
@@ -1281,7 +1300,7 @@ td {
     float: left;
     margin-right: 0.25rem; }
   .social-share a {
-    background: #4d4d4d;
+    background: #696c6f;
     color: white;
     display: block;
     padding: 0.5rem; }

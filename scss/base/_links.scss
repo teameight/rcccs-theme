@@ -3,6 +3,7 @@ a {
 	color: $gray-dark;
 	text-decoration: none;
 	outline: 0;
+    cursor: pointer;
 	
 	&:hover, &:focus {
 		color: $gray;
@@ -38,7 +39,7 @@ a {
 		.g1 > & {
 			float: left;
 			clear: left;
-			margin-bottom: $space;
+			margin-bottom: $space/2;
 		}
 	}
 

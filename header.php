@@ -30,14 +30,15 @@
 <!-- Begin .header -->
 <header class="header cf" role="banner">
 	<div class="wrap">
-		<a href="#" class="logo"><img src="<?php echo(THEME_DIR); ?>/images/logo.png" alt="Logo Alt Text" /></a>
+		<a href="<?php bloginfo('url'); ?>" class="logo"><img src="<?php echo(THEME_DIR); ?>/images/logo.png" alt="Logo Alt Text" /></a>
         <nav id="nav" class="nav">
-			<ul>
-				<li><a href="#">About Us</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="#">Community</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
+            <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
+<!--			<ul>-->
+<!--				<li><a href="#">About Us</a></li>-->
+<!--				<li><a href="#">Services</a></li>-->
+<!--				<li><a href="#">Community</a></li>-->
+<!--				<li><a href="#">Contact</a></li>-->
+<!--			</ul>-->
 		</nav><!--end .nav-->
 	</div>
 </header>

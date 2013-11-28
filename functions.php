@@ -29,3 +29,7 @@ function enqueue_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+
+// ADD WP NAV MENUS
+
+register_nav_menu('primary', 'Main Nav');

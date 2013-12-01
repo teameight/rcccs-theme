@@ -24,8 +24,9 @@ function enqueue_scripts() {
     wp_enqueue_script( 'html5-shim' );
 
     wp_enqueue_script( 'jquery' );
-    wp_enqueue_script( 'modernizr', THEME_DIR . 'js/modernizr.js', 'jquery');
-    wp_enqueue_script( 'cycle2', THEME_DIR . 'js/jquery.cycle2.min.js', 'jquery');
+    wp_enqueue_script( 'jquery-effects-core' );
+    wp_enqueue_script( 'modernizr', THEME_DIR . '/js/modernizr.js', 'jquery');
+    wp_enqueue_script( 'cycle2', THEME_DIR . '/js/cycle2.js', 'jquery');
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
@@ -33,3 +34,18 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 // ADD WP NAV MENUS
 
 register_nav_menu('primary', 'Main Nav');
+
+// ADD SIDEBAR
+
+function rcs_widgets_init() {
+
+    register_sidebar( array(
+        'name' => 'Services right sidebar',
+        'id' => 'serv_right_1',
+        'before_widget' => '<div>',
+        'after_widget' => '</div>',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+    ) );
+}
+add_action( 'widgets_init', 'rcs_widgets_init' );

@@ -64,14 +64,30 @@
 h2, time {
     &.stories {
         color: $purple;
+
+        a &:hover {
+            color: darken($purple, 20%);
+        }
     }
     &.news {
         color: $red;
+
+        a &:hover {
+            color: darken($red, 20%);
+        }
     }
     &.resources {
         color: $gray;
+
+        a &:hover {
+            color: darken($gray, 20%);
+        }
     }
     &.staff {
         color: $green-dark;
+
+        a &:hover {
+            color: darken($green-dark, 20%);
+        }
     }
 }

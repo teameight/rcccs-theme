@@ -79,10 +79,11 @@
 	@media all and (min-width: $bp-med) {
 		> .gi {
 			float: left;
-			width: 50%;
-			
+            width: 49%;
+
 			&:nth-of-type(odd) {
 				clear: left;
+                margin-right: 2%;
 			}
 		}
 	}
@@ -92,11 +93,20 @@
 .g-half {
 	> .gi {
 		float: left;
-		width: 50%;
-		
-		&:nth-of-type(odd) {
+//        @include calc( width, '50% - 1px');
+        width: 49%;
+
+        &:nth-of-type(odd) {
+            @include calc( width, '50% - 1px');
 			clear: left;
+            border-right: 1px solid $gray;
+            margin-right: 1%;
+            padding-right: 4%;
 		}
+
+        &:nth-of-type(even) {
+            padding-left: 4%;
+        }
 	}
 }
 

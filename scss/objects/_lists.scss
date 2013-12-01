@@ -38,10 +38,19 @@
 .post-list {
 	margin: 0;
 
+    .home & {
+        margin-top: $space*2;
+    }
+
 	li {
 		margin-bottom: $space*2;
 		padding-bottom: $space*2;
 		border-bottom: 1px solid $gray;
+        width: 100%;
+
+        .home & {
+            border-bottom: none;
+        }
 
 		// &:last-child {
 		// 	border-bottom: none;

@@ -3,4 +3,9 @@ body {
 	font: 19px $font;
 	-webkit-text-size-adjust: 100%;
 	color: $gray-dark;
+    height: 100%;
+}
+
+html, .g-half, .gi {
+    height: 100%;
 }

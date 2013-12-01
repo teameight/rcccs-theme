@@ -25,7 +25,7 @@ get_header();
     </div><!--End main-->
     <div class="bg section">
         <div class="wrap">
-            <div class="g-2up">
+            <div class="g-half">
                 <div class="gi">
                     <h2 class="alpha">Who We Are</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -33,7 +33,7 @@ get_header();
                 </div>
                 <div class="gi">
                     <h2 class="alpha">The Community Blog</h2>
-                    <ul class="post-list">
+                    <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint">
                     <?php
                         $args = array(
                             'category_name'     => 'community',

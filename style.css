@@ -170,7 +170,11 @@ body {
   background: white;
   font: 19px "Source Sans Pro", "Helvetica", "Arial", sans-serif;
   -webkit-text-size-adjust: 100%;
-  color: #696c6f; }
+  color: #696c6f;
+  height: 100%; }
+
+html, .g-half, .gi {
+  height: 100%; }
 
 /* Links */
 a {
@@ -517,16 +521,25 @@ td {
 @media all and (min-width: 720px) {
   .g-2up > .gi {
     float: left;
-    width: 50%; }
+    width: 49%; }
     .g-2up > .gi:nth-of-type(odd) {
-      clear: left; } }
+      clear: left;
+      margin-right: 2%; } }
 
 /* Grid Half (Always displayed side by side) */
 .g-half > .gi {
   float: left;
-  width: 50%; }
+  width: 49%; }
   .g-half > .gi:nth-of-type(odd) {
-    clear: left; }
+    width: -moz-calc(50% - 1px);
+    width: -webkit-calc(50% - 1px);
+    width: calc(50% - 1px);
+    clear: left;
+    border-right: 1px solid #84868d;
+    margin-right: 1%;
+    padding-right: 4%; }
+  .g-half > .gi:nth-of-type(even) {
+    padding-left: 4%; }
 
 /* Grid 3up */
 @media all and (min-width: 720px) {
@@ -690,12 +703,20 @@ td {
 
 h2.stories, time.stories {
   color: #a3adb8; }
+  a h2.stories:hover, a time.stories:hover {
+    color: #6b7a8a; }
 h2.news, time.news {
   color: #8c8384; }
+  a h2.news:hover, a time.news:hover {
+    color: #585152; }
 h2.resources, time.resources {
   color: #84868d; }
+  a h2.resources:hover, a time.resources:hover {
+    color: #525459; }
 h2.staff, time.staff {
   color: #8c9685; }
+  a h2.staff:hover, a time.staff:hover {
+    color: #596154; }
 
 /*------------------------------------*\
     $NAVIGATION
@@ -1161,10 +1182,15 @@ h2.staff, time.staff {
 /* Post List */
 .post-list {
   margin: 0; }
+  .home .post-list {
+    margin-top: 2rem; }
   .post-list li {
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px solid #84868d; }
+    border-bottom: 1px solid #84868d;
+    width: 100%; }
+    .home .post-list li {
+      border-bottom: none; }
 
 /* Bullet List */
 .bullet-list {
@@ -1257,7 +1283,8 @@ h2.staff, time.staff {
       color: white; }
 
 .section {
-  padding: 4rem 0; }
+  padding: 4rem 0;
+  height: auto; }
 
 .section-title {
   margin-bottom: 0.5rem; }

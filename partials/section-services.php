@@ -14,17 +14,21 @@
 
     ?>
     <div class="gi">
-        <?php foreach($firsthalf as $service) : ?>
-        <li>
-            <a href=""><h4><?php echo $service->post_title; ?></h4></a>
+        <?php foreach($firsthalf as $service) :
+            $link = get_post_permalink($service->ID);
+            ?>
+            <li>
+                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4></a>
             <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5>
         </li>
         <?php endforeach; ?>
     </div>
     <div class="gi">
-        <?php foreach($secondhalf as $service) : ?>
+        <?php foreach($secondhalf as $service) :
+            $link = get_post_permalink($service->ID);
+            ?>
             <li>
-                <a href=""><h4><?php echo $service->post_title; ?></h4></a>
+                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4></a>
                 <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5>
             </li>
         <?php endforeach; ?>

@@ -25,8 +25,9 @@ function enqueue_scripts() {
 
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'jquery-effects-core' );
-    wp_enqueue_script( 'modernizr', THEME_DIR . '/js/modernizr.js', 'jquery');
-    wp_enqueue_script( 'cycle2', THEME_DIR . '/js/cycle2.js', 'jquery');
+    wp_enqueue_script( 'modernizr', THEME_DIR . '/js/modernizr.js', 'jquery' );
+    wp_enqueue_script( 'cycle2', THEME_DIR . '/js/cycle2.js', 'jquery' );
+    wp_enqueue_script( 'rcccs', THEME_DIR . '/js/rcccs.js', 'jquery' );
 
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );

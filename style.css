@@ -184,7 +184,7 @@ a {
   cursor: pointer; }
   a:hover, a:focus {
     color: #84868d; }
-  a.more, dl, .pagination li, a.cat {
+  a.more, dl, .side-matter-text, .pagination li, a.cat {
     font-size: .7368em;
     text-transform: uppercase;
     font-weight: 700; }
@@ -215,7 +215,7 @@ a {
       float: left;
       clear: left;
       margin-bottom: 0.5rem; }
-  a.more, dl, .pagination li {
+  a.more, dl, .side-matter-text, .pagination li {
     margin-top: 2rem;
     display: block;
     float: left; }
@@ -290,23 +290,40 @@ ol, ul {
   list-style: none; }
 
 /* Definition Lists */
-dl {
+dl, .side-matter-text {
   overflow: hidden;
   margin: 0 0 1rem;
-  color: #96b5be;
+  color: #b6cbd2;
   text-transform: none;
   float: left;
-  width: 100%; }
+  width: 100%;
+  cursor: pointer; }
+
+.side-matter-text {
+  float: none; }
+
+.side-matter-ref {
+  color: #96b5be; }
+  .side-matter-ref:hover {
+    color: #b6cbd2; }
 
 dt {
   font-weight: bold; }
   dt:first-child {
     text-transform: uppercase;
-    border-top: 1px solid #96b5be; }
+    border-top: 1px solid #b6cbd2; }
+  dt:hover, dt.active {
+    color: #96b5be; }
+    dt:hover + dd, dt.active + dd {
+      visibility: visible; }
+    dt:hover:first-child, dt.active:first-child {
+      border-top: 1px solid #96b5be; }
 
 dd {
   margin-left: 0;
-  font-weight: 300; }
+  font-weight: 300;
+  visibility: hidden;
+  color: #96b5be; }
 
 /*------------------------------------*\
     $MEDIA ELEMENTS

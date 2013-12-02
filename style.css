@@ -230,7 +230,7 @@ h1, .alpha {
 h2, .beta {
   line-height: 1.2;
   font-size: 1.78em;
-  font-weight: 300; }
+  font-weight: 700; }
   #homepage .block-headline h2, #homepage .block-headline .beta {
     font-size: 1.315em; }
 
@@ -1316,6 +1316,11 @@ h2.staff, time.staff {
     border-radius: 50%; }
   .staff-img span {
     font-size: .773em; }
+
+.about-staff {
+  display: none;
+  width: 100%;
+  float: left; }
 
 .article-header h1 {
   font-size: 2.5em; }

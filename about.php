@@ -31,10 +31,10 @@ get_header(); ?>
             </div>
         </div><!-- end wrap -->
     </div><!-- end main -->
-    <hr />
     <div class="section">
         <div class="wrap">
-            <h3>Who We Are</h3>
+            <hr />
+            <h2>Who We Are</h2>
             <ul>
             <?php
             foreach($staff as $member) :
@@ -42,14 +42,14 @@ get_header(); ?>
                 $img = get_field('image', $id);
                 $name = $member->post_title;
                 $degree = get_field('degree', $id);
-                $about = $member->post_content;
+                $about = apply_filters('the_content', $member->post_content);
 
 //                echo var_dump($member);
 
             echo "<li class='staff-img'>
                     <img src=".$img[sizes][thumbnail]." alt=".$img->alt." />
                     <span>$name<br>$degree</span>
-                </li>";
+                </li><li class='about-staff'>$about</li>";
 
             endforeach; ?>
         </div>

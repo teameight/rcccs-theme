@@ -9,7 +9,7 @@ remove_action('wp_head', 'wp_generator');
 function enqueue_styles() {
 
     /** REGISTER css/screen.cs **/
-    wp_register_style( 'screen-style', THEME_DIR . '/style.css', array(), '1', 'all' );
+    wp_register_style( 'screen-style', THEME_DIR . '/scss/style.css', array(), '1', 'all' );
     wp_enqueue_style( 'screen-style' );
 
 }

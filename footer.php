@@ -3,7 +3,7 @@
     <div class="wrap">
         <div class="g g-2up">
             <div class="gi">
-                <h2 class="alpha">Contact Us</h2>
+                <h2>Contact Us</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, magni, rem sint itaque cumque quas enim consequuntur ut</p>
             </div>
             <div class="gi"></div>

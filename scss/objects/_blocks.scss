@@ -140,8 +140,8 @@
 
 /* Slide Image */
 .block-slide-img {
-	margin-bottom: $space-half;
 	position: relative;
+    width: 100%;
 
 	.slide-thumb {
 		img {
@@ -175,17 +175,18 @@
 
 /* Slide Text */
 .block-slide-txt {
-	margin-bottom: $space-half;
 	position: relative;
 	display: table;
 	background: $yellow;
+    max-height: 483px;
+    width: 100%;
 
 	.slide-thumb {
 		display: table-cell;
 		width: 50%;
 		vertical-align: middle;
 		text-align: center;
-		padding: 10% 10% 10% 0;
+		padding: 8% 10% 9% 0;
 
 		img {
 			border-radius: 50%;

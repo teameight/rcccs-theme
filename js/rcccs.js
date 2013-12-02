@@ -28,16 +28,15 @@
 
 //    HEADER ANIMATION
     jQuery(document).ready(function($j) {
-        var $header = $j('.no-touch #header'),
+        var $header = $j('.no-touch header'),
             $window = $j(window),
             $doc = $j(document),
             $nav = $j('nav'),
-            $logo = $j('.logo'),
+            $logo = $j('.logo');
         // ANIMATE HEADER
 
-        $j(function(){
-            $header.data('size', 0);
-        });
+        $header.data('size', 0);
+
         $pricea.hover(
             function () {
                 $j(this).addClass('headerPBhover');

@@ -5,8 +5,14 @@ the_post();
 
 ?>
 
-<div class="wrap">
-    <div class="cycle-slideshow" data-cycle-slides="> div" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true">
+    <div class="cycle-slideshow home-slides"
+         data-cycle-slides="> div"
+         data-cycle-fx="carousel"
+         data-cycle-carousel-visible="1.5"
+         data-cycle-speed="500"
+         data-cycle-carousel-fluid="true"
+         data-cycle-pause-on-hover="true"
+        >
         <?php
         if(get_field('home_slider')) :
         while(has_sub_field('home_slider')) :
@@ -49,7 +55,6 @@ the_post();
 
 
     </div>
-</div>
     <div class="main">
         <div class="wrap">
             <?php the_field('services'); ?>

@@ -1124,6 +1124,11 @@ h2.staff, time.staff {
   margin-left: 50%;
   padding: 0.5rem; }
 
+/* Cycle Slides */
+.cycle-slide {
+  width: 850px;
+  height: 478px; }
+
 /* Slide Image */
 .block-slide-img {
   position: relative;
@@ -1153,20 +1158,20 @@ h2.staff, time.staff {
   max-height: 483px;
   width: 100%; }
   .block-slide-txt .slide-thumb {
-    display: table-cell;
     width: 50%;
     vertical-align: middle;
     text-align: center;
-    padding: 8% 10% 9% 0; }
+    padding: 8% 10% 9% 0;
+    float: left; }
     .block-slide-txt .slide-thumb img {
       border-radius: 50%; }
   .block-slide-txt .slide-text {
     position: relative;
-    display: table-cell;
     color: #84868d;
-    padding: 0 1% 0 10%;
+    padding: 0 1% 0 2%;
     width: 50%;
-    vertical-align: middle; }
+    float: left;
+    white-space: normal; }
 
 /* Services Links */
 .services .gi {
@@ -1337,6 +1342,11 @@ h2.staff, time.staff {
   display: none;
   width: 100%;
   float: left; }
+
+.g-map {
+  width: 100%;
+  max-height: 650px;
+  overflow: hidden; }
 
 .article-header h1 {
   font-size: 2.5em; }

@@ -138,6 +138,13 @@
 	}
 }
 
+/* Cycle Slides */
+
+.cycle-slide {
+    width: 850px;
+    height: 478px;
+}
+
 /* Slide Image */
 .block-slide-img {
 	position: relative;
@@ -182,11 +189,11 @@
     width: 100%;
 
 	.slide-thumb {
-		display: table-cell;
 		width: 50%;
 		vertical-align: middle;
 		text-align: center;
 		padding: 8% 10% 9% 0;
+        float: left;
 
 		img {
 			border-radius: 50%;
@@ -195,11 +202,11 @@
 
 	.slide-text {
 		position: relative;
-		display: table-cell;
 		color: $gray;
-		padding: 0 1% 0 10%;
+		padding: 0 1% 0 2%;
 		width: 50%;
-		vertical-align: middle;
+		float: left;
+        white-space: normal;
 	}
 
 	@media all and (min-width: $bp-large) {

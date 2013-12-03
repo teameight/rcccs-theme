@@ -102,11 +102,35 @@
             border-right: 1px solid $gray;
             margin-right: 1%;
             padding-right: 4%;
+
+            @media screen and (max-width : $bp-small) {
+                width: 100%;
+                padding-right: 0;
+                margin-right: 0;
+                border-right: 0;
+            }
 		}
 
         &:nth-of-type(even) {
             padding-left: 4%;
+
+            @media screen and (max-width : $bp-small) {
+                width: 100%;
+                padding-left: 0;
+            }
         }
+
+        @media screen and (max-width: $bp-small) {
+            border-bottom: 1px solid $gray;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+
+            &:last-child {
+                border-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+
 	}
 }
 

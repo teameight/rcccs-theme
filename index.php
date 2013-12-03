@@ -6,7 +6,7 @@ the_post();
 ?>
 
 <div class="wrap">
-    <div class="cycle-slideshow" data-cycle-slides="> div" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000">
+    <div class="cycle-slideshow" data-cycle-slides="> div" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true">
         <?php
         if(get_field('home_slider')) :
         while(has_sub_field('home_slider')) :
@@ -52,8 +52,7 @@ the_post();
 </div>
     <div class="main">
         <div class="wrap">
-            <h2>Comprehensive Services</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <?php the_field('services'); ?>
      		<?php get_template_part('partials/section', 'services'); ?>
         </div>
     </div><!--End main-->
@@ -61,13 +60,11 @@ the_post();
         <div class="wrap">
             <div class="g-half">
                 <div class="gi">
-                    <h2>Who We Are</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    <a href="" class="more">Find out more about our staff &gt;&gt;</a>
+                    <?php the_field('who_we_are'); ?>
                 </div>
                 <div class="gi">
                     <h2>The Community Blog</h2>
-                    <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000">
+                    <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true">
                     <?php
                         $args = array(
                             'category_name'     => 'community',

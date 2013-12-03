@@ -1,6 +1,18 @@
 .section {
 	padding: $pad*4 0;
     height: auto;
+
+    .g-half .gi img.size-thumbnail {
+        width: 40%;
+        float: left;
+        border-radius: 50%;
+        margin-right: 10%;
+
+        & + .more {
+            width: 40%;
+            margin-top: 5rem;
+        }
+    }
 }
 
 .section-title {

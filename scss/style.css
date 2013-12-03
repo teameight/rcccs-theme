@@ -544,8 +544,26 @@ td {
     border-right: 1px solid #84868d;
     margin-right: 1%;
     padding-right: 4%; }
+    @media screen and (max-width: 480px) {
+      .g-half > .gi:nth-of-type(odd) {
+        width: 100%;
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0; } }
   .g-half > .gi:nth-of-type(even) {
     padding-left: 4%; }
+    @media screen and (max-width: 480px) {
+      .g-half > .gi:nth-of-type(even) {
+        width: 100%;
+        padding-left: 0; } }
+  @media screen and (max-width: 480px) {
+    .g-half > .gi {
+      border-bottom: 1px solid #84868d;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem; }
+      .g-half > .gi:last-child {
+        border-bottom: 0;
+        margin-bottom: 0; } }
 
 /* Grid 3up */
 @media all and (min-width: 720px) {
@@ -1292,6 +1310,14 @@ h2.staff, time.staff {
 .section {
   padding: 4rem 0;
   height: auto; }
+  .section .g-half .gi img.size-thumbnail {
+    width: 40%;
+    float: left;
+    border-radius: 50%;
+    margin-right: 10%; }
+    .section .g-half .gi img.size-thumbnail + .more {
+      width: 40%;
+      margin-top: 5rem; }
 
 .section-title {
   margin-bottom: 0.5rem; }

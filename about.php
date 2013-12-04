@@ -31,7 +31,7 @@ get_header(); ?>
             </div>
         </div><!-- end wrap -->
     </div><!-- end main -->
-    <div class="section">
+    <section>
         <div class="wrap">
             <hr />
             <h2>Who We Are</h2>
@@ -53,6 +53,6 @@ get_header(); ?>
 
             endforeach; ?>
         </div>
-    </div>
+    </section>
 <?php endwhile; ?>
 <?php get_footer(); ?>

@@ -1,20 +1,88 @@
 /*------------------------------------*\
     $FOOTER
 \*------------------------------------*/
-.footer {
+footer {
 	clear: both;
 	overflow: hidden;
 	background: $gray;
 	color: $offwhite;
 	line-height: 1.2;
+    padding: $pad*4 0;
 
 	.lc {
 		padding: $pad $pad 0;
 	}
 
+    .gi:nth-of-type(odd) {
+        border-right: 1px solid darken($gray-dark, 5%) !important;
+    }
+
 
 	a {
-		color: $gray-light;
+		display: block;
+        float: left;
+        color: $offwhite;
+        font-weight: 300;
+        width: 100%;
+        margin-bottom: $space;
+
+        &:hover {
+            color: $gray-light;
+        }
+        &:hover div.icon  {
+            -ms-background-position-y: -34px;
+            background-position-y: -34px;
+        }
+
+        div.icon {
+            background-image:  url(../images/footer-sprite-276x68.png);
+            -ms-background-position-x: 0;
+            background-position-x: 0;
+            background-repeat: no-repeat;
+            display: block;
+            width: 34px;
+            height: 34px;
+            float: left;
+
+            &.phone {
+                -ms-background-position-x: -34px;
+                background-position-x: -34px;
+            }
+
+            &.map {
+                -ms-background-position-x: -68px;
+                background-position-x: -68px;
+            }
+
+            &.referral {
+                -ms-background-position-x: -102px;
+                background-position-x: -102px;
+            }
+
+            &.career {
+                -ms-background-position-x: -136px;
+                background-position-x: -136px;
+            }
+            &.resources {
+                -ms-background-position-x: -173px;
+                background-position-x: -173px;
+            }
+            &.fb {
+                -ms-background-position-x: -208px;
+                background-position-x: -208px;
+            }
+            &.twi {
+                -ms-background-position-x: -243px;
+                background-position-x: -243px;
+            }
+        }
+
+        span {
+            display: block;
+            padding: $pad/2 0 0 $pad/2;
+            font-size: .8em;
+            float: left;
+        }
 	}
 
 	

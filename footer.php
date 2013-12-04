@@ -1,20 +1,24 @@
 <!-- Begin Footer -->
-<footer class="footer section" role="contentinfo">
+<footer class="footer" role="contentinfo">
     <div class="wrap">
-        <div class="g g-2up">
+        <div class="g g-half">
             <div class="gi">
                 <h2>Contact Us</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, magni, rem sint itaque cumque quas enim consequuntur ut</p>
-                <a class="icon email" href="">Email</a> hello@rivercityccs.com
-                <a class="icon phone" href="">Phone</a> (804) 230-0999
-                <a class="icon map" href="">Locations</a> View our locations
+                <div class="foot-links lf">
+                    <a href=""><div class="icon email"></div><span>hello@rivercityccs.com</span></a>
+                    <a href=""><div class="icon phone"></div><span>(804) 230-0999</span></a>
+                    <a href=""><div class="icon map"></div><span>View our locations</span></a>
+                </div>
             </div>
             <div class="gi">
-                <a class="icon referral" href="">Referral</a> Submit a referral
-                <a class="icon careers" href="">Careers</a> Careers
-                <a class="icon resources" href="">Resources</a> Resources
-                <a class="icon fb" href="">Facebook</a> Connect on Facebook
-                <a class="icon twi" href="">Twitter</a> Connect on Twitter
+                <div class="foot-links rt">
+                    <a href=""><div class="icon referral"></div><span>Referral</span></a>
+                    <a href=""><div class="icon careers"></div><span>Careers</span></a>
+                    <a href=""><div class="icon resources"></div><span>Resources</span></a>
+                    <a href=""><div class="icon fb"></div><span>Connect on Facebook</span></a>
+                    <a href=""><div class="icon twi"></div><span>Connect on Twitter</span></a>
+                </div>
             </div>
         </div>
     </div>

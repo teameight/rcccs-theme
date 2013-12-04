@@ -32,25 +32,26 @@
             $window = $j(window),
             $doc = $j(document),
             $nav = $j('nav'),
-            $logo = $j('.logo');
+            $logo = $j('.logo'),
+            $pricea = '';
         // ANIMATE HEADER
 
         $header.data('size', 0);
 
-        $pricea.hover(
-            function () {
-                $j(this).addClass('headerPBhover');
-                $j('.spriteAnimation').css('background-position', '0 -2000px');
-            },
-            function () {
-                $j(this).removeClass('headerPBhover');
-                if($j(this).hasClass('small')){
-                    $j('.spriteAnimation').css('background-position', '-2240px 0');
-                }else{
-                    $j('.spriteAnimation').css('background-position', '0 0');
-                }
-            }
-        );
+//        $pricea.hover(
+//            function () {
+//                $j(this).addClass('headerPBhover');
+//                $j('.spriteAnimation').css('background-position', '0 -2000px');
+//            },
+//            function () {
+//                $j(this).removeClass('headerPBhover');
+//                if($j(this).hasClass('small')){
+//                    $j('.spriteAnimation').css('background-position', '-2240px 0');
+//                }else{
+//                    $j('.spriteAnimation').css('background-position', '0 0');
+//                }
+//            }
+//        );
 
         if($header.length){
             //$header.after('<div id="readout"></div>');

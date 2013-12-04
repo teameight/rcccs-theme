@@ -61,7 +61,7 @@ the_post();
      		<?php get_template_part('partials/section', 'services'); ?>
         </div>
     </div><!--End main-->
-    <div class="bg section">
+    <section class="bg">
         <div class="wrap">
             <div class="g-half">
                 <div class="gi">
@@ -84,7 +84,7 @@ the_post();
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 <?php
 get_footer();

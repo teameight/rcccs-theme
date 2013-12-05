@@ -42,6 +42,34 @@
                 $(this).addClass('clicked');
             }
         });
+//    SERVICES SUBNAV ANIMATION
+        var $selector = $('.subnav');
+
+        $('.nolink a').click(function(e){
+            e.preventDefault();
+            if ( $selector.hasClass('show') )
+            {
+                $selector
+                    .data('oHeight',$selector.height())
+                    .css('height', 0)
+                    .data('nHeight',$selector.height())
+                    .height($selector.data('oHeight'))
+                    .animate({height: $selector.data('nHeight')},400)
+                    .removeClass('show');
+            }
+            else
+            {
+                $selector
+                    .data('oHeight',$selector.height())
+                    .css('height','auto')
+                    .data('nHeight',$selector.height())
+                    .height($selector.data('oHeight'))
+                    .animate({height: $selector.data('nHeight')},400)
+                    .addClass('show');
+            }
+
+        });
+
     });
 
 //    HEADER ANIMATION

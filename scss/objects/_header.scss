@@ -14,6 +14,19 @@
 	}
 }
 
+.subnav {
+    height: 0;
+    position: absolute;
+    background: $offwhite;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    .show {
+        height: auto;
+    }
+}
+
 .nav-toggle {
 	float: right;
 	display: block;

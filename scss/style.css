@@ -784,13 +784,16 @@ h2.staff, time.staff {
     border: 0; }
 
 .pagination {
-  overflow: hidden; }
+  overflow: hidden;
+  margin: 0; }
   .pagination li {
     float: left; }
     .pagination li.label {
       margin-right: 1rem; }
   .pagination a {
     padding: 0.25rem; }
+  .pagination span.current {
+    color: black; }
 
 /*------------------------------------*\
     $MAIN CONTENT AREA

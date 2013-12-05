@@ -99,13 +99,13 @@
                     }
                     if($doc.scrollTop() > 60) { // STAGE 2
                         if($header.data('size') < 3) { // STAGE 1
+                            $header.addClass('sticky');
                             //
                         }
                         if($header.data('size') < 2) { //advance to STAGE 2
                             $header.data('size', 2);
                             $navul.animate({'margin': '0'});
                             $logo.animate({'width': '25%'});
-                            $header.addClass('sticky');
                         }
                         if($doc.scrollTop() > 100 && $header.data('size') < 3) { // advance to STAGE 3
                             $header.data('size', 3);

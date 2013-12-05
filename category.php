@@ -15,6 +15,7 @@
                         <?php get_template_part('partials/content', 'excerpt'); ?>
                     <?php endwhile; ?>
                     </ul>
+                    <?php rcccs_paging_nav(); ?>
                 </div>
                 <div class="gi g1">
                     <?php get_template_part('partials/sidebar', 'blog'); ?>

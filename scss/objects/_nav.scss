@@ -45,6 +45,7 @@
 //Pagination
 .pagination {
 	overflow: hidden;
+    margin: 0;
 
 	li {
 		float: left;
@@ -59,4 +60,8 @@
 	a {
 		padding: $pad/4;
 	}
+
+    span.current {
+        color: black;
+    }
 }

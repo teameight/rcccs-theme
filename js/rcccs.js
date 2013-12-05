@@ -2,28 +2,46 @@
  * Created by administrator on 12/1/13.
  */
 (function ( $ ) {
-//    VARS
-    var def = $('a.side-matter-ref'),
-        ref = $('div.side-matter-text dt'),
-        num = '',
-        header = $('header');
+    $(function(){
+    //    VARS
+        var def, text, ref, num, id, header;
+        def = $(".side-matter-ref");
+        text = $(".side-matter-text");
+        ref = text.find("dt");
+        header = $("header");
 
-    // NEED TO FIX THIS SHIT
+    //    ACTIVATE REFS on DEF HOVER
+        def.hover(function() {
+            id = $(this).attr('id');
+            num = id.split('-');
+            num = num[1];
 
+            $('#note-'+num).find('dt').addClass('hover');
+        },
+        function() {
+            $('#note-'+num).find('dt').removeClass('hover');
+        });
 
-    console.log(def);
+        def.click(function(e) {
+            e.preventDefault();
+            id = $(this).attr('id');
+            num = id.split('-');
+            num = num[1];
 
-//    ACTIVATE REFS on DEF HOVER
-    def.hover(function() {
-        num = this.attr('id');
-        console.log('number is' + num);
-    },
-    function() {
-        //
-    });
+            $('.side-matter-note dt.clicked').removeClass('clicked');
+            $('#note-'+num).find('dt').addClass('clicked');
+        });
 
-    def.click(function() {
-        alert('clicked');
+        ref.click(function(e) {
+            if ($(this).hasClass('clicked'))
+            {
+                $(this).removeClass('clicked');
+            }
+            else
+            {
+                $(this).addClass('clicked');
+            }
+        });
     });
 
 //    HEADER ANIMATION

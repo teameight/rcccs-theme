@@ -35,7 +35,7 @@ dt {
 		border-top: 1px solid lighten($blue, 10%);
 	}
 
-    &:hover, &.active {
+    &:hover, &.hover, &.clicked {
         color: $blue;
 
         + dd {

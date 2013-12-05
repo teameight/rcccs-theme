@@ -49,10 +49,10 @@
             <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
 		</nav><!--end .nav-->
 	</div>
-</header>
-<div class="subnav">
-    <div class="wrap">
-        <?php get_template_part( 'partials/section', 'services' ); ?>
+    <div class="subnav">
+        <div class="wrap">
+            <?php get_template_part( 'partials/section', 'services' ); ?>
+        </div>
     </div>
-</div>
+</header>
 <!-- End .header -->

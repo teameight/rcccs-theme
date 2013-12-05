@@ -1,13 +1,18 @@
-.header {
+header {
 	background: $blue;
 	padding: 0;
+    width: 100%;
+
+    .sticky {
+        position: fixed;
+    }
 }
 
 .logo {
 	display: block;
 	text-align: center;
 	width: 50%;
-	margin: 0 auto;
+	margin: $space auto;
 
 	@media all and (min-width: $bp-med) {
 //		max-width: 9rem;

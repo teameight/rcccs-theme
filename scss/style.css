@@ -681,15 +681,18 @@ td {
 /*------------------------------------*\
     $PAGE STRUCTURE
 \*------------------------------------*/
-.header {
+header {
   background: #96b5be;
-  padding: 0; }
+  padding: 0;
+  width: 100%; }
+  header .sticky {
+    position: fixed; }
 
 .logo {
   display: block;
   text-align: center;
   width: 50%;
-  margin: 0 auto; }
+  margin: 1rem auto; }
 
 .subnav {
   height: 0;

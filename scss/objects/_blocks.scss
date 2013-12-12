@@ -141,8 +141,16 @@
 /* Cycle Slides */
 
 .home-slides .cycle-slide {
-    width: 850px;
+    width: 850px !important;
     height: 478px;
+    opacity: .5 !important;
+    transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+
+    &.cycle-slide-active {
+        opacity: 1 !important;
+    }
 }
 
 /* Slide Image */

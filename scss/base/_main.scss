@@ -9,3 +9,16 @@ body {
 html, .g-half, .gi {
     height: 100%;
 }
+
+div {
+    position: relative;
+}
+
+#content {
+    padding-top: 267px;
+    background: $blue;
+
+    @media screen and (max-width: $bp-med) {
+
+    }
+}

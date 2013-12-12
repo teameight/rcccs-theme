@@ -5,14 +5,7 @@ the_post();
 
 ?>
 
-    <div class="cycle-slideshow home-slides"
-         data-cycle-slides="> div"
-         data-cycle-fx="carousel"
-         data-cycle-carousel-visible="1.5"
-         data-cycle-speed="500"
-         data-cycle-carousel-fluid="true"
-         data-cycle-pause-on-hover="true"
-        >
+    <div class="home-slides">
         <?php
         if(get_field('home_slider')) :
         while(has_sub_field('home_slider')) :
@@ -27,7 +20,7 @@ the_post();
                                 <h2 class="headline font-light">'.get_sub_field('text').'</h2>
                             </div>
                             <div class="slide-thumb">
-                                <img src="'.$img[sizes][medium].'" alt="'.$img[alt].'">
+                                <img src="'.$img[sizes][thumbnail].'" alt="'.$img[alt].'">
                             </div>
                         </div>
                     </a>

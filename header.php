@@ -43,16 +43,17 @@
 
 <!-- Begin .header -->
 <header class="header cf" role="banner">
-	<div class="wrap">
-		<a href="<?php bloginfo('url'); ?>" class="logo"><img src="<?php echo(THEME_DIR); ?>/images/logo.png" alt="Logo Alt Text" /></a>
+    <div class="wrap">
+        <a href="<?php bloginfo('url'); ?>" class="logo"><img src="<?php echo(THEME_DIR); ?>/images/logo.png" alt="Logo Alt Text" /></a>
         <nav id="nav" class="nav">
             <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
-		</nav><!--end .nav-->
-	</div>
+        </nav><!--end .nav-->
+    </div>
     <div class="subnav">
         <div class="wrap">
             <?php get_template_part( 'partials/section', 'services' ); ?>
         </div>
     </div>
 </header>
+<div id="content">
 <!-- End .header -->

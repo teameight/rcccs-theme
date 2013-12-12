@@ -1,3 +1,4 @@
+</div> <!--End Content-->
 <!-- Begin Footer -->
 <footer class="footer" role="contentinfo">
     <div class="wrap">

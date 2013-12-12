@@ -165,6 +165,13 @@ body {
 html, .g-half, .gi {
   height: 100%; }
 
+div {
+  position: relative; }
+
+#content {
+  padding-top: 267px;
+  background: #96b5be; }
+
 /* Links */
 a {
   color: #696c6f;
@@ -684,14 +691,14 @@ td {
 header {
   background: #96b5be;
   padding: 0;
-  width: 100%; }
-  header .sticky {
-    position: fixed; }
+  width: 100%;
+  position: fixed;
+  z-index: 1000; }
 
 .logo {
   display: block;
   text-align: center;
-  width: 50%;
+  width: 40%;
   margin: 1rem auto; }
 
 .subnav {
@@ -799,7 +806,8 @@ h2.staff, time.staff {
     $MAIN CONTENT AREA
 \*------------------------------------*/
 .main {
-  padding: 4rem 0; }
+  padding: 4rem 0;
+  background: white; }
 
 /*------------------------------------*\
     $FOOTER
@@ -1190,8 +1198,14 @@ footer {
 
 /* Cycle Slides */
 .home-slides .cycle-slide {
-  width: 850px;
-  height: 478px; }
+  width: 850px !important;
+  height: 478px;
+  opacity: .5 !important;
+  transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out; }
+  .home-slides .cycle-slide.cycle-slide-active {
+    opacity: 1 !important; }
 
 /* Slide Image */
 .block-slide-img {

@@ -216,6 +216,25 @@ a {
     display: block;
     float: left; }
 
+#menu-item-89::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #f9faee;
+  margin-bottom: -21px;
+  margin-top: 12px;
+  margin-left: 45px;
+  display: none;
+  transition: margin-top .4s ease-in-out; }
+
+#menu-item-89.show::after {
+  display: block; }
+
+.shrink #menu-item-89::after {
+  margin-top: -5px; }
+
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 h1, .alpha {
@@ -766,13 +785,13 @@ h2.staff, time.staff {
     $NAVIGATION
 \*------------------------------------*/
 .nav {
-  clear: both;
+  clear: none;
   overflow: hidden;
-  max-height: 0;
-  border-top: 1px solid #f9faee;
-  text-align: center;
   max-height: none;
-  clear: none; }
+  border-top: 1px solid #f9faee;
+  text-align: center; }
+  .nav .current-menu-item a, .nav .current-menu-parent a {
+    color: #84868d; }
   .nav a {
     display: block;
     padding: 1rem;
@@ -785,10 +804,10 @@ h2.staff, time.staff {
   .nav ul {
     display: inline-block;
     text-align: center; }
-  .nav li {
-    float: left; }
-  .nav a {
-    border: 0; }
+    .nav ul li {
+      float: left; }
+    .nav ul a {
+      border: 0; }
 
 .pagination {
   overflow: hidden;
@@ -1260,6 +1279,8 @@ footer {
   padding: .75em 0; }
   .services li:last-child {
     border-bottom: 1px solid #eeeeee; }
+  .subnav .services li:first-child {
+    border-top: none; }
 
 /* Map */
 .map {
@@ -1396,7 +1417,8 @@ footer {
 
 section {
   padding: 4rem 0;
-  height: auto; }
+  height: auto;
+  background: white; }
   section .g-half .gi img.size-thumbnail {
     width: 40%;
     float: left;

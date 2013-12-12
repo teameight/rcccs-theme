@@ -49,3 +49,25 @@ a {
 		float: left;
 	}
 }
+
+#menu-item-89::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $offwhite;
+    margin-bottom: -21px;
+    margin-top: 12px;
+    margin-left: 45px;
+    display: none;
+    transition: margin-top .4s ease-in-out;
+}
+
+#menu-item-89.show::after {
+    display: block;
+}
+
+.shrink #menu-item-89::after {
+    margin-top: -5px;
+}

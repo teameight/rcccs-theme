@@ -3,13 +3,17 @@
 \*------------------------------------*/
 
 .nav {
-	clear: both;
+	clear: none;
 	overflow: hidden;
-	max-height: 0;
+	max-height: none;
 	border-top: 1px solid $offwhite;
 	text-align: center;
-	
-	a {
+
+    .current-menu-item a, .current-menu-parent a {
+        color: $gray;
+    }
+
+    a {
 		display: block;
 		padding: $pad;
 		color: $offwhite;
@@ -27,10 +31,6 @@
 	ul {
 		display: inline-block;
 		text-align: center;
-	}
-
-		max-height: none;
-		clear: none;
 
 		li {
 			float: left;
@@ -39,7 +39,7 @@
 		a {
 			border: 0;
 		}
-		
+    }
 }
 
 //Pagination

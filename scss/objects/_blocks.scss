@@ -238,6 +238,10 @@
 		&:last-child {
 			border-bottom: 1px solid $gray-light-2;
 		}
+
+        .subnav &:first-child {
+            border-top: none;
+        }
 	}
 }
 

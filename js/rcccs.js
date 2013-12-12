@@ -84,6 +84,7 @@
                     .height($selector.data('oHeight'))
                     .animate({height: $selector.data('nHeight')},400)
                     .removeClass('show');
+                $('#menu-item-89').removeClass('show');
             }
             else
             {
@@ -94,6 +95,7 @@
                     .height($selector.data('oHeight'))
                     .animate({height: $selector.data('nHeight')},400)
                     .addClass('show');
+                $('#menu-item-89').addClass('show');
             }
 
         });
@@ -121,14 +123,14 @@
                         if ($header.data('size') == 0) { // FULL SIZE
                             $header.data('size', 1); // SET STAGE 1
                             $logo.animate({width: '25%'}, 400);
-                            $navul.animate({margin: 0}, 400);
+                            $navul.animate({margin: 0}, 400).addClass('shrink');
                         }
                     }
                     else {
                         if ($header.data('size') == 1) {
                             $header.data('size', 0); // SET STAGE 1
                             $logo.animate({width: '40%'}, 400);
-                            $navul.animate({margin: '1rem'}, 400);
+                            $navul.animate({margin: '1rem'}, 400).removeClass('shrink');
                         }
                     }
                 }

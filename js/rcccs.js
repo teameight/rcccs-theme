@@ -31,24 +31,24 @@
 
 (function ( $ ) {
     $(function(){
-    //    VARS
+        //    VARS
         var def, text, ref, num, id, header;
         def = $(".side-matter-ref");
         text = $(".side-matter-text");
         ref = text.find("dt");
         header = $("header");
 
-    //    ACTIVATE REFS on DEF HOVER
+        //    ACTIVATE REFS on DEF HOVER
         def.hover(function() {
-            id = $(this).attr('id');
-            num = id.split('-');
-            num = num[1];
+                id = $(this).attr('id');
+                num = id.split('-');
+                num = num[1];
 
-            $('#note-'+num).find('dt').addClass('hover');
-        },
-        function() {
-            $('#note-'+num).find('dt').removeClass('hover');
-        });
+                $('#note-'+num).find('dt').addClass('hover');
+            },
+            function() {
+                $('#note-'+num).find('dt').removeClass('hover');
+            });
 
         def.click(function(e) {
             e.preventDefault();
@@ -84,7 +84,7 @@
                     .height($selector.data('oHeight'))
                     .animate({height: $selector.data('nHeight')},400)
                     .removeClass('show');
-                $('#menu-item-89').removeClass('show');
+                $('.nolink').removeClass('show');
             }
             else
             {
@@ -95,7 +95,7 @@
                     .height($selector.data('oHeight'))
                     .animate({height: $selector.data('nHeight')},400)
                     .addClass('show');
-                $('#menu-item-89').addClass('show');
+                $('.nolink').addClass('show');
             }
 
         });
@@ -163,8 +163,8 @@
                 $offset = $extra / 2;
                 // apply that to carousel-offset for home-slides
                 o.carouselOffset = $offset;
-    //            o.fx = 'carousel';
-    //            o.slides = '> div';
+                //            o.fx = 'carousel';
+                //            o.slides = '> div';
             }
             // for med breakpoint
 

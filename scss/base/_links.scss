@@ -1,56 +1,84 @@
-/* Links */ 
+/* Links */
 a {
-	color: $gray-dark;
-	text-decoration: none;
-	outline: 0;
+    color: $gray-dark;
+    text-decoration: none;
+    outline: 0;
     cursor: pointer;
-	
-	&:hover, &:focus {
-		color: $gray;
-	}
 
-	&.more, &.cat {
-		font-size: .7368em;
-		text-transform: uppercase;
-		font-weight: 700;
-	}
+    &:hover, &:focus {
+        color: $gray;
+    }
 
-	&.cat {
-		color: $offwhite;
-		border-radius: 3px;
-		display: inline-block;
-		padding: .205em;
-		float: right;
-		clear: right;
+    &.more, &.cat {
+        font-size: .7368em;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
 
-		&.stories {
-			@include category(stories);
-		}
-		&.news {
-			@include category(news);
-		}
-		&.resources {
-			@include category(resources);
-		}
-		&.staff {
-			@include category(staff);
-		}
+    &.cat {
+        color: $offwhite;
+        border-radius: 3px;
+        display: inline-block;
+        padding: .205em;
+        float: right;
+        clear: right;
 
-		.g1 > & {
-			float: left;
-			clear: left;
-			margin-bottom: $space/2;
-		}
-	}
+        &.stories {
+            @include category(stories);
+        }
+        &.news {
+            @include category(news);
+        }
+        &.resources {
+            @include category(resources);
+        }
+        &.staff {
+            @include category(staff);
+        }
 
-	&.more {
-		margin-top: $space-double;
-		display: block;
-		float: left;
-	}
+        .g1 > & {
+            float: left;
+            clear: left;
+            margin-bottom: $space/2;
+        }
+    }
+
+    &.more {
+        margin-top: $space-double;
+        display: block;
+        float: left;
+    }
 }
 
-#menu-item-89::after {
+.contact-links a {
+    display: block;
+    float: left;
+    color: $gray;
+    font-weight: 300;
+    width: 100%;
+    margin-bottom: $space;
+
+    footer & {
+        color: $offwhite;
+    }
+
+    &:hover {
+        color: $gray-light;
+    }
+    &:hover div.icon  {
+        -ms-background-position-y: -34px;
+        background-position-y: -34px;
+    }
+
+    span {
+        display: block;
+        padding: $pad/2 0 0 $pad/2;
+        font-size: .8em;
+        float: left;
+    }
+}
+
+.nolink::after {
     content: '';
     width: 0;
     height: 0;
@@ -64,10 +92,10 @@ a {
     transition: margin-top .4s ease-in-out;
 }
 
-#menu-item-89.show::after {
+.nolink.show::after {
     display: block;
 }
 
-.shrink #menu-item-89::after {
+.shrink .nolink::after {
     margin-top: -5px;
 }

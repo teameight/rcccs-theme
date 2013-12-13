@@ -216,7 +216,27 @@ a {
     display: block;
     float: left; }
 
-#menu-item-89::after {
+.contact-links a {
+  display: block;
+  float: left;
+  color: #84868d;
+  font-weight: 300;
+  width: 100%;
+  margin-bottom: 1rem; }
+  footer .contact-links a {
+    color: #f9faee; }
+  .contact-links a:hover {
+    color: #a3adb8; }
+  .contact-links a:hover div.icon {
+    -ms-background-position-y: -34px;
+    background-position-y: -34px; }
+  .contact-links a span {
+    display: block;
+    padding: 0.5rem 0 0 0.5rem;
+    font-size: .8em;
+    float: left; }
+
+.nolink::after {
   content: '';
   width: 0;
   height: 0;
@@ -229,10 +249,10 @@ a {
   display: none;
   transition: margin-top .4s ease-in-out; }
 
-#menu-item-89.show::after {
+.nolink.show::after {
   display: block; }
 
-.shrink #menu-item-89::after {
+.shrink .nolink::after {
   margin-top: -5px; }
 
 /* Headings */
@@ -463,6 +483,35 @@ input[type="search"]::-webkit-search-decoration {
   border: 0;
   border-left: 1px solid #84868d;
   color: #84868d; }
+
+/* Gravity Form - Contact */
+form > div, .gform_fields, .gfield, .gfield_label {
+  float: left; }
+
+.gfield {
+  width: 100%;
+  position: relative; }
+
+.gfield_label {
+  padding-top: .5em;
+  font-weight: 300; }
+
+.ginput_container {
+  float: right;
+  width: 75%;
+  margin-bottom: 1em; }
+  .gfield:last-child .ginput_container {
+    width: 100%;
+    background: #f9faee; }
+
+.validation_message {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  color: darkred;
+  font-size: .75em;
+  font-family: "Radley", Times, "Times New Roman", serif;
+  font-style: italic; }
 
 /*------------------------------------*\
     $Table
@@ -842,53 +891,6 @@ footer {
     padding: 1rem 1rem 0; }
   footer .gi:nth-of-type(odd) {
     border-right: 1px solid #5d5f62 !important; }
-  footer a {
-    display: block;
-    float: left;
-    color: #f9faee;
-    font-weight: 300;
-    width: 100%;
-    margin-bottom: 1rem; }
-    footer a:hover {
-      color: #a3adb8; }
-    footer a:hover div.icon {
-      -ms-background-position-y: -34px;
-      background-position-y: -34px; }
-    footer a div.icon {
-      background-image: url(../images/footer-sprite-276x68.png);
-      -ms-background-position-x: 0;
-      background-position-x: 0;
-      background-repeat: no-repeat;
-      display: block;
-      width: 34px;
-      height: 34px;
-      float: left; }
-      footer a div.icon.phone {
-        -ms-background-position-x: -34px;
-        background-position-x: -34px; }
-      footer a div.icon.map {
-        -ms-background-position-x: -68px;
-        background-position-x: -68px; }
-      footer a div.icon.referral {
-        -ms-background-position-x: -102px;
-        background-position-x: -102px; }
-      footer a div.icon.career {
-        -ms-background-position-x: -136px;
-        background-position-x: -136px; }
-      footer a div.icon.resources {
-        -ms-background-position-x: -173px;
-        background-position-x: -173px; }
-      footer a div.icon.fb {
-        -ms-background-position-x: -208px;
-        background-position-x: -208px; }
-      footer a div.icon.twi {
-        -ms-background-position-x: -243px;
-        background-position-x: -243px; }
-    footer a span {
-      display: block;
-      padding: 0.5rem 0 0 0.5rem;
-      font-size: .8em;
-      float: left; }
 
 .nav-footer {
   margin: -1rem -1rem 1rem; }
@@ -972,6 +974,38 @@ footer {
 /*------------------------------------*\
     $COMPONENTS
 \*------------------------------------*/
+/* Genericons */
+div.icon {
+  background-image: url(../images/footer-sprite-276x68.png);
+  -ms-background-position-x: 0;
+  background-position-x: 0;
+  background-repeat: no-repeat;
+  display: block;
+  width: 34px;
+  height: 34px;
+  float: left; }
+  div.icon.phone {
+    -ms-background-position-x: -34px;
+    background-position-x: -34px; }
+  div.icon.map {
+    -ms-background-position-x: -68px;
+    background-position-x: -68px; }
+  div.icon.referral {
+    -ms-background-position-x: -102px;
+    background-position-x: -102px; }
+  div.icon.careers {
+    -ms-background-position-x: -138px;
+    background-position-x: -138px; }
+  div.icon.resources {
+    -ms-background-position-x: -173px;
+    background-position-x: -173px; }
+  div.icon.fb {
+    -ms-background-position-x: -208px;
+    background-position-x: -208px; }
+  div.icon.twi {
+    -ms-background-position-x: -243px;
+    background-position-x: -243px; }
+
 /* Icon Font */
 @font-face {
   font-family: 'icons';
@@ -1089,7 +1123,7 @@ footer {
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-.btn {
+.btn, input[type="submit"] {
   display: inline-block;
   background: #96b5be;
   color: white;
@@ -1098,10 +1132,10 @@ footer {
   padding: 1rem;
   border: 0;
   text-align: center; }
-  .btn:hover, .btn:focus {
+  .btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus {
     color: white;
     background-color: #779fab; }
-  .btn.disabled {
+  .btn.disabled, input[type="submit"].disabled {
     background: #eeeeee;
     color: #bbbbbb; }
 

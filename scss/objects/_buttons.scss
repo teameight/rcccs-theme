@@ -1,40 +1,40 @@
 /*------------------------------------*\
     $BUTTONS
 \*------------------------------------*/
-.btn {
-	display: inline-block;
-	background: $blue;
-	color: $white;
-	line-height: 1;
-	font-weight: 300;
-	padding: $pad;
-	border: 0;
-	text-align: center;
-	
-	&:hover, &:focus {
-		color: $white;
-		background-color: darken($blue, 10%);
-	}
+.btn, input[type="submit"] {
+    display: inline-block;
+    background: $blue;
+    color: $white;
+    line-height: 1;
+    font-weight: 300;
+    padding: $pad;
+    border: 0;
+    text-align: center;
 
-	&.disabled {
-		background: $gray-light-2;
-		color: $gray-light-4;
-	}
+    &:hover, &:focus {
+        color: $white;
+        background-color: darken($blue, 10%);
+    }
+
+    &.disabled {
+        background: $gray-light-2;
+        color: $gray-light-4;
+    }
 }
 
 .btn-small {
-	padding: $pad-half;
+    padding: $pad-half;
 }
 
 .btn-large {
-	padding: $pad-half;
-	text-transform: uppercase;
-	background: $gray;
-	font-size: 1.4rem;
-	font-weight: normal;
+    padding: $pad-half;
+    text-transform: uppercase;
+    background: $gray;
+    font-size: 1.4rem;
+    font-weight: normal;
 }
 
 
 .text-btn {
-	font-style: italic;
+    font-style: italic;
 }

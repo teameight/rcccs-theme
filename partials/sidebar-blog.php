@@ -1,5 +1,7 @@
 <?php
 
+get_search_form();
+
 $id = get_category_by_slug('community');
 
 $args = array(

@@ -75,6 +75,18 @@ header {
     &.community {
         @extend .bg;
     }
+    &.careers {
+        background-color: $gray-dark;
+        color: $offwhite;
+
+        a {
+            color: $offwhite;
+
+            &:hover {
+                color: $gray-light;
+            }
+        }
+    }
 }
 
 h2, time {

@@ -812,6 +812,13 @@ header {
   .subhead.staff {
     background-color: #8c9685;
     color: #f9faee; }
+  .subhead.careers {
+    background-color: #696c6f;
+    color: #f9faee; }
+    .subhead.careers a {
+      color: #f9faee; }
+      .subhead.careers a:hover {
+        color: #a3adb8; }
 
 h2.stories, time.stories {
   color: #a3adb8; }

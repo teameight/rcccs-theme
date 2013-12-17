@@ -57,3 +57,15 @@ add_action( 'widgets_init', 'rcs_widgets_init' );
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
+
+//toggle shortcode
+function toggle_shortcode( $atts, $content = null ) {
+    extract( shortcode_atts(
+        array(
+            'title' => 'Click To Open'
+        ),
+        $atts ) );
+        $content = apply_filters('the_content', $content);
+    return '<h2 class="trigger"><a href="#">'. $title .'</a></h2><div class="toggle_container">' . do_shortcode($content) . '</div>';
+}
+add_shortcode('toggle', 'toggle_shortcode');

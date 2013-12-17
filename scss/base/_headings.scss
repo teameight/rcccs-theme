@@ -43,3 +43,22 @@ h6, .zeta    {
 	font-weight: normal;
 	font-style: italic;
 }
+
+/*toggle*/
+h2.trigger {
+    margin: 0px !important;
+    padding-left: 20px;
+    background-image: url('../images/toggle-plus.png');
+    background-position: 0px center;
+    background-repeat: no-repeat;
+}
+h2.active{
+    background-image: url('../images/toggle-minus.png') !important;
+    background-position: 0px center;
+    background-repeat: no-repeat;
+}
+.toggle_container {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: 1px dotted $gray;
+}

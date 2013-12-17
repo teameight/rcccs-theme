@@ -198,5 +198,12 @@
                 carouselOffset: $offset
             });
         });
+
+        // toggle shortcode
+        $(".toggle_container").hide();
+        $("h2.trigger").click(function(){
+            $(this).toggleClass("active").next().slideToggle("normal");
+            return false; //Prevent the browser jump to the link anchor
+        });
     });
 })( jQuery );

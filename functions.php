@@ -69,3 +69,52 @@ function toggle_shortcode( $atts, $content = null ) {
     return '<h2 class="trigger"><a href="#">'. $title .'</a></h2><div class="toggle_container">' . do_shortcode($content) . '</div>';
 }
 add_shortcode('toggle', 'toggle_shortcode');
+
+// theme customizer
+add_action('customize_register', 'rcccs_customize');
+function rcccs_customize($wp_customize) {
+
+    $wp_customize->add_section( 'contact_settings', array(
+        'title'          => 'Contact Info'
+    ) );
+
+    $wp_customize->add_setting( 'email_address', array(
+        'default'        => 'hello@rivercityccs.com',
+    ) );
+
+    $wp_customize->add_control( 'email_address', array(
+        'label'   => 'Email Address',
+        'section' => 'contact_settings',
+        'type'    => 'text'
+    ) );
+
+    $wp_customize->add_setting( 'phone_number', array(
+        'default'        => '(804) 230-0999',
+    ) );
+
+    $wp_customize->add_control( 'phone_number', array(
+        'label'   => 'Phone Number',
+        'section' => 'contact_settings',
+        'type'    => 'text'
+    ) );
+
+    $wp_customize->add_setting( 'facebook', array(
+        'default'        => 'https://www.facebook.com/RiverCityCCS',
+    ) );
+
+    $wp_customize->add_control( 'facebook', array(
+        'label'   => 'Facebook URL',
+        'section' => 'contact_settings',
+        'type'    => 'text'
+    ) );
+    $wp_customize->add_setting( 'twitter', array(
+        'default'        => 'https://www.twitter.com/RiverCityCCS',
+    ) );
+
+    $wp_customize->add_control( 'twitter', array(
+        'label'   => 'Twitter URL',
+        'section' => 'contact_settings',
+        'type'    => 'text'
+    ) );
+
+}

@@ -17,7 +17,9 @@ the_post();
                     <a href="'.get_sub_field('link').'" class="inner">
                         <div class="slide">
                             <div class="slide-text">
+                                <div class="vcenter">
                                 <h2 class="headline font-light">'.get_sub_field('text').'</h2>
+                                </div>
                             </div>
                             <div class="slide-thumb">
                                 <img src="'.$img[sizes][thumbnail].'" alt="'.$img[alt].'">

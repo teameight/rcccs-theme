@@ -1312,6 +1312,8 @@ div.icon {
   background: #edebb0;
   max-height: 483px;
   width: 100%; }
+  .block-slide-txt .slide {
+    height: 100%; }
   .block-slide-txt .slide-thumb {
     width: 50%;
     vertical-align: middle;
@@ -1326,7 +1328,19 @@ div.icon {
     padding: 0 1% 0 2%;
     width: 50%;
     float: left;
-    white-space: normal; }
+    white-space: normal;
+    height: 100%; }
+  .block-slide-txt .vcenter {
+    width: 100%;
+    padding: 0 10%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
 
 /* Services Links */
 .services .gi {

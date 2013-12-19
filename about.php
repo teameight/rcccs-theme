@@ -35,7 +35,7 @@ get_header(); ?>
         <div class="wrap">
             <hr />
             <h2>Who We Are</h2>
-            <ul>
+            <ul class="who-we-are">
             <?php
             foreach($staff as $member) :
                 $id = $member->ID;
@@ -49,7 +49,8 @@ get_header(); ?>
             echo "<li class='staff-img'>
                     <img src=".$img[sizes][thumbnail]." alt=".$img->alt." />
                     <span>$name<br>$degree</span>
-                </li><li class='about-staff'>$about</li>";
+                    <div class='about-staff'>$about</div>
+                </li>";
 
             endforeach; ?>
         </div>

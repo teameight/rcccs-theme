@@ -40,11 +40,14 @@ get_header(); ?>
                         <?php if( have_rows('locations') ): ?>
                             <?php while ( have_rows('locations') ) : the_row();
                                 $location = get_sub_field('location');
+                                $address = explode(',', $location['address']);
                                 ?>
                                 <div class="location" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>">
-                                    <h4><div class="icon map"></div><?php the_sub_field('title'); ?></h4>
-                                    <p class="address"><?php echo $location['address']; ?></p>
-                                    <p><?php the_sub_field('description'); ?></p>
+                                    <div class="icon map"></div><?php the_sub_field('title'); ?>
+                                    <p class="address">
+                                        <?php echo $address[0].'<br/>'.$address[1].'<br/>'.$address[2].', '.$address[3]; ?>
+                                        <a class="btn" href="<?php echo get_sub_field('directions'); ?>">Get Directions</a>
+                                    </p>
                                 </div>
                             <?php endwhile; ?>
                         <?php endif; ?>

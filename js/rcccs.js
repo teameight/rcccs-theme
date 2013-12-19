@@ -205,5 +205,105 @@
             $(this).toggleClass("active").next().slideToggle("normal");
             return false; //Prevent the browser jump to the link anchor
         });
+
+        // WHO WE ARE toggle
+        function isOdd(a, b) {
+            if (a % b === 0) return false;
+            else return true;
+        }
+        var wrapper = $('.who-we-are'),
+            boxes = wrapper.children(),
+            boxSize = boxes.first().outerWidth(true),
+            w = wrapper.outerWidth(true),
+            breakat = Math.floor(w / boxSize),
+            aboutWrap = '<li class="about-wrapper two-col"></li>';
+
+        boxes.removeClass('edge')
+            .filter(':nth-of-type(' + breakat + 'n)')
+            .addClass('edge')
+            .after(aboutWrap);
+
+        if(isOdd(boxes.length, breakat)) {
+            console.log('odd');
+            boxes.last().addClass('edge').after(aboutWrap);
+        }
+
+
+        $(window).resize(function () {
+            var w = wrapper.width(),
+                rebreakat = Math.floor(w / boxSize),
+                aboutWrap = $('.about-wrap');
+
+            aboutWrap.remove();
+
+            if (breakat == rebreakat) {
+                boxes.removeClass('edge')
+                    .filter(':nth-of-type(' + rebreakat + 'n)')
+                    .addClass('edge')
+                    .after(aboutWrap);
+            }
+        });
+
+        $('.staff-img').click(function () {
+            var $this = $(this),
+                clone = $this.children('.about-staff').clone(),
+                aboutActive = $('.about-wrapper.active');
+
+            // if this image's about is open, close it
+            if ($this.hasClass('open')) {
+                aboutActive.slideToggle()
+                    .removeClass('active')
+                    .children().slideToggle("slow", function () {
+                        $(this).remove();
+                    });
+                $this.removeClass('open').siblings().removeClass('fade');
+                // if another image's about is open, switch them
+            } else if ($this.siblings().hasClass('open')) {
+                // if this is an edge but it's not open
+                if ($this.hasClass('edge')) {
+                    // if the next wrapper is active, swap the html
+                    if ($this.next().hasClass('active')) {
+                        $('.open').removeClass('open');
+                        $this.addClass('open').next().html(clone.html());
+                    }
+                    // if not, then close the active, emtpy it, and open the right one
+                    else {
+                        aboutActive.slideToggle()
+                            .removeClass('active')
+                            .children().remove()
+                            .end().parent().removeClass('open');
+                        $this.next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                    }
+                }
+
+                // if it's the same edge, swap the about-staff
+                else if ($this.nextAll('.edge').first().next().hasClass('active')) {
+                    $('.open').removeClass('open');
+                    aboutActive.html(clone.html());
+                    $this.addClass('open');
+                }
+                // if different, toggle and remove the open one, add and toggle new
+                else {
+                    $('.open').removeClass('open');
+                    aboutActive.slideToggle().removeClass('active')
+                        .children().remove();
+                    $this.addClass('open').nextAll('.edge').first()
+                        .next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                }
+                // unfade this img, fade all others
+                $this.removeClass('fade').siblings('.staff-img').addClass('fade');
+                // if no about is open, find the closest edge, append the about and open the wrapper
+
+            } else {
+                // if this img is the edge
+                if ($this.hasClass('edge')) {
+                    $this.next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                } else {
+                    $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                }
+                $this.addClass('open').siblings('.staff-img').addClass('fade');
+            }
+
+        });
     });
 })( jQuery );

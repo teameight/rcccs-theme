@@ -155,6 +155,10 @@ header, footer, nav, section, article, hgroup, figure {
   color: #f9faee; }
 
 /* Service Colors */
+/* Opacity */
+.fade {
+  opacity: .6; }
+
 body {
   background: white;
   font: 19px "Source Sans Pro", "Helvetica", "Arial", sans-serif;
@@ -430,7 +434,7 @@ input, textarea {
 input[type=text], input[type=search], input[type=url], input[type=number], textarea {
   -webkit-appearance: none; }
 
-button, input[type="submit"] {
+button, input[type="submit"], .directions {
   padding: 0.5rem;
   background: #696c6f;
   border: 1px solid #84868d;
@@ -577,6 +581,15 @@ td {
   max-width: 72rem;
   margin: 0 auto;
   padding: 0.5rem; }
+
+/*------------------------------------*\
+    $TEXT COLUMNS
+\*------------------------------------*/
+.two-col {
+  -moz-column-count: 2;
+  -moz-column-gap: 20px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 20px; }
 
 /*------------------------------------*\
     $TEMPLATES
@@ -1150,12 +1163,16 @@ div.icon {
 .btn, input[type="submit"] {
   display: inline-block;
   background: #96b5be;
-  color: white;
+  color: white !important;
   line-height: 1;
   font-weight: 300;
   padding: 1rem;
   border: 0;
-  text-align: center; }
+  text-align: center;
+  border-radius: 3px;
+  text-transform: uppercase;
+  width: auto !important;
+  margin-top: 0.5rem; }
   .btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus {
     color: white;
     background-color: #779fab; }
@@ -1364,6 +1381,15 @@ div.icon {
   width: 100%;
   height: 650px; }
 
+/* Locations */
+.location {
+  float: left;
+  width: 100%; }
+
+.address {
+  float: left;
+  margin-left: 1rem; }
+
 .inline-list li {
   display: inline-block; }
 
@@ -1518,6 +1544,11 @@ section {
   display: none;
   width: 100%;
   float: left; }
+
+.about-wrapper {
+  width: 100%;
+  float: left;
+  display: none; }
 
 .g-map {
   width: 100%;

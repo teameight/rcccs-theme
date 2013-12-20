@@ -17,6 +17,11 @@
     -moz-column-gap: 20px;
     -webkit-column-count: 2;
     -webkit-column-gap: 20px;
+
+    @media all and (max-width: $bp-med) {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+    }
 }
 
 /*------------------------------------*\

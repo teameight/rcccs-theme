@@ -229,17 +229,16 @@
         }
 
 
-        $(window).resize(function () {
+        $(window).smartresize(function () {
             var w = wrapper.outerWidth(true),
                 rebreakat = Math.floor(w / boxSize),
-                aboutWrap = $('.about-wrap');
+                aboutWrappers = $('.about-wrapper');
 
-            aboutWrap.each(function(e) {
-                e.remove();
+            aboutWrappers.each(function() {
+                $(this).remove();
             });
             console.log(breakat + ' ' + rebreakat);
 
-            if (breakat == rebreakat) {
                 console.log('=');
                 boxes.removeClass('edge')
                     .filter(':nth-of-type(' + rebreakat + 'n)')
@@ -248,7 +247,6 @@
                 if (isOdd(boxes.length, rebreakat)) {
                     boxes.last().addClass('edge').after(aboutWrap);
                 }
-            }
         });
 
         $('.staff-img').click(function () {
@@ -260,7 +258,12 @@
             if ($this.hasClass('open')) {
                 aboutActive.slideToggle()
                     .removeClass('active')
-                    .children().slideToggle("fast", function(){$(this).remove();});
+                    .children().slideToggle("fast", function(){
+                        $(this).remove();
+                        $('html, body').animate({
+                            scrollTop: $this.offset().top - 250
+                        }, 500);
+                    });
                 $this.removeClass('open').siblings().removeClass('fade');
 
                 // if another image's about is open, switch them
@@ -281,6 +284,9 @@
                             .after(clone).next().fadeIn("fast", function () {
                                 $('.clone').removeClass('clone');
                                 aboutActive.children().first().remove();
+                                $('html, body').animate({
+                                    scrollTop: $this.offset().top - 250
+                                }, 500);
                             });
                     }
                     // if not, then close the active, empty it, and open the right one
@@ -290,7 +296,11 @@
                             .children().remove();
                         $('.open').removeClass('open');
                         clone.show();
-                        $this.addClass('open').next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                        $this.addClass('open').next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
+                            $('html, body').animate({
+                                scrollTop: $this.offset().top - 250
+                            }, 500);
+                        });
                     }
                 }
 
@@ -306,6 +316,9 @@
                         .after(clone).next().fadeIn("fast", function () {
                             $('.clone').removeClass('clone');
                             aboutActive.children().first().remove();
+                            $('html, body').animate({
+                                scrollTop: $this.offset().top - 250
+                            }, 500);
                         });
                 }
 
@@ -318,10 +331,18 @@
                         });
                     if ($this.hasClass('edge')) {
                         clone.show();
-                        $this.next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                        $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
+                            $('html, body').animate({
+                                scrollTop: $this.offset().top - 250
+                            }, 500);
+                        });
                     } else {
                         clone.show();
-                        $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                        $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
+                            $('html, body').animate({
+                                scrollTop: $this.offset().top - 250
+                            }, 500);
+                        });
                     }
                     $this.addClass('open').siblings('.staff-img').addClass('fade');
                 }
@@ -334,14 +355,21 @@
                 // if this img is the edge
                 if ($this.hasClass('edge')) {
                     clone.show();
-                    $this.next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                    $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
+                        $('html, body').animate({
+                            scrollTop: $this.offset().top - 250
+                        }, 500);
+                    });
                 } else {
                     clone.show();
-                    $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                    $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
+                        $('html, body').animate({
+                            scrollTop: $this.offset().top - 250
+                        }, 500);
+                    });
                 }
                 $this.addClass('open').siblings('.staff-img').addClass('fade');
             }
-
         });
     });
 })( jQuery );

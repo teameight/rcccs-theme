@@ -346,6 +346,9 @@ ol, ul {
   padding: 0;
   list-style: none; }
 
+.who-we-are {
+  margin: 0; }
+
 /* Definition Lists */
 dl, .side-matter-text {
   overflow: hidden;
@@ -1533,7 +1536,12 @@ section {
   width: 20%;
   float: left;
   text-align: center;
-  padding: 1rem; }
+  padding: 1rem;
+  -webkit-transition: opacity .2s;
+  -moz-transition: opacity .2s;
+  -ms-transition: opacity .2s;
+  -o-transition: opacity .2s;
+  transition: opacity .2s; }
   .staff-img img {
     width: 100%;
     border-radius: 50%; }
@@ -1541,13 +1549,17 @@ section {
     font-size: .773em; }
 
 .about-staff {
-  display: none;
   width: 100%;
-  float: left; }
+  float: left;
+  display: none; }
 
 .about-wrapper {
   width: 100%;
   float: left;
+  display: none; }
+
+.clone {
+  position: absolute;
   display: none; }
 
 .g-map {

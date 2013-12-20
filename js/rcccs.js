@@ -216,31 +216,38 @@
             boxSize = boxes.first().outerWidth(true),
             w = wrapper.outerWidth(true),
             breakat = Math.floor(w / boxSize),
-            aboutWrap = '<li class="about-wrapper two-col"></li>';
+            aboutWrap = '<li class="about-wrapper"></li>';
+
 
         boxes.removeClass('edge')
             .filter(':nth-of-type(' + breakat + 'n)')
             .addClass('edge')
             .after(aboutWrap);
 
-        if(isOdd(boxes.length, breakat)) {
-            console.log('odd');
+        if (isOdd(boxes.length, breakat)) {
             boxes.last().addClass('edge').after(aboutWrap);
         }
 
 
         $(window).resize(function () {
-            var w = wrapper.width(),
+            var w = wrapper.outerWidth(true),
                 rebreakat = Math.floor(w / boxSize),
                 aboutWrap = $('.about-wrap');
 
-            aboutWrap.remove();
+            aboutWrap.each(function(e) {
+                e.remove();
+            });
+            console.log(breakat + ' ' + rebreakat);
 
             if (breakat == rebreakat) {
+                console.log('=');
                 boxes.removeClass('edge')
                     .filter(':nth-of-type(' + rebreakat + 'n)')
                     .addClass('edge')
                     .after(aboutWrap);
+                if (isOdd(boxes.length, rebreakat)) {
+                    boxes.last().addClass('edge').after(aboutWrap);
+                }
             }
         });
 
@@ -253,53 +260,84 @@
             if ($this.hasClass('open')) {
                 aboutActive.slideToggle()
                     .removeClass('active')
-                    .children().slideToggle("slow", function () {
-                        $(this).remove();
-                    });
+                    .children().slideToggle("fast", function(){$(this).remove();});
                 $this.removeClass('open').siblings().removeClass('fade');
+
                 // if another image's about is open, switch them
             } else if ($this.siblings().hasClass('open')) {
+
                 // if this is an edge but it's not open
                 if ($this.hasClass('edge')) {
-                    // if the next wrapper is active, swap the html
+
+                    // if it's the same edge, swap the html
                     if ($this.next().hasClass('active')) {
                         $('.open').removeClass('open');
-                        $this.addClass('open').next().html(clone.html());
+                        clone.addClass('clone');
+
+                        $this.addClass('open');
+                        aboutActive.children().animate({
+                            opacity: 0
+                        })
+                            .after(clone).next().fadeIn("fast", function () {
+                                $('.clone').removeClass('clone');
+                                aboutActive.children().first().remove();
+                            });
                     }
-                    // if not, then close the active, emtpy it, and open the right one
+                    // if not, then close the active, empty it, and open the right one
                     else {
                         aboutActive.slideToggle()
                             .removeClass('active')
-                            .children().remove()
-                            .end().parent().removeClass('open');
-                        $this.next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                            .children().remove();
+                        $('.open').removeClass('open');
+                        clone.show();
+                        $this.addClass('open').next('.about-wrapper').addClass('active').append(clone).slideToggle();
                     }
                 }
 
                 // if it's the same edge, swap the about-staff
                 else if ($this.nextAll('.edge').first().next().hasClass('active')) {
                     $('.open').removeClass('open');
-                    aboutActive.html(clone.html());
+                    clone.addClass('clone');
+
                     $this.addClass('open');
+                    aboutActive.children().animate({
+                        opacity: 0
+                    })
+                        .after(clone).next().fadeIn("fast", function () {
+                            $('.clone').removeClass('clone');
+                            aboutActive.children().first().remove();
+                        });
                 }
+
                 // if different, toggle and remove the open one, add and toggle new
                 else {
                     $('.open').removeClass('open');
                     aboutActive.slideToggle().removeClass('active')
-                        .children().remove();
-                    $this.addClass('open').nextAll('.edge').first()
-                        .next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                        .children().slideToggle("fast", function() {
+                            $(this).remove();
+                        });
+                    if ($this.hasClass('edge')) {
+                        clone.show();
+                        $this.next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                    } else {
+                        clone.show();
+                        $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle();
+                    }
+                    $this.addClass('open').siblings('.staff-img').addClass('fade');
                 }
                 // unfade this img, fade all others
                 $this.removeClass('fade').siblings('.staff-img').addClass('fade');
-                // if no about is open, find the closest edge, append the about and open the wrapper
 
+                // if no about is open, find the closest edge, append the about and open the wrapper
             } else {
+
                 // if this img is the edge
                 if ($this.hasClass('edge')) {
-                    $this.next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                    clone.show();
+                    $this.next('.about-wrapper').addClass('active').append(clone).slideToggle();
                 } else {
-                    $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone.html()).slideToggle();
+                    clone.show();
+                    $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle();
                 }
                 $this.addClass('open').siblings('.staff-img').addClass('fade');
             }

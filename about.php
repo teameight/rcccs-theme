@@ -49,7 +49,7 @@ get_header(); ?>
             echo "<li class='staff-img'>
                     <img src=".$img[sizes][thumbnail]." alt=".$img->alt." />
                     <span>$name<br>$degree</span>
-                    <div class='about-staff'>$about</div>
+                    <div class='about-staff two-col'>$about</div>
                 </li>";
 
             endforeach; ?>

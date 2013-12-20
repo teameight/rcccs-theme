@@ -25,6 +25,7 @@ section {
 	float: left;
 	text-align: center;
 	padding: $pad;
+    -webkit-transition: opacity .2s;-moz-transition: opacity .2s;-ms-transition: opacity .2s;-o-transition: opacity .2s;transition: opacity .2s;
 
 	img {
 		width: 100%;
@@ -37,14 +38,19 @@ section {
 }
 
 .about-staff {
-    display: none;
     width: 100%;
     float: left;
+    display: none;
 }
 
 .about-wrapper {
     width: 100%;
     float: left;
+    display: none;
+}
+
+.clone {
+    position: absolute;
     display: none;
 }
 

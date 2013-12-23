@@ -140,6 +140,10 @@
 
 /* Cycle Slides */
 
+.home-slides {
+    display: none;
+}
+
 .home-slides .cycle-slide {
     width: 850px !important;
     height: 478px;
@@ -150,6 +154,23 @@
 
     &.cycle-slide-active {
         opacity: 1 !important;
+    }
+}
+
+.pager {
+    position: absolute;
+    display: block;
+    height: 478px;
+    width: 75px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 500;
+
+    &.pager-left {
+        background-image: url('../images/pager-left.png');
+    }
+    &.pager-right {
+        background-image: url('../images/pager-right.png');
     }
 }
 
@@ -223,7 +244,7 @@
 	}
 
     .vcenter {
-        width: 100%;
+        width: 85%;
         padding: 0 10%;
         position: absolute;
         left: 50%;

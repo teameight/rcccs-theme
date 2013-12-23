@@ -6,6 +6,8 @@ the_post();
 
 ?>
 
+    <div class="pager pager-left"></div>
+    <div class="pager pager-right"></div>
     <div class="home-slides">
         <?php
         if(get_field('home_slider')) :

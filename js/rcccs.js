@@ -102,13 +102,15 @@
 
 
 //    HEADER ANIMATION
-        var $header, $window, $doc, $nav, $logo, $dscrollTop, $navul, $homeSlides, $offset, $winWidth, $extra;
+        var $header, $window, $doc, $nav, $logo, $dscrollTop, $navul, $homeSlides, $offset, $winWidth, $extra, $pagerLeft, $pagerRight, $homeH;
         $header = $('header');
         $window = $(window);
         $doc = $(document);
         $nav = $('nav');
         $navul = $('nav ul');
         $logo = $('.logo');
+        $pagerLeft = $('.pager-left');
+        $pagerRight = $('.pager-right');
         // ANIMATE HEADER
 
         $header.data('size', 0);
@@ -154,6 +156,7 @@
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
             console.log(o);
             $winWidth = $window.width();
+            $homeH = $homeSlides.css('height');
 
             // for full breakpoint
             if ($winWidth >= 850) {
@@ -165,6 +168,13 @@
                 o.carouselOffset = $offset;
                 //            o.fx = 'carousel';
                 //            o.slides = '> div';
+                $pagerLeft.css({
+                    'left': $offset
+                }).fadeIn();
+                $pagerRight.css({
+                    'left': $offset + 775
+                }).fadeIn();
+
             }
             // for med breakpoint
 
@@ -176,10 +186,24 @@
             fx: 'carousel',
             carouselVisible: 1.5,
             speed: 700,
-            carouselFluid: true,
-            pauseOnHover: true
+            carouselFluid: true
         });
 
+        $homeSlides.on('cycle-next', function(e, o) {
+            console.log(o.currSlide);
+        });
+
+        $(window).load(function() {
+            $homeSlides.fadeIn('slow');
+        });
+
+        $pagerLeft.click(function() {
+            $homeSlides.cycle('prev');
+        });
+
+        $pagerRight.click(function() {
+            $homeSlides.cycle('next');
+        });
 
         // resize, uses smartresize
         $window.smartresize(function() {
@@ -192,12 +216,15 @@
                 slides: '> div',
                 fx: 'carousel',
                 carouselVisible: 1.5,
-                speed: 500,
+                speed: 700,
                 carouselFluid: true,
-                pauseOnHover: true,
                 carouselOffset: $offset
             });
+
+            $homeSlides.fadeIn('slow');
+
         });
+
 
         // toggle shortcode
         $(".toggle_container").hide();
@@ -237,9 +264,7 @@
             aboutWrappers.each(function() {
                 $(this).remove();
             });
-            console.log(breakat + ' ' + rebreakat);
 
-                console.log('=');
                 boxes.removeClass('edge')
                     .filter(':nth-of-type(' + rebreakat + 'n)')
                     .addClass('edge')
@@ -261,7 +286,7 @@
                     .children().slideToggle("fast", function(){
                         $(this).remove();
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 250
+                            scrollTop: $this.offset().top - 220
                         }, 500);
                     });
                 $this.removeClass('open').siblings().removeClass('fade');
@@ -285,7 +310,7 @@
                                 $('.clone').removeClass('clone');
                                 aboutActive.children().first().remove();
                                 $('html, body').animate({
-                                    scrollTop: $this.offset().top - 250
+                                    scrollTop: $this.offset().top - 220
                                 }, 500);
                             });
                     }
@@ -298,7 +323,7 @@
                         clone.show();
                         $this.addClass('open').next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 250
+                                scrollTop: $this.offset().top - 220
                             }, 500);
                         });
                     }
@@ -317,7 +342,7 @@
                             $('.clone').removeClass('clone');
                             aboutActive.children().first().remove();
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 250
+                                scrollTop: $this.offset().top - 220
                             }, 500);
                         });
                 }
@@ -333,14 +358,14 @@
                         clone.show();
                         $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 250
+                                scrollTop: $this.offset().top - 220
                             }, 500);
                         });
                     } else {
                         clone.show();
                         $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 250
+                                scrollTop: $this.offset().top - 220
                             }, 500);
                         });
                     }
@@ -357,14 +382,14 @@
                     clone.show();
                     $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 250
+                            scrollTop: $this.offset().top - 220
                         }, 500);
                     });
                 } else {
                     clone.show();
                     $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 250
+                            scrollTop: $this.offset().top - 220
                         }, 500);
                     });
                 }

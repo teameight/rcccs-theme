@@ -119,3 +119,13 @@ function rcccs_customize($wp_customize) {
     ) );
 
 }
+
+// GET POST ID BY SLUG
+function get_ID_by_slug($page_slug) {
+    $page = get_page_by_path($page_slug);
+    if ($page) {
+        return $page->ID;
+    } else {
+        return null;
+    }
+}

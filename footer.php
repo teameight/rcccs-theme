@@ -21,7 +21,15 @@
             <div class="gi">
                 <div class="contact-links rt">
                     <a href="<?php echo get_bloginfo('url'); ?>/referral"><div class="icon referral"></div><span>Referral</span></a>
-                    <?php if(!is_page('contact')) { ?>
+                    <?php if(is_page('contact')) { ?>
+                        <?php
+                        $ref_link = get_field('downloadable_form', get_ID_by_slug('referral'));
+                        if(!empty($ref_link)) { ?>
+                            <a href="<?php echo $ref_link; ?>"><div class="icon referral"></div><span>Downloadable Referral Form</span></a>
+                        <?php
+                            }
+                        } else {
+                        ?>
                         <a href="<?php echo get_bloginfo('url'); ?>/category/careers"><div class="icon careers"></div><span>Careers</span></a>
                         <a href="<?php echo get_bloginfo('url'); ?>/category/resources"><div class="icon resources"></div><span>Resources</span></a>
                         <a href="<?php echo get_theme_mod( 'facebook'); ?>"><div class="icon fb"></div><span>Connect on Facebook</span></a>

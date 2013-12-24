@@ -28,7 +28,7 @@ button, input, select, textarea {
     margin: 0;
 }
 
-input, textarea {
+input, textarea, select {
     width: 100%;
     border: 1px solid $brown;
     padding: $pad-half 0.65rem;
@@ -152,6 +152,7 @@ form > div, .gform_fields, .gfield, .gfield_label {
 .gfield_label {
     padding-top: .5em;
     font-weight: 300;
+    width: 25%;
 }
 
 .ginput_container {
@@ -166,6 +167,56 @@ form > div, .gform_fields, .gfield, .gfield_label {
     }
 }
 
+.gsection {
+    border-bottom: 1px dotted $gray;
+    margin: $space 0;
+}
+
+.gfield_date .ginput_container {
+    width: 15%;
+    float: left;
+    margin-right: 2em;
+
+    &.gfield_date_year {
+        width: 25%;
+        margin-right: 0;
+    }
+}
+
+.gfield_radio, .gfield_checkbox {
+    display: inline-block;
+
+    li {
+        display: inline-block;
+
+        input, label {
+            float: left;
+            width: auto;
+            margin-right: $space;
+        }
+    }
+}
+
+.ginput_left {
+    width: 48%;
+    float: left;
+}
+
+.ginput_right {
+    width: 48%;
+    float: right;
+}
+
+.ginput_container select {
+    -webkit-appearance: none;-moz-webkit-appearance: none;-ms-webkit-appearance: none;-o-webkit-appearance: none;webkit-appearance: none;
+    width: 40%;
+    padding-right: $pad;
+    background-image: url('../images/select-arrow.png');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    border-radius: 0;
+}
+
 .validation_message {
     position: absolute;
     right: 0;
@@ -174,4 +225,12 @@ form > div, .gform_fields, .gfield, .gfield_label {
     font-size: .75em;
     font-family: $font-secondary;
     font-style: italic;
+}
+
+.recaptcha_area {
+
+    img {
+        width: auto;
+        height: auto;
+    }
 }

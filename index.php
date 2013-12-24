@@ -12,7 +12,13 @@ the_post();
                 <div class="gi g3">
                     <?php the_content(); ?>
                 </div>
-                <div class="gi g1"></div>
+                <div class="gi g1">
+                <?php
+                $ref_link = get_field('downloadable_form', get_ID_by_slug('referral'));
+                if(!empty($ref_link)) { ?>
+                    <a href="<?php echo $ref_link; ?>"><div class="icon referral"></div><span>Downloadable Referral Form</span></a>
+                <?php } ?>
+                </div>
             </div>
         </div>
     </div><!--End main-->

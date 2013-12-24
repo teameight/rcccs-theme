@@ -428,7 +428,7 @@ button, input, select, textarea {
   font-size: 100%;
   margin: 0; }
 
-input, textarea {
+input, textarea, select {
   width: 100%;
   border: 1px solid #bfbb9b;
   padding: 0.5rem 0.65rem;
@@ -520,7 +520,8 @@ form > div, .gform_fields, .gfield, .gfield_label {
 
 .gfield_label {
   padding-top: .5em;
-  font-weight: 300; }
+  font-weight: 300;
+  width: 25%; }
 
 .ginput_container {
   float: right;
@@ -530,6 +531,48 @@ form > div, .gform_fields, .gfield, .gfield_label {
     width: 100%;
     background: #f9faee; }
 
+.gsection {
+  border-bottom: 1px dotted #84868d;
+  margin: 1rem 0; }
+
+.gfield_date .ginput_container {
+  width: 15%;
+  float: left;
+  margin-right: 2em; }
+  .gfield_date .ginput_container.gfield_date_year {
+    width: 25%;
+    margin-right: 0; }
+
+.gfield_radio, .gfield_checkbox {
+  display: inline-block; }
+  .gfield_radio li, .gfield_checkbox li {
+    display: inline-block; }
+    .gfield_radio li input, .gfield_radio li label, .gfield_checkbox li input, .gfield_checkbox li label {
+      float: left;
+      width: auto;
+      margin-right: 1rem; }
+
+.ginput_left {
+  width: 48%;
+  float: left; }
+
+.ginput_right {
+  width: 48%;
+  float: right; }
+
+.ginput_container select {
+  -webkit-appearance: none;
+  -moz-webkit-appearance: none;
+  -ms-webkit-appearance: none;
+  -o-webkit-appearance: none;
+  webkit-appearance: none;
+  width: 40%;
+  padding-right: 1rem;
+  background-image: url("../images/select-arrow.png");
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border-radius: 0; }
+
 .validation_message {
   position: absolute;
   right: 0;
@@ -538,6 +581,10 @@ form > div, .gform_fields, .gfield, .gfield_label {
   font-size: .75em;
   font-family: "Radley", Times, "Times New Roman", serif;
   font-style: italic; }
+
+.recaptcha_area img {
+  width: auto;
+  height: auto; }
 
 /*------------------------------------*\
     $Table

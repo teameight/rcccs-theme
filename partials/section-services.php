@@ -18,9 +18,9 @@
             $link = get_post_permalink($service->ID);
             ?>
             <li>
-                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4></a>
-            <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5>
-        </li>
+                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4>
+                <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5></a>
+            </li>
         <?php endforeach; ?>
     </div>
     <div class="gi">
@@ -28,8 +28,8 @@
             $link = get_post_permalink($service->ID);
             ?>
             <li>
-                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4></a>
-                <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5>
+                <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4>
+                <h5 class="subheading"><?php the_field('subheading', $service->ID); ?></h5></a>
             </li>
         <?php endforeach; ?>
     </div>

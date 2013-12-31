@@ -13,15 +13,18 @@ a {
         font-size: .7368em;
         text-transform: uppercase;
         font-weight: 700;
+        letter-spacing: 1px;
     }
 
     &.cat {
         color: $offwhite;
         border-radius: 3px;
         display: inline-block;
-        padding: .205em;
+        padding: 6px;
         float: right;
         clear: right;
+        font-size: .7em;
+        letter-spacing: 1px;
 
         &.stories {
             @include category(stories);
@@ -63,7 +66,7 @@ a {
     }
 
     &:hover {
-        color: $gray-light;
+        color: #545658;
     }
     &:hover div.icon  {
         -ms-background-position-y: -34px;

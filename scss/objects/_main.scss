@@ -5,4 +5,12 @@
 	padding: $pad-double*2 0;
     background: white;
 	@extend .cf;
+
+    .wrap > p {
+        font-size: 1.10526315789474em;
+    }
+
+    h2 {
+        letter-spacing: .02em;
+    }
 }

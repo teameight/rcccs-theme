@@ -10,6 +10,7 @@ the_post();
     <div class="main">
         <div class="wrap">
             <div class="g-3-1">
+                <?php edit_post_link(); ?>
                 <div class="gi g3">
                     <?
                     $rows = get_field('events');

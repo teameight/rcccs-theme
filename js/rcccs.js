@@ -234,6 +234,8 @@
         });
 
         // WHO WE ARE toggle
+
+        if($('.who-we-are').length) {
         function isOdd(a, b) {
             if (a % b === 0) return false;
             else return true;
@@ -396,5 +398,6 @@
                 $this.addClass('open').siblings('.staff-img').addClass('fade');
             }
         });
+        }
     });
 })( jQuery );

@@ -271,15 +271,35 @@
 
 	li {
 		list-style: none;
-		border-top: 1px solid $gray-light-2;
+		border-top: 1px solid #d7d6cf;
 		padding: .75em 0;
 
 		&:last-child {
-			border-bottom: 1px solid $gray-light-2;
+			border-bottom: 1px solid #d7d6cf;
 		}
 
-        .subnav &:first-child {
-            border-top: none;
+        .subnav & {
+            border-top: 1px solid #84868d;
+
+            &:first-child {
+                border-top: none;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            a * {
+                color: #84868d;
+
+                :hover {
+                    color: #696c6f;
+                }
+            }
+
+            a:hover * {
+                color: #696c6f;
+            }
         }
 	}
 }

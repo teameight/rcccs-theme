@@ -5,7 +5,7 @@
         <div class="g g-half">
             <div class="gi">
                 <?php if(is_page('contact')) {
-                    echo '<h4><div class="icon referral"></div>Contact Us</h4>';
+                    echo '<h4><div class="icon referral contact"></div>Contact Us</h4>';
                     gravity_form(1, false, true, false, false, true);
                 }
                 else { ?>

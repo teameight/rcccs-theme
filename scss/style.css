@@ -230,17 +230,23 @@ a {
   font-weight: 300;
   width: 100%;
   margin-bottom: 1rem; }
+  .contact-links a.btn {
+    font-weight: 700; }
   footer .contact-links a {
     color: #f9faee; }
+    footer .contact-links a:hover {
+      color: #545658; }
+    footer .contact-links a span {
+      font-size: .8em;
+      padding: 0.5rem 0 0 0.5rem; }
   .contact-links a:hover {
-    color: #545658; }
+    color: #696c6f; }
   .contact-links a:hover div.icon {
     -ms-background-position-y: -34px;
     background-position-y: -34px; }
   .contact-links a span {
     display: block;
-    padding: 0.5rem 0 0 0.5rem;
-    font-size: .8em;
+    padding: 0.22rem 0 0 0.5rem;
     float: left; }
 
 .nolink::after {
@@ -286,6 +292,8 @@ h4, .delta {
   line-height: 1.2;
   font-size: 1.052em;
   font-weight: 300; }
+  h4 .contact, .delta .contact {
+    margin-right: 10px; }
 
 h5, .epsilon {
   font-size: .773em;
@@ -439,7 +447,8 @@ input, textarea, select {
   background: #f9faee; }
 
 input[type=text], input[type=search], input[type=url], input[type=number], textarea {
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  color: #696c6f; }
 
 button, input[type="submit"], .directions {
   padding: 0.5rem;
@@ -1230,12 +1239,14 @@ div.icon {
   background: #96b5be;
   color: white !important;
   line-height: 1;
-  font-weight: 300;
+  font-size: .7368em;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
   padding: 1rem;
   border: 0;
   text-align: center;
   border-radius: 3px;
-  text-transform: uppercase;
   width: auto !important;
   margin-top: 0.5rem; }
   .btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus {

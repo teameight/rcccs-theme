@@ -116,9 +116,13 @@
 			clear: left;
             border-right: 1px solid $gray;
             margin-right: 1%;
-            padding-right: 4%;
+            padding-right: 8%;
 
-            @media screen and (max-width : $bp-small) {
+	        @media screen and (max-width : $bp-large) {
+	            padding-right: 4%;
+	        }
+
+           	@media screen and (max-width : $bp-small) {
                 width: 100%;
                 padding-right: 0;
                 margin-right: 0;
@@ -127,7 +131,11 @@
 		}
 
         &:nth-of-type(even) {
-            padding-left: 4%;
+            padding-left: 8%;
+            
+            @media screen and (max-width : $bp-large) {
+                padding-left: 4%;
+            }
 
             @media screen and (max-width : $bp-small) {
                 width: 100%;

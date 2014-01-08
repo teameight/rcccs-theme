@@ -4,6 +4,7 @@ h1, .alpha   {
 	line-height: 1.2;
 	font-size: 1.84em;
 	font-weight: 700;
+	letter-spacing: 0.02em;
 }
 
 h2, .beta    { 
@@ -11,9 +12,23 @@ h2, .beta    {
 	font-size: 1.78em;
 	font-weight: 700;
     margin-bottom: 10px;
+	letter-spacing: 0.02em;
 
 	#homepage .block-headline & {
 		font-size: 1.315em;
+	}
+
+	.home .blogroll .block & {
+		font-size: 1.25em;
+		margin-top:$space;
+	}
+
+	.vcenter & {
+		font-size: 1.4em;
+	}
+
+	.home-slides & {
+		line-height: 1.4;
 	}
 }
 

@@ -62,10 +62,10 @@ the_post();
     <section class="bg">
         <div class="wrap">
             <div class="g-half">
-                <div class="gi">
+                <div class="gi whoweare">
                     <?php the_field('who_we_are'); ?>
                 </div>
-                <div class="gi">
+                <div class="gi blogroll">
                     <h2>The Community Blog</h2>
                     <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true">
                         <?php

@@ -2,7 +2,6 @@ header {
 	background: $blue;
 	padding: 0;
     width: 100%;
-    position: fixed;
     z-index: 1000;
 }
 
@@ -10,10 +9,10 @@ header {
 	display: block;
 	text-align: center;
 	width: 40%;
-	margin: $space auto;
+	margin: 50px auto $space;
 
-	@media all and (min-width: $bp-med) {
-//		max-width: 9rem;
+	@media all and (max-width: $bp-large) {
+        margin: $space auto;
 	}
 }
 

@@ -111,31 +111,73 @@
         $logo = $('.logo');
         $pagerLeft = $('.pager-left');
         $pagerRight = $('.pager-right');
+
+        var $head_full_height, $head_small_height, $logo_full_width, $logo_small_width;
+        $head_full_height = $header.height();
+        $head_small_height = 167;
+        $logo_full_width = 40;
+        $logo_small_width = 25;
+        $trigger = 35;
+        $endtrigger = $head_full_height - $head_small_height;
+        $head_anim_speed = 300;
+
         // ANIMATE HEADER
 
-        $header.data('size', 0);
+        function headanim_stage1 ( scrolltoppos ) {
+            if( $header.data('stage') == 0 ){
+                $header.css({'position' : 'fixed', marginTop : '-' + $trigger + 'px' });
+                $('#content').css({ paddingTop : $head_full_height + 'px' });
+                $header.data('stage', 1);
+            }
+
+            if( scrolltoppos > $endtrigger ){
+                $header.data('stage', 2);
+                scrolltoppos = $endtrigger;
+                $header.css({'position' : 'fixed', marginTop : '-' + $trigger + 'px' });
+            }
+
+            var $percent = 1 - ( ( scrolltoppos ) / ( $endtrigger ) ) ;
+            var $width =  $logo_small_width + ( ( $logo_full_width - $logo_small_width ) * $percent );  
+            $logo.stop().animate({width: $width + '%'}, $head_anim_speed);
+            $navul.stop().animate({margin: $percent + 'rem'}, $head_anim_speed);
+
+            console.log( $header.data('stage') + '|' + $width );       
+
+        }
+
+        $header.data('stage', 0);
+        if ($window.width() > 849) {
+            $header.data('size', 2);
+        }
 
         if($header.length){
             //$header.after('<div id="readout"></div>');
             $window.scroll(function(){
                 var $headheight;
-                if ($window.width() > 849) {
-                    $dscrollTop = $doc.scrollTop();
-                    if ($dscrollTop >= 100) {
-                        if ($header.data('size') == 0) { // FULL SIZE
-                            $header.data('size', 1); // SET STAGE 1
-                            $logo.animate({width: '25%'}, 400);
-                            $navul.animate({margin: 0}, 400).addClass('shrink');
-                        }
-                    }
-                    else {
-                        if ($header.data('size') == 1) {
-                            $header.data('size', 0); // SET STAGE 1
-                            $logo.animate({width: '40%'}, 400);
-                            $navul.animate({margin: '1rem'}, 400).removeClass('shrink');
-                        }
+                $dscrollTop = $doc.scrollTop();
+                
+                if( $dscrollTop < $trigger ){
+                    
+                    $header.data('stage', 0);
+                    $header.css({'position' : 'relative', marginTop : '0' });
+                    $('#content').css({ paddingTop : '0' });
+                    $logo.animate({width: $logo_full_width + '%'}, $head_anim_speed);
+                    $navul.animate({margin: '1rem'}, $head_anim_speed);
+
+                }else if ( $dscrollTop >= $trigger ){
+                    if( $dscrollTop < $endtrigger || $header.data('stage') < 2 ){
+                        headanim_stage1( $dscrollTop )
                     }
                 }
+                /* else {
+                    $header.css('position','relative');
+                    if ($header.data('size') == 1) {
+                        $header.data('size', 0); // SET STAGE 1
+                        $logo.animate({width: '40%'}, 400);
+                        $navul.animate({margin: '1rem'}, 400).removeClass('shrink');
+                    }
+                } */
+                
             });
             $window.resize(function(){
                 //TODO this
@@ -185,7 +227,7 @@
             slides: '> div',
             fx: 'carousel',
             carouselVisible: 1.5,
-            speed: 700,
+            speed: 1100,
             carouselFluid: true
         });
 

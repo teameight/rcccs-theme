@@ -286,7 +286,11 @@
             }
 
             &:last-child {
-                border-bottom: none;
+                border-bottom: 1px solid #84868d;
+
+                @media screen and (min-width: $bp-large) {
+                    border-bottom: none;
+                }
             }
 
             a * {

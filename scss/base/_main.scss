@@ -19,6 +19,11 @@ div {
     background: $blue;
 
     @media screen and (max-width: $bp-med) {
-
+        padding-top: 200px;
     }
+
+    @media screen and (max-width: $bp-small) {
+        padding-top: 120px;
+    }
+
 }

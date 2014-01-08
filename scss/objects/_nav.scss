@@ -25,6 +25,11 @@
 		&:hover, &:active {
 			color: $gray;
 		}
+
+        @media screen and (max-width: $bp-small) {
+            padding: $pad/4;
+            font-size: 12px;
+        }
 	}
 
 	&.active {
@@ -42,6 +47,10 @@
 		a {
 			border: 0;
 		}
+
+        @media screen and (max-width: $bp-small) {
+            margin: 0;
+        }
     }
 }
 

@@ -99,11 +99,11 @@
     position: relative;
     @extend .cf;
 
-    @media all and (min-width: $bp-med) and (max-width: $bp-large) {
+    @media all and (max-width: $bp-med) {
         width: 600px;
     }
 
-    @media all and (max-width: $bp-med) {
+    @media all and (max-width: $bp-small) {
         width: 320px;
     }
 

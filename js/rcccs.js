@@ -141,7 +141,7 @@
             $logo.stop().animate({width: $width + '%'}, $head_anim_speed);
             $navul.stop().animate({margin: $percent + 'rem'}, $head_anim_speed);
 
-            console.log( $header.data('stage') + '|' + $width );       
+            //console.log( $header.data('stage') + '|' + $width );       
 
         }
 
@@ -196,7 +196,7 @@
         $homeSlides = $('.home-slides');
 
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
-            console.log(o);
+            //console.log(o);
             $winWidth = $window.width();
             $homeH = $homeSlides.css('height');
 
@@ -232,7 +232,7 @@
         });
 
         $homeSlides.on('cycle-next', function(e, o) {
-            console.log(o.currSlide);
+            //console.log(o.currSlide);
         });
 
         $(window).load(function() {
@@ -267,13 +267,63 @@
 
         });
 
-
         // toggle shortcode
         $(".toggle_container").hide();
-        $("h2.trigger").click(function(){
-            $(this).toggleClass("active").next().slideToggle("normal");
+        $("h4.trigger").click(function(){
+            $(this).toggleClass("active").next().slideToggle("normal", function() {
+                if( $(this).is(":hidden") ){
+                    var $thisref = $(this).find('.side-matter-ref'),
+                        count = $thisref.length;
+                    if( count ) {
+                        $thisref.each( function () {
+                            var id = $(this).attr('id').replace("ref-","");
+                            var note = '#note-' + id; // Sidenote
+                            $(note).hide();
+                            if (--count == 0) rccsPlaceNotes();
+                        });
+                    }
+                } else {
+                    rccsPlaceNotes();                    
+                }
+            });
             return false; //Prevent the browser jump to the link anchor
         });
+
+ // Definition With Toggle and positioning fix
+        function rccsPlaceNotes() {
+            var offsetcumulate = 0;
+            $('a.side-matter-ref').each( function(){
+                if($(this).is(":visible") ){
+                    var id = $(this).attr('id').replace("ref-","");
+                    var ref = '#ref-' + id; // Reference anchor
+                    var note = '#note-' + id; // Sidenote
+                    $(note).show();
+                    var refPosition = $(ref).offset().top;
+                    var notePosition = $(note).offset().top; // Position of sidenote
+                    var noteMargin = parseInt($(note).css('margin-top')); // this was the one detail that fixed everyhting after 4 hours!!!
+                    var noteOffset = refPosition - notePosition + noteMargin; // Get current offset between reference and note, minus noteAdjust
+                    var finalOffset = ( noteOffset < 0 || notePosition < 0 ) ? 0 : noteOffset; // If offset is negative, set to 0 (prevents layout problems)
+                    offsetcumulate += finalOffset
+                    $(note).css('marginTop', finalOffset); // Position note
+                    console.log(refPosition + "|" + notePosition + "||" + noteOffset + "|" + finalOffset + "|" + offsetcumulate);
+                }
+            });
+        }       
+
+        rccsPlaceNotes();
+ 
+        if($('.side-matter-note').length) {
+            $('.side-matter-note').each( function () {
+                var id = $(this).attr('id').replace("note-","");
+                if( $('#ref-'+id).closest('.toggle_container').is(":hidden") ) {
+                    $(this).hide();
+                    //console.log($(this).html());
+                }
+            });
+        }
+
+
+
 
         // WHO WE ARE toggle
 

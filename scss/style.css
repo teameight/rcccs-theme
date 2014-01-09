@@ -419,31 +419,32 @@ h2, .beta {
 }
 
 /* line 35, base/_headings.scss */
-h3, .gamma {
+h3, .gamma, .subhead h1 {
   line-height: 1.2;
   font-size: 1.473em;
   font-weight: 300;
+  letter-spacing: 0;
 }
 
-/* line 41, base/_headings.scss */
+/* line 42, base/_headings.scss */
 h4, .delta {
   line-height: 1.2;
   font-size: 1.052em;
   font-weight: 300;
 }
-/* line 46, base/_headings.scss */
+/* line 47, base/_headings.scss */
 h4 .contact, .delta .contact {
   margin-right: 10px;
 }
 
-/* line 51, base/_headings.scss */
+/* line 52, base/_headings.scss */
 h5, .epsilon {
   font-size: .773em;
   font-weight: 400;
 }
 
 /* Subheadings */
-/* line 61, base/_headings.scss */
+/* line 62, base/_headings.scss */
 .subheading {
   font-family: "Radley", Times, "Times New Roman", serif;
   font-weight: normal;
@@ -451,27 +452,33 @@ h5, .epsilon {
 }
 
 /*toggle*/
-/* line 68, base/_headings.scss */
-h2.trigger {
+/* line 69, base/_headings.scss */
+h4.trigger {
   margin: 0px !important;
-  padding-left: 20px;
+  padding: 1rem 0 1rem 2rem;
   background-image: url("../images/toggle-plus.png");
   background-position: 0px center;
   background-repeat: no-repeat;
+  line-height: 1.2;
+  font-size: 1.78em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
 }
 
-/* line 75, base/_headings.scss */
-h2.active {
+/* line 82, base/_headings.scss */
+h4.active {
   background-image: url("../images/toggle-minus.png") !important;
   background-position: 0px center;
   background-repeat: no-repeat;
 }
 
-/* line 80, base/_headings.scss */
+/* line 87, base/_headings.scss */
 .toggle_container {
   overflow: hidden;
-  padding: 20px 0;
+  padding: 1rem 0 4rem 2rem;
   border-bottom: 1px dotted #84868d;
+  margin-bottom: 3rem;
 }
 
 /* Text-Related Elements */
@@ -538,7 +545,7 @@ ol, ul {
 /* line 11, base/_lists.scss */
 dl, .side-matter-text {
   overflow: hidden;
-  margin: 0 0 1rem;
+  margin: 0;
   color: #b6cbd2;
   text-transform: none;
   float: left;
@@ -552,37 +559,42 @@ dl, .side-matter-text {
 }
 
 /* line 25, base/_lists.scss */
+.side-matter-note {
+  padding-bottom: 1rem;
+}
+
+/* line 28, base/_lists.scss */
 .side-matter-ref {
   color: #96b5be;
 }
-/* line 28, base/_lists.scss */
+/* line 31, base/_lists.scss */
 .side-matter-ref:hover {
   color: #b6cbd2;
 }
 
-/* line 33, base/_lists.scss */
+/* line 36, base/_lists.scss */
 dt {
   font-weight: bold;
 }
-/* line 36, base/_lists.scss */
+/* line 39, base/_lists.scss */
 dt:first-child {
   text-transform: lowercase;
   border-top: 1px solid #b6cbd2;
 }
-/* line 41, base/_lists.scss */
+/* line 44, base/_lists.scss */
 dt:hover, dt.hover, dt.clicked {
   color: #96b5be;
 }
-/* line 44, base/_lists.scss */
+/* line 47, base/_lists.scss */
 dt:hover + dd, dt.hover + dd, dt.clicked + dd {
   visibility: visible;
 }
-/* line 48, base/_lists.scss */
+/* line 51, base/_lists.scss */
 dt:hover:first-child, dt.hover:first-child, dt.clicked:first-child {
   border-top: 1px solid #96b5be;
 }
 
-/* line 54, base/_lists.scss */
+/* line 57, base/_lists.scss */
 dd {
   margin-left: 0;
   font-weight: 300;
@@ -1363,7 +1375,7 @@ header {
 /* line 54, objects/_header.scss */
 .subhead {
   text-align: center;
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 /* line 58, objects/_header.scss */
 .subhead.stories {
@@ -2534,7 +2546,19 @@ section .g-half .gi img.size-thumbnail + .more {
   display: none;
 }
 
-/* line 59, objects/_sections.scss */
+/* line 58, objects/_sections.scss */
+.expandables {
+  border-top: 1px solid #84868d;
+  padding-top: 4rem;
+}
+
+/* line 62, objects/_sections.scss */
+.service-content {
+  font-size: 1.25em;
+  padding-bottom: 4rem;
+}
+
+/* line 66, objects/_sections.scss */
 .g-map {
   width: 100%;
   max-height: 650px;

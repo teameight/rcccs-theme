@@ -43,13 +43,15 @@ get_header(); ?>
                 $name = $member->post_title;
                 $degree = get_field('degree', $id);
                 $about = apply_filters('the_content', $member->post_content);
+                $position = get_field('position', $id);
+                if( $position ) $position = '<h3>'.$position.'</h3>';
 
 //                echo var_dump($member);
 
             echo "<li class='staff-img'>
                     <img src=".$img[sizes][thumbnail]." alt=".$img->alt." />
                     <span>$name<br>$degree</span>
-                    <div class='about-staff two-col'>$about</div>
+                    <div class='about-staff two-col'>$position $about</div>
                 </li>";
 
             endforeach; ?>

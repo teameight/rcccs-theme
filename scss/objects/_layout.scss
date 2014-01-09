@@ -14,9 +14,9 @@
 \*------------------------------------*/
 .two-col {
     -moz-column-count: 2;
-    -moz-column-gap: 20px;
+    -moz-column-gap: 60px;
     -webkit-column-count: 2;
-    -webkit-column-gap: 20px;
+    -webkit-column-gap: 60px;
 
     @media all and (max-width: $bp-med) {
         -moz-column-count: 1;
@@ -94,11 +94,11 @@
 	@media all and (min-width: $bp-med) {
 		> .gi {
 			float: left;
-            width: 49%;
+            width: 46%;
 
 			&:nth-of-type(odd) {
 				clear: left;
-                margin-right: 2%;
+                margin-right: 8%;
 			}
 		}
 	}

@@ -114,3 +114,7 @@ a {
 .shrink .nolink::after {
     margin-top: -5px;
 }
+.about-staff a {
+    font-family: $font-secondary;
+    font-style: italic;
+}

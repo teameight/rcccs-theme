@@ -11,7 +11,7 @@ h2, .beta    {
 	line-height: 1.2;
 	font-size: 1.78em;
 	font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: $space-and-half;
 	letter-spacing: 0.02em;
 
 	#homepage .block-headline & {
@@ -37,6 +37,14 @@ h3, .gamma, .subhead h1   {
 	font-size: 1.473em;
 	font-weight: 300;
 	letter-spacing:0;
+
+	.about-staff & {
+		line-height: 1.2;
+		font-size: 1.052em;
+		font-weight: 300;
+		text-transform:uppercase;
+		margin-bottom:1.2em;
+	}
 }
 
 h4, .delta   {

@@ -28,6 +28,7 @@ section {
 	text-align: center;
 	padding: $pad;
     -webkit-transition: opacity .2s;-moz-transition: opacity .2s;-ms-transition: opacity .2s;-o-transition: opacity .2s;transition: opacity .2s;
+    cursor:pointer;
 
 	img {
 		width: 100%;
@@ -43,6 +44,9 @@ section {
     width: 100%;
     float: left;
     display: none;
+    border-bottom: 1px dotted $gray;
+    padding-bottom:$pad*3;
+    margin-bottom:$space*2;
 }
 
 .about-wrapper {

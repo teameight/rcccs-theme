@@ -220,22 +220,23 @@ header, footer, nav, section, article, hgroup, figure {
 body {
   background: white;
   font: 19px "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  line-height: 1.2;
   -webkit-text-size-adjust: 100%;
   color: #696c6f;
   height: 100%;
 }
 
-/* line 9, base/_main.scss */
+/* line 10, base/_main.scss */
 html, .g-half, .gi {
   height: 100%;
 }
 
-/* line 13, base/_main.scss */
+/* line 14, base/_main.scss */
 div {
   position: relative;
 }
 
-/* line 17, base/_main.scss */
+/* line 18, base/_main.scss */
 #content {
   background: #96b5be;
 }
@@ -382,6 +383,12 @@ footer .contact-links a span {
   margin-top: -5px;
 }
 
+/* line 117, base/_links.scss */
+.about-staff a {
+  font-family: "Radley", Times, "Times New Roman", serif;
+  font-style: italic;
+}
+
 /* Headings */
 /*Further Reading: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
 /* line 3, base/_headings.scss */
@@ -397,7 +404,7 @@ h2, .beta {
   line-height: 1.2;
   font-size: 1.78em;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 1.5rem;
   letter-spacing: 0.02em;
 }
 /* line 17, base/_headings.scss */
@@ -425,26 +432,34 @@ h3, .gamma, .subhead h1 {
   font-weight: 300;
   letter-spacing: 0;
 }
+/* line 41, base/_headings.scss */
+.about-staff h3, .about-staff .gamma, .about-staff .subhead h1 {
+  line-height: 1.2;
+  font-size: 1.052em;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin-bottom: 1.2em;
+}
 
-/* line 42, base/_headings.scss */
+/* line 50, base/_headings.scss */
 h4, .delta {
   line-height: 1.2;
   font-size: 1.052em;
   font-weight: 300;
 }
-/* line 47, base/_headings.scss */
+/* line 55, base/_headings.scss */
 h4 .contact, .delta .contact {
   margin-right: 10px;
 }
 
-/* line 52, base/_headings.scss */
+/* line 60, base/_headings.scss */
 h5, .epsilon {
   font-size: .773em;
   font-weight: 400;
 }
 
 /* Subheadings */
-/* line 62, base/_headings.scss */
+/* line 70, base/_headings.scss */
 .subheading {
   font-family: "Radley", Times, "Times New Roman", serif;
   font-weight: normal;
@@ -452,7 +467,7 @@ h5, .epsilon {
 }
 
 /*toggle*/
-/* line 69, base/_headings.scss */
+/* line 77, base/_headings.scss */
 h4.trigger {
   margin: 0px !important;
   padding: 1rem 0 1rem 2rem;
@@ -466,14 +481,14 @@ h4.trigger {
   letter-spacing: 0.02em;
 }
 
-/* line 82, base/_headings.scss */
+/* line 90, base/_headings.scss */
 h4.active {
   background-image: url("../images/toggle-minus.png") !important;
   background-position: 0px center;
   background-repeat: no-repeat;
 }
 
-/* line 87, base/_headings.scss */
+/* line 95, base/_headings.scss */
 .toggle_container {
   overflow: hidden;
   padding: 1rem 0 4rem 2rem;
@@ -484,7 +499,7 @@ h4.active {
 /* Text-Related Elements */
 /* line 2, base/_text.scss */
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2em;
   font-weight: 300;
 }
 
@@ -959,9 +974,9 @@ td {
 /* line 15, objects/_layout.scss */
 .two-col {
   -moz-column-count: 2;
-  -moz-column-gap: 20px;
+  -moz-column-gap: 60px;
   -webkit-column-count: 2;
-  -webkit-column-gap: 20px;
+  -webkit-column-gap: 60px;
 }
 @media all and (max-width: 720px) {
   /* line 15, objects/_layout.scss */
@@ -1035,12 +1050,12 @@ td {
   /* line 95, objects/_layout.scss */
   .g-2up > .gi {
     float: left;
-    width: 49%;
+    width: 46%;
   }
   /* line 99, objects/_layout.scss */
   .g-2up > .gi:nth-of-type(odd) {
     clear: left;
-    margin-right: 2%;
+    margin-right: 8%;
   }
 }
 
@@ -1378,66 +1393,70 @@ header {
   padding: 4rem 0;
 }
 /* line 58, objects/_header.scss */
+.page .subhead {
+  padding: 8rem 0;
+}
+/* line 62, objects/_header.scss */
 .subhead.stories {
   background-color: #a3adb8;
 }
-/* line 61, objects/_header.scss */
+/* line 65, objects/_header.scss */
 .subhead.news {
   background-color: #8c8384;
   color: #f9faee;
 }
-/* line 65, objects/_header.scss */
+/* line 69, objects/_header.scss */
 .subhead.resources {
   background-color: #84868d;
 }
-/* line 68, objects/_header.scss */
+/* line 72, objects/_header.scss */
 .subhead.staff {
   background-color: #8c9685;
   color: #f9faee;
 }
-/* line 75, objects/_header.scss */
+/* line 79, objects/_header.scss */
 .subhead.careers {
   background-color: #696c6f;
   color: #f9faee;
 }
-/* line 79, objects/_header.scss */
+/* line 83, objects/_header.scss */
 .subhead.careers a {
   color: #f9faee;
 }
-/* line 82, objects/_header.scss */
+/* line 86, objects/_header.scss */
 .subhead.careers a:hover {
   color: #a3adb8;
 }
 
-/* line 90, objects/_header.scss */
+/* line 94, objects/_header.scss */
 h2.stories, time.stories {
   color: #a3adb8;
 }
-/* line 93, objects/_header.scss */
+/* line 97, objects/_header.scss */
 a h2.stories:hover, a time.stories:hover {
   color: #6b7a8a;
 }
-/* line 97, objects/_header.scss */
+/* line 101, objects/_header.scss */
 h2.news, time.news {
   color: #8c8384;
 }
-/* line 100, objects/_header.scss */
+/* line 104, objects/_header.scss */
 a h2.news:hover, a time.news:hover {
   color: #585152;
 }
-/* line 104, objects/_header.scss */
+/* line 108, objects/_header.scss */
 h2.resources, time.resources {
   color: #84868d;
 }
-/* line 107, objects/_header.scss */
+/* line 111, objects/_header.scss */
 a h2.resources:hover, a time.resources:hover {
   color: #525459;
 }
-/* line 111, objects/_header.scss */
+/* line 115, objects/_header.scss */
 h2.staff, time.staff {
   color: #8c9685;
 }
-/* line 114, objects/_header.scss */
+/* line 118, objects/_header.scss */
 a h2.staff:hover, a time.staff:hover {
   color: #596154;
 }
@@ -2515,50 +2534,54 @@ section .g-half .gi img.size-thumbnail + .more {
   -ms-transition: opacity .2s;
   -o-transition: opacity .2s;
   transition: opacity .2s;
+  cursor: pointer;
 }
-/* line 32, objects/_sections.scss */
+/* line 33, objects/_sections.scss */
 .staff-img img {
   width: 100%;
   border-radius: 50%;
 }
-/* line 37, objects/_sections.scss */
+/* line 38, objects/_sections.scss */
 .staff-img span {
   font-size: .773em;
 }
 
-/* line 42, objects/_sections.scss */
+/* line 43, objects/_sections.scss */
 .about-staff {
   width: 100%;
   float: left;
   display: none;
+  border-bottom: 1px dotted #84868d;
+  padding-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
-/* line 48, objects/_sections.scss */
+/* line 52, objects/_sections.scss */
 .about-wrapper {
   width: 100%;
   float: left;
   display: none;
 }
 
-/* line 54, objects/_sections.scss */
+/* line 58, objects/_sections.scss */
 .clone {
   position: absolute;
   display: none;
 }
 
-/* line 58, objects/_sections.scss */
+/* line 62, objects/_sections.scss */
 .expandables {
   border-top: 1px solid #84868d;
   padding-top: 4rem;
 }
 
-/* line 62, objects/_sections.scss */
+/* line 66, objects/_sections.scss */
 .service-content {
   font-size: 1.25em;
   padding-bottom: 4rem;
 }
 
-/* line 66, objects/_sections.scss */
+/* line 70, objects/_sections.scss */
 .g-map {
   width: 100%;
   max-height: 650px;

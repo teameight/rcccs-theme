@@ -55,6 +55,10 @@ header {
 	text-align: center;
 	padding: $pad*4 0;
 
+    .page & {
+        padding: $pad*8 0;
+    }
+
     &.stories {
         background-color: $purple;
     }

@@ -106,46 +106,46 @@
         $header = $('header');
         $window = $(window);
         $doc = $(document);
-        $nav = $('nav');
+        $nav = $('#nav');
         $navul = $('nav ul');
         $logo = $('.logo');
+        $logomini = $('.logo-mini');
         $pagerLeft = $('.pager-left');
         $pagerRight = $('.pager-right');
 
-        var $head_full_height, $head_small_height, $logo_full_width, $logo_small_width;
+        var $head_full_height, $trigger, $trigger2, $head_anim_speed;
         $head_full_height = $header.height();
-        $head_small_height = 167;
-        $logo_full_width = 40;
-        $logo_small_width = 25;
-        $trigger = 35;
-        $endtrigger = $head_full_height - $head_small_height;
+        $trigger = $nav.offset().top + 1;
+        $trigger2 = $trigger + 15;
         $head_anim_speed = 300;
 
         // ANIMATE HEADER
 
         function headanim_stage1 ( scrolltoppos ) {
-            if( $header.data('stage') == 0 ){
-                $header.css({'position' : 'fixed', marginTop : '-' + $trigger + 'px' });
-                $('#content').css({ paddingTop : $head_full_height + 'px' });
+
+            if( $header.data('stage') == 0 && scrolltoppos > $trigger ){
+                console.log( scrolltoppos + '|' + $trigger );
                 $header.data('stage', 1);
+                $logomini.fadeIn( $head_anim_speed );
             }
 
-            if( scrolltoppos > $endtrigger ){
+            if( scrolltoppos > $trigger){
+                $logomini.show();
+            }
+            if( scrolltoppos > $trigger2 ){
                 $header.data('stage', 2);
-                scrolltoppos = $endtrigger;
-                $header.css({'position' : 'fixed', marginTop : '-' + $trigger + 'px' });
+
+                $header.css({'position' : 'fixed', marginTop : '-' + $trigger2 + 'px' });
+                $('#content').css({ paddingTop : $head_full_height + 'px' });
+                
+                $nav.stop().animate({paddingBottom: '0'}, $head_anim_speed );
             }
-
-            var $percent = 1 - ( ( scrolltoppos ) / ( $endtrigger ) ) ;
-            var $width =  $logo_small_width + ( ( $logo_full_width - $logo_small_width ) * $percent );  
-            $logo.stop().animate({width: $width + '%'}, $head_anim_speed);
-            $navul.stop().animate({margin: $percent + 'rem'}, $head_anim_speed);
-
-            //console.log( $header.data('stage') + '|' + $width );       
+            console.log( 'headanim_stage1' + '|' + $header.data('stage') );
 
         }
 
         $header.data('stage', 0);
+
         if ($window.width() > 849) {
             $header.data('size', 2);
         }
@@ -156,28 +156,19 @@
                 var $headheight;
                 $dscrollTop = $doc.scrollTop();
                 
-                if( $dscrollTop < $trigger ){
+                if( $dscrollTop < $trigger && $header.data('stage') ){
                     
                     $header.data('stage', 0);
                     $header.css({'position' : 'relative', marginTop : '0' });
-                    $('#content').css({ paddingTop : '0' });
-                    $logo.animate({width: $logo_full_width + '%'}, $head_anim_speed);
-                    $navul.animate({margin: '1rem'}, $head_anim_speed);
+                    $('#content').css({paddingTop : '0'});
+                    $logomini.hide();
+                    $nav.stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
 
-                }else if ( $dscrollTop >= $trigger ){
-                    if( $dscrollTop < $endtrigger || $header.data('stage') < 2 ){
-                        headanim_stage1( $dscrollTop )
-                    }
+                } else if( $header.data('stage') < 2 ){
+                    headanim_stage1( $dscrollTop );
                 }
-                /* else {
-                    $header.css('position','relative');
-                    if ($header.data('size') == 1) {
-                        $header.data('size', 0); // SET STAGE 1
-                        $logo.animate({width: '40%'}, 400);
-                        $navul.animate({margin: '1rem'}, 400).removeClass('shrink');
-                    }
-                } */
-                
+
+                console.log($header.data('stage'));
             });
             $window.resize(function(){
                 //TODO this

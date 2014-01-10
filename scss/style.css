@@ -1346,6 +1346,19 @@ header {
 }
 
 /* line 19, objects/_header.scss */
+.nav a.logo-mini {
+  display: none;
+  width: 46px;
+  height: 35px;
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 31, objects/_header.scss */
 .subnav {
   height: 0;
   position: absolute;
@@ -1354,12 +1367,12 @@ header {
   z-index: 1;
   overflow: hidden;
 }
-/* line 27, objects/_header.scss */
+/* line 39, objects/_header.scss */
 .subnav .show {
   height: auto;
 }
 
-/* line 32, objects/_header.scss */
+/* line 44, objects/_header.scss */
 .nav-toggle {
   float: right;
   display: block;
@@ -1369,94 +1382,94 @@ header {
   border-left: 1px solid #dbdbdb;
 }
 @media all and (min-width: 720px) {
-  /* line 32, objects/_header.scss */
+  /* line 44, objects/_header.scss */
   .nav-toggle {
     display: none;
   }
 }
 
-/* line 45, objects/_header.scss */
+/* line 57, objects/_header.scss */
 .search-form {
   max-height: 0;
 }
 @media all and (min-width: 720px) {
-  /* line 45, objects/_header.scss */
+  /* line 57, objects/_header.scss */
   .search-form {
     float: right;
     max-height: none;
   }
 }
 
-/* line 54, objects/_header.scss */
+/* line 66, objects/_header.scss */
 .subhead {
   text-align: center;
   padding: 4rem 0;
 }
-/* line 58, objects/_header.scss */
+/* line 70, objects/_header.scss */
 .page .subhead {
   padding: 8rem 0;
 }
-/* line 62, objects/_header.scss */
+/* line 74, objects/_header.scss */
 .subhead.stories {
   background-color: #a3adb8;
 }
-/* line 65, objects/_header.scss */
+/* line 77, objects/_header.scss */
 .subhead.news {
   background-color: #8c8384;
   color: #f9faee;
 }
-/* line 69, objects/_header.scss */
+/* line 81, objects/_header.scss */
 .subhead.resources {
   background-color: #84868d;
 }
-/* line 72, objects/_header.scss */
+/* line 84, objects/_header.scss */
 .subhead.staff {
   background-color: #8c9685;
   color: #f9faee;
 }
-/* line 79, objects/_header.scss */
+/* line 91, objects/_header.scss */
 .subhead.careers {
   background-color: #696c6f;
   color: #f9faee;
 }
-/* line 83, objects/_header.scss */
+/* line 95, objects/_header.scss */
 .subhead.careers a {
   color: #f9faee;
 }
-/* line 86, objects/_header.scss */
+/* line 98, objects/_header.scss */
 .subhead.careers a:hover {
   color: #a3adb8;
 }
 
-/* line 94, objects/_header.scss */
+/* line 106, objects/_header.scss */
 h2.stories, time.stories {
   color: #a3adb8;
 }
-/* line 97, objects/_header.scss */
+/* line 109, objects/_header.scss */
 a h2.stories:hover, a time.stories:hover {
   color: #6b7a8a;
 }
-/* line 101, objects/_header.scss */
+/* line 113, objects/_header.scss */
 h2.news, time.news {
   color: #8c8384;
 }
-/* line 104, objects/_header.scss */
+/* line 116, objects/_header.scss */
 a h2.news:hover, a time.news:hover {
   color: #585152;
 }
-/* line 108, objects/_header.scss */
+/* line 120, objects/_header.scss */
 h2.resources, time.resources {
   color: #84868d;
 }
-/* line 111, objects/_header.scss */
+/* line 123, objects/_header.scss */
 a h2.resources:hover, a time.resources:hover {
   color: #525459;
 }
-/* line 115, objects/_header.scss */
+/* line 127, objects/_header.scss */
 h2.staff, time.staff {
   color: #8c9685;
 }
-/* line 118, objects/_header.scss */
+/* line 130, objects/_header.scss */
 a h2.staff:hover, a time.staff:hover {
   color: #596154;
 }
@@ -1471,12 +1484,14 @@ a h2.staff:hover, a time.staff:hover {
   max-height: none;
   border-top: 1px solid #c7cecf;
   text-align: center;
+  position: relative;
+  padding-bottom: 15px;
 }
-/* line 12, objects/_nav.scss */
+/* line 14, objects/_nav.scss */
 .nav .current-menu-item a, .nav .current-menu-parent a {
   color: #84868d;
 }
-/* line 16, objects/_nav.scss */
+/* line 18, objects/_nav.scss */
 .nav a {
   display: block;
   padding: 1rem;
@@ -1485,46 +1500,47 @@ a h2.staff:hover, a time.staff:hover {
   font-size: 14px;
   letter-spacing: 2px;
 }
-/* line 24, objects/_nav.scss */
+/* line 26, objects/_nav.scss */
 .nav a:hover, .nav a:active {
   color: #84868d;
 }
-/* line 29, objects/_nav.scss */
+/* line 31, objects/_nav.scss */
 .nav.active {
   max-height: 40em;
 }
-/* line 33, objects/_nav.scss */
+/* line 35, objects/_nav.scss */
 .nav ul {
   display: inline-block;
   text-align: center;
+  margin: 1rem 1rem 0;
 }
-/* line 37, objects/_nav.scss */
+/* line 40, objects/_nav.scss */
 .nav ul li {
   float: left;
 }
-/* line 41, objects/_nav.scss */
+/* line 44, objects/_nav.scss */
 .nav ul a {
   border: 0;
 }
 
-/* line 48, objects/_nav.scss */
+/* line 51, objects/_nav.scss */
 .pagination {
   overflow: hidden;
   margin: 0;
 }
-/* line 52, objects/_nav.scss */
+/* line 55, objects/_nav.scss */
 .pagination li {
   float: left;
 }
-/* line 57, objects/_nav.scss */
+/* line 60, objects/_nav.scss */
 .pagination li.label {
   margin-right: 1rem;
 }
-/* line 62, objects/_nav.scss */
+/* line 65, objects/_nav.scss */
 .pagination a {
   padding: 0.25rem;
 }
-/* line 66, objects/_nav.scss */
+/* line 69, objects/_nav.scss */
 .pagination span.current {
   color: black;
 }

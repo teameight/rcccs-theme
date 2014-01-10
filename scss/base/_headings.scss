@@ -4,23 +4,47 @@ h1, .alpha   {
 	line-height: 1.2;
 	font-size: 1.84em;
 	font-weight: 700;
+	letter-spacing: 0.02em;
 }
 
 h2, .beta    { 
 	line-height: 1.2;
 	font-size: 1.78em;
 	font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: $space-and-half;
+	letter-spacing: 0.02em;
 
 	#homepage .block-headline & {
 		font-size: 1.315em;
 	}
+
+	.home .blogroll .block & {
+		font-size: 1.25em;
+		margin-top:$space;
+	}
+
+	.vcenter & {
+		font-size: 1.4em;
+	}
+
+	.home-slides & {
+		line-height: 1.4;
+	}
 }
 
-h3, .gamma   { 
+h3, .gamma, .subhead h1   { 
 	line-height: 1.2;
 	font-size: 1.473em;
 	font-weight: 300;
+	letter-spacing:0;
+
+	.about-staff & {
+		line-height: 1.2;
+		font-size: 1.052em;
+		font-weight: 300;
+		text-transform:uppercase;
+		margin-bottom:1.2em;
+	}
 }
 
 h4, .delta   {
@@ -50,20 +74,27 @@ h6, .zeta    {
 }
 
 /*toggle*/
-h2.trigger {
+h4.trigger {
     margin: 0px !important;
-    padding-left: 20px;
+    padding: $pad 0 $pad $pad-double;
     background-image: url('../images/toggle-plus.png');
     background-position: 0px center;
     background-repeat: no-repeat;
+    line-height: 1.2;
+	font-size: 1.78em;
+	font-weight: 700;
+    margin-bottom: 10px;
+	letter-spacing: 0.02em;
 }
-h2.active{
+
+h4.active{
     background-image: url('../images/toggle-minus.png') !important;
     background-position: 0px center;
     background-repeat: no-repeat;
 }
 .toggle_container {
     overflow: hidden;
-    padding: 20px 0;
+    padding: $pad 0 $pad*4 $pad-double;
     border-bottom: 1px dotted $gray;
+    margin-bottom: 3rem;
 }

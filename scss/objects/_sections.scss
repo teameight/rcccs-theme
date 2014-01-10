@@ -11,7 +11,7 @@ section {
 
         & + .more {
             width: 40%;
-            margin-top: 5rem;
+            margin-top: 3rem;
         }
     }
 }
@@ -28,6 +28,7 @@ section {
 	text-align: center;
 	padding: $pad;
     -webkit-transition: opacity .2s;-moz-transition: opacity .2s;-ms-transition: opacity .2s;-o-transition: opacity .2s;transition: opacity .2s;
+    cursor:pointer;
 
 	img {
 		width: 100%;
@@ -43,6 +44,9 @@ section {
     width: 100%;
     float: left;
     display: none;
+    border-bottom: 1px dotted $gray;
+    padding-bottom:$pad*3;
+    margin-bottom:$space*2;
 }
 
 .about-wrapper {
@@ -55,7 +59,14 @@ section {
     position: absolute;
     display: none;
 }
-
+.expandables {
+    border-top:1px solid $gray;
+    padding-top:$pad*4;
+}
+.service-content {
+    font-size:1.25em;
+    padding-bottom:$pad*4;
+}
 .g-map {
     width: 100%;
     max-height: 650px;

@@ -11,7 +11,7 @@ ol, ul {
 dl, .side-matter-text {
 	@extend a.more;
 	overflow: hidden;
-	margin: 0 0 $space;
+	margin: 0;
 	color: lighten($blue, 10%);
 	text-transform: none;
 	float: left;
@@ -21,6 +21,9 @@ dl, .side-matter-text {
 
 .side-matter-text {
     float: none;
+}
+.side-matter-note {
+    padding-bottom:$pad;
 }
 .side-matter-ref {
     color: $blue;

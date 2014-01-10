@@ -8,6 +8,8 @@
 	max-height: none;
 	border-top: 1px solid #c7cecf;
 	text-align: center;
+    position:relative;
+    padding-bottom:15px;
 
     .current-menu-item a, .current-menu-parent a {
         color: $gray;
@@ -18,7 +20,6 @@
 		padding: $pad;
 		color: $offwhite;
 		text-transform: uppercase;
-        font-weight: bold;
         font-size: 14px;
         letter-spacing: 2px;
 
@@ -39,6 +40,7 @@
 	ul {
 		display: inline-block;
 		text-align: center;
+		margin: $space $space 0;
 
 		li {
 			float: left;
@@ -57,7 +59,7 @@
 //Pagination
 .pagination {
 	overflow: hidden;
-    margin: 0;
+    margin:0;
 
 	li {
 		float: left;

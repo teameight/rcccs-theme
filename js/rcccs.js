@@ -106,36 +106,69 @@
         $header = $('header');
         $window = $(window);
         $doc = $(document);
-        $nav = $('nav');
+        $nav = $('#nav');
         $navul = $('nav ul');
         $logo = $('.logo');
+        $logomini = $('.logo-mini');
         $pagerLeft = $('.pager-left');
         $pagerRight = $('.pager-right');
+
+        var $head_full_height, $trigger, $trigger2, $head_anim_speed;
+        $head_full_height = $header.height();
+        $trigger = $nav.offset().top + 1;
+        $trigger2 = $trigger + 15;
+        $head_anim_speed = 300;
+
         // ANIMATE HEADER
 
-        $header.data('size', 0);
+        function headanim_stage1 ( scrolltoppos ) {
+
+            if( $header.data('stage') == 0 && scrolltoppos > $trigger ){
+                console.log( scrolltoppos + '|' + $trigger );
+                $header.data('stage', 1);
+                $logomini.fadeIn( $head_anim_speed );
+            }
+
+            if( scrolltoppos > $trigger){
+                $logomini.show();
+            }
+            if( scrolltoppos > $trigger2 ){
+                $header.data('stage', 2);
+
+                $header.css({'position' : 'fixed', marginTop : '-' + $trigger2 + 'px' });
+                $('#content').css({ paddingTop : $head_full_height + 'px' });
+                
+                $nav.stop().animate({paddingBottom: '0'}, $head_anim_speed );
+            }
+            console.log( 'headanim_stage1' + '|' + $header.data('stage') );
+
+        }
+
+        $header.data('stage', 0);
+
+        if ($window.width() > 849) {
+            $header.data('size', 2);
+        }
 
         if($header.length){
             //$header.after('<div id="readout"></div>');
             $window.scroll(function(){
                 var $headheight;
-                if ($window.width() > 849) {
-                    $dscrollTop = $doc.scrollTop();
-                    if ($dscrollTop >= 100) {
-                        if ($header.data('size') == 0) { // FULL SIZE
-                            $header.data('size', 1); // SET STAGE 1
-                            $logo.animate({width: '25%'}, 400);
-                            $navul.animate({margin: 0}, 400).addClass('shrink');
-                        }
-                    }
-                    else {
-                        if ($header.data('size') == 1) {
-                            $header.data('size', 0); // SET STAGE 1
-                            $logo.animate({width: '40%'}, 400);
-                            $navul.animate({margin: '1rem'}, 400).removeClass('shrink');
-                        }
-                    }
+                $dscrollTop = $doc.scrollTop();
+                
+                if( $dscrollTop < $trigger && $header.data('stage') ){
+                    
+                    $header.data('stage', 0);
+                    $header.css({'position' : 'relative', marginTop : '0' });
+                    $('#content').css({paddingTop : '0'});
+                    $logomini.hide();
+                    $nav.stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
+
+                } else if( $header.data('stage') < 2 ){
+                    headanim_stage1( $dscrollTop );
                 }
+
+                console.log($header.data('stage'));
             });
             $window.resize(function(){
                 //TODO this
@@ -154,7 +187,7 @@
         $homeSlides = $('.home-slides');
 
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
-            console.log(o);
+            //console.log(o);
             $winWidth = $window.width();
             $homeH = $homeSlides.css('height');
 
@@ -185,12 +218,12 @@
             slides: '> div',
             fx: 'carousel',
             carouselVisible: 1.5,
-            speed: 700,
+            speed: 1100,
             carouselFluid: true
         });
 
         $homeSlides.on('cycle-next', function(e, o) {
-            console.log(o.currSlide);
+            //console.log(o.currSlide);
         });
 
         $(window).load(function() {
@@ -225,13 +258,63 @@
 
         });
 
-
         // toggle shortcode
         $(".toggle_container").hide();
-        $("h2.trigger").click(function(){
-            $(this).toggleClass("active").next().slideToggle("normal");
+        $("h4.trigger").click(function(){
+            $(this).toggleClass("active").next().slideToggle("normal", function() {
+                if( $(this).is(":hidden") ){
+                    var $thisref = $(this).find('.side-matter-ref'),
+                        count = $thisref.length;
+                    if( count ) {
+                        $thisref.each( function () {
+                            var id = $(this).attr('id').replace("ref-","");
+                            var note = '#note-' + id; // Sidenote
+                            $(note).hide();
+                            if (--count == 0) rccsPlaceNotes();
+                        });
+                    }
+                } else {
+                    rccsPlaceNotes();                    
+                }
+            });
             return false; //Prevent the browser jump to the link anchor
         });
+
+ // Definition With Toggle and positioning fix
+        function rccsPlaceNotes() {
+            var offsetcumulate = 0;
+            $('a.side-matter-ref').each( function(){
+                if($(this).is(":visible") ){
+                    var id = $(this).attr('id').replace("ref-","");
+                    var ref = '#ref-' + id; // Reference anchor
+                    var note = '#note-' + id; // Sidenote
+                    $(note).show();
+                    var refPosition = $(ref).offset().top;
+                    var notePosition = $(note).offset().top; // Position of sidenote
+                    var noteMargin = parseInt($(note).css('margin-top')); // this was the one detail that fixed everyhting after 4 hours!!!
+                    var noteOffset = refPosition - notePosition + noteMargin; // Get current offset between reference and note, minus noteAdjust
+                    var finalOffset = ( noteOffset < 0 || notePosition < 0 ) ? 0 : noteOffset; // If offset is negative, set to 0 (prevents layout problems)
+                    offsetcumulate += finalOffset
+                    $(note).css('marginTop', finalOffset); // Position note
+                    console.log(refPosition + "|" + notePosition + "||" + noteOffset + "|" + finalOffset + "|" + offsetcumulate);
+                }
+            });
+        }       
+
+        rccsPlaceNotes();
+ 
+        if($('.side-matter-note').length) {
+            $('.side-matter-note').each( function () {
+                var id = $(this).attr('id').replace("note-","");
+                if( $('#ref-'+id).closest('.toggle_container').is(":hidden") ) {
+                    $(this).hide();
+                    //console.log($(this).html());
+                }
+            });
+        }
+
+
+
 
         // WHO WE ARE toggle
 

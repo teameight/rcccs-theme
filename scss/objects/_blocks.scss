@@ -165,11 +165,13 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: 500;
+    cursor:pointer;
+    background-image:none;
 
-    &.pager-left {
+    &.pager-left:hover {
         background-image: url('../images/pager-left.png');
     }
-    &.pager-right {
+    &.pager-right:hover {
         background-image: url('../images/pager-right.png');
     }
 }
@@ -187,15 +189,21 @@
 
 	.slide-text {
 		position: absolute;
-		top: 35%;
-		left: 0;
 		width: 100%;
 		text-align: center;
 		color: $offwhite;
 		padding: 0 10%;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		white-space: normal;
 
 		@media all and (max-width: $bp-small) {
-			top: 20%;
 			padding: $pad-and-half;
 
 			h2 {

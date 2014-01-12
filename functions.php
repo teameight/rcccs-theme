@@ -39,7 +39,10 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 // ADD WP NAV MENUS
 
-register_nav_menu('primary', 'Main Nav');
+function rcccs_extra_setup() {
+    register_nav_menu('primary', 'Main Nav');
+}
+add_action( 'after_setup_theme', 'rcccs_extra_setup' );
 
 // ADD SIDEBAR
 

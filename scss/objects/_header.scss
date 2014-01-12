@@ -14,9 +14,13 @@ header {
 	@media all and (max-width: $bp-large) {
         margin: $space auto;
 	}
+    @media all and (max-width: $bp-small-2) {
+        width: 50%;
+    }
+
 }
 
-.nav a.logo-mini {
+#nav-wrap a.logo-mini {
     display: none;
     width: 46px;
     height:35px;

@@ -5,6 +5,10 @@ body {
 	-webkit-text-size-adjust: 100%;
 	color: $gray-dark;
     height: 100%;
+
+    @media screen and (max-width: $bp-small-2) {
+        font-size: 15px;
+    }
 }
 
 html, .g-half, .gi {
@@ -18,13 +22,4 @@ div {
 #content {
     //padding-top: 267px;
     background: $blue;
-
-    @media screen and (max-width: $bp-med) {
-        padding-top: 200px;
-    }
-
-    @media screen and (max-width: $bp-small) {
-        padding-top: 120px;
-    }
-
 }

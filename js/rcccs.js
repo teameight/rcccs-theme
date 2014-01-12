@@ -107,6 +107,7 @@
         $window = $(window);
         $doc = $(document);
         $nav = $('#nav');
+        $navwrap = $('#nav-wrap');
         $navul = $('nav ul');
         $logo = $('.logo');
         $logomini = $('.logo-mini');
@@ -124,14 +125,15 @@
         function headanim_stage1 ( scrolltoppos ) {
 
             if( $header.data('stage') == 0 && scrolltoppos > $trigger ){
-                console.log( scrolltoppos + '|' + $trigger );
                 $header.data('stage', 1);
                 $logomini.fadeIn( $head_anim_speed );
+                $nav.addClass('condensed');
             }
 
             if( scrolltoppos > $trigger){
                 $logomini.show();
-            }
+                 $nav.addClass('condensed');
+           }
             if( scrolltoppos > $trigger2 ){
                 $header.data('stage', 2);
 
@@ -140,7 +142,6 @@
                 
                 $nav.stop().animate({paddingBottom: '0'}, $head_anim_speed );
             }
-            console.log( 'headanim_stage1' + '|' + $header.data('stage') );
 
         }
 
@@ -162,17 +163,24 @@
                     $header.css({'position' : 'relative', marginTop : '0' });
                     $('#content').css({paddingTop : '0'});
                     $logomini.hide();
-                    $nav.stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
+                    $nav.removeClass('condensed').stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
 
                 } else if( $header.data('stage') < 2 ){
                     headanim_stage1( $dscrollTop );
                 }
 
-                console.log($header.data('stage'));
             });
             $window.resize(function(){
-                //TODO this
-            });
+
+                $head_full_height = $header.height();
+                $trigger = $navwrap.position().top + $nav.position().top + 1;
+                $trigger2 = $trigger + 15;
+                $header.data('stage', 0);
+                
+                $dscrollTop = $doc.scrollTop();
+                headanim_stage1( $dscrollTop );
+
+           });
         }// if if header (no-touch)
 
         $('.mininav select').change(function() {
@@ -187,7 +195,8 @@
         $homeSlides = $('.home-slides');
 
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
-            //console.log(o);
+            //console.log
+(o);
             $winWidth = $window.width();
             $homeH = $homeSlides.css('height');
 
@@ -223,7 +232,8 @@
         });
 
         $homeSlides.on('cycle-next', function(e, o) {
-            //console.log(o.currSlide);
+            //console.log
+(o.currSlide);
         });
 
         $(window).load(function() {
@@ -296,7 +306,7 @@
                     var finalOffset = ( noteOffset < 0 || notePosition < 0 ) ? 0 : noteOffset; // If offset is negative, set to 0 (prevents layout problems)
                     offsetcumulate += finalOffset
                     $(note).css('marginTop', finalOffset); // Position note
-                    console.log(refPosition + "|" + notePosition + "||" + noteOffset + "|" + finalOffset + "|" + offsetcumulate);
+                    //console.log(refPosition + "|" + notePosition + "||" + noteOffset + "|" + finalOffset + "|" + offsetcumulate);
                 }
             });
         }       
@@ -308,7 +318,8 @@
                 var id = $(this).attr('id').replace("note-","");
                 if( $('#ref-'+id).closest('.toggle_container').is(":hidden") ) {
                     $(this).hide();
-                    //console.log($(this).html());
+                    //console.log
+($(this).html());
                 }
             });
         }

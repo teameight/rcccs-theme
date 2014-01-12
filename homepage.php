@@ -64,6 +64,19 @@ the_post();
             <div class="g-half">
                 <div class="gi whoweare">
                     <?php the_field('who_we_are'); ?>
+                    <p>
+                        <?php 
+                        $attachment_id = get_field('staff_image');
+                        $size = "thumbnail"; // (thumbnail, medium, large, full or custom size)
+                         
+                        $image = wp_get_attachment_image_src( $attachment_id, $size );
+                        // url = $image[0];
+                        // width = $image[1];
+                        // height = $image[2];
+                        ?>
+                        <img class="alignleft size-thumbnail" src="<?php echo $image[0]; ?>" />
+                        <a href="" class="more"><?php the_field('link_text'); ?> >></a>
+                    </p>
                 </div>
                 <div class="gi blogroll">
                     <h2>The Community Blog</h2>

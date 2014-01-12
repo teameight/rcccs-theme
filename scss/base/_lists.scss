@@ -31,6 +31,14 @@ dl, .side-matter-text {
     &:hover {
         color: lighten($blue, 10%);
     }
+
+    @media screen and (max-width: $bp-small-2) {
+        color: $gray-dark;
+
+        &:hover {
+            color: $gray-dark;
+        }
+    }
 }
 
 dt {

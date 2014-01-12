@@ -4,7 +4,6 @@
 
 .nav {
 	clear: none;
-	overflow: hidden;
 	max-height: none;
 	border-top: 1px solid #c7cecf;
 	text-align: center;
@@ -27,8 +26,11 @@
 			color: $gray;
 		}
 
+        @media screen and (max-width: $bp-small-2) {
+             padding: $pad $pad/2;
+       }
         @media screen and (max-width: $bp-small) {
-            padding: $pad/4;
+            padding: $pad $pad/3;
             font-size: 12px;
         }
 	}
@@ -40,7 +42,7 @@
 	ul {
 		display: inline-block;
 		text-align: center;
-		margin: $space $space 0;
+		margin: $space 0 0;
 
 		li {
 			float: left;
@@ -50,10 +52,77 @@
 			border: 0;
 		}
 
-        @media screen and (max-width: $bp-small) {
-            margin: 0;
-        }
-    }
+    }    
+
+    @media screen and (max-width: $bp-small) {
+
+		text-align:center;
+
+		ul {
+			display: none;
+			position: absolute;
+			padding: $space/2;
+			background: $blue;
+			right: 0;
+			top: 40px;
+		}
+
+		li {
+			text-align: center;
+			width: 100%;
+			margin: 0;
+		}
+
+		#menu-icon {
+			display:inline-block;
+		}
+
+	}
+}
+
+@media screen and (max-width: $bp-small) {
+
+	.nav:hover ul {
+		display: block;
+		z-index: 100;
+		width: 100%;
+	}
+
+}
+#menu-icon {
+	display: none;
+	margin: $space 0 0;
+}
+
+@media screen and (max-width: $bp-small-2) {
+	.nav.condensed {
+
+		float:right;
+
+		ul {
+			display: none;
+			position: absolute;
+			padding: $space/2;
+			background: $blue;
+			right: 0;
+			top: 40px;
+		}
+
+		li {
+			text-align: center;
+			width: 100%;
+			margin: 0;
+		}
+
+		#menu-icon {
+			display:inline-block;
+		}
+
+		&:hover ul {
+			display: block;
+			width: auto;
+		}
+	}
 }
 
 //Pagination

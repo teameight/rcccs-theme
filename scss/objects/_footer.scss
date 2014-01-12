@@ -15,11 +15,21 @@ footer {
 
     .gi:nth-of-type(odd) {
         border-right: 1px solid darken($gray-dark, 5%) !important;
+        
+        @media screen and (max-width: $bp-small) {
+            border-right: none !important;
+            border-bottom: 1px solid darken($gray-dark, 5%);
+        }
     }
 
     .contact-links.rt {
          margin-top: 2rem;
     }
+    
+    @media screen and (max-width: $bp-small-2) {
+        font-size:1.2em;
+    }
+
 
 }
 

@@ -45,10 +45,13 @@
 <header class="header cf" role="banner">
     <div class="wrap">
         <a href="<?php bloginfo('url'); ?>" class="logo"><img src="<?php echo(THEME_DIR); ?>/images/logo.png" alt="Logo Alt Text" /></a>
-        <nav id="nav" class="nav">
+        <div id="nav-wrap">
             <a href="<?php bloginfo('url'); ?>" class="logo-mini"><img src="<?php echo(THEME_DIR); ?>/images/logo-mini.png" alt="Logo Alt Text" /></a>
-            <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
-        </nav><!--end .nav-->
+            <nav id="nav" class="nav">
+                <a href="#" id="menu-icon">MENU</a>
+                <?php wp_nav_menu(array('theme_location' => 'primary', 'container' => false)); ?>
+            </nav><!--end .nav-->
+        </div>
     </div>
     <div class="subnav">
         <div class="wrap">

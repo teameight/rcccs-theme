@@ -99,12 +99,20 @@
     position: relative;
     @extend .cf;
 
+    @media all and (max-width: $bp-med-2) {
+        width: 700px;
+    }
+
     @media all and (max-width: $bp-med) {
         width: 600px;
     }
 
+    @media all and (max-width: $bp-small-2) {
+        width: 85%;
+    }
+
     @media all and (max-width: $bp-small) {
-        width: 320px;
+        width: 90%;
     }
 
     > * {

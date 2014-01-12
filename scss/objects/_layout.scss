@@ -272,11 +272,35 @@
 	>.g3 {
 		float: left;
 		width: 75%;
+
+		@media all and (max-width: $bp-med-2) {
+			width: 70%;
+		}
+
+		@media all and (max-width: $bp-med) {
+			width: 100%;
+		}
+
 	}
 	>.g1 {
 		float: right;
 		width: 25%;
-		padding-left: 4em;
+		padding-left: 2.5em;
+
+		@media all and (max-width: $bp-med-2) {
+			width: 30%;
+		}
+
+		@media all and (max-width: $bp-med) {
+			width: 0;
+		}
+
+	}
+}
+
+@media all and (max-width: $bp-med) {
+	#tertiary {
+		display:none;
 	}
 }
 

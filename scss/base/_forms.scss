@@ -30,7 +30,7 @@ button, input, select, textarea {
 
 input, textarea, select {
     width: 100%;
-    border: 1px solid $brown;
+    border: 1px solid $yellow;
     padding: $pad-half 0.65rem;
     background: $offwhite;
 }
@@ -146,19 +146,45 @@ form > div, .gform_fields, .gfield, .gfield_label {
 }
 
 form > .gform_heading,
-form > .gform_body {
+form > .gform_body,
+.wrap .gform_wrapper div.validation_error {
     padding-left:45px;
     width: 100%;    
     margin:0;
 }
 
+.wrap .gform_wrapper div.validation_error {
+    font-family:$font-secondary;
+    font-weight:normal;
+    font-size:1em;
+    font-style:italic;
+}
+
 .wrap .gform_wrapper ul.gform_fields {
     width: 100%;  
 }
+
+.wrap .gform_wrapper.rcccs-contact .top_label {
+
+}
+
 .wrap .gform_wrapper .top_label {
     
     ul.gform_fields {
       width: 100%;    
+    }
+
+    .gfield_description {
+        text-align: right;
+        font-family:$font-secondary;
+        font-style:italic;
+        padding-top:0;
+        margin-top:0;
+        
+        &.validation_message {
+            padding:0 !important;
+            margin:0;
+        }
     }
 
     .gfield {
@@ -172,27 +198,93 @@ form > .gform_body {
     .gfield_label {
         padding-top: .35em;
         font-weight: 300;
-        width: 25%;
-        margin: 0;
+        width: 28%;
+        margin: 0 2% 1rem 0;
+
+        @media all and (max-width: $bp-small-2) {
+            width: 100%;
+            margin:0;
+        }
+
     }
 
-    input, textarea, select {
+    input.medium, input, textarea, select,
+    .ginput_complex .ginput_full input[type=text] {
         padding:$pad/2;
         font-size: .8em;
-        width: 100%;    
+        width: 100% !important; 
+        color:$gray-dark;   
+   }
+    .ginput_complex .ginput_left input[type=text],
+    .ginput_complex .ginput_right input[type=text] {
+        padding:$pad/2;
+        font-size: .8em;
    }
 
     .ginput_container {
         float: right;
-        width: 75%;
+        width: 70%;
         margin-bottom: 1em;
 
+        @media all and (max-width: $bp-small-2) {
+            width: 100%;
+        }
 
         .gfield:last-child & {
             width: 100%;
             background: $offwhite;
         }
     }    
+
+    .gfield_date_month, 
+    .gfield_date_day, 
+    .gfield_date_year {
+        width: 21% !important;
+        margin-right: 2%;
+        float: left;
+
+        @media all and (max-width: $bp-small-2) {
+            margin-right:3%;
+        }
+
+    }
+
+
+    ul.gfield_radio,
+    ul.gfield_checkbox {
+
+        width:100%;
+        padding-top: .45em;
+
+        li {
+            width: 50%;
+
+            @media all and (max-width: $bp-small-2) {
+                width:100%;
+            }
+
+            label {
+                margin:0;
+                font-weight: 300;
+                font-size:.9em;
+            }
+
+            input[type="radio"]:checked+label,
+            input[type="checkbox"]:checked+label {
+                font-weight: 500;
+            }
+
+            input[type=text]{
+                margin:0;
+                width: 70% !important;
+            }
+        }
+    }
+
+    .gfield_radio li input[type=radio], 
+    .gfield_checkbox li input[type=checkbox] {
+        margin: .25rem .5rem 0 .05rem;
+    }
 
 }
 
@@ -257,20 +349,39 @@ form > .gform_body {
     border-radius: 0;
 }
 
+.wrap {
+    .gform_wrapper li.gfield.gfield_error, 
+    .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+        background-color: $valid-lt;
+        margin-bottom: 6px !important;
+        padding: 6px 6px 4px 6px !important;
+        border-top: 1px solid #C89797;
+        border-bottom: 1px solid #C89797;
+    }
+
+
+}
+
+
 .validation_message {
-    position: absolute;
-    right: 0;
-    top: -15px;
-    color: darkred;
+    color: $valid;
     font-size: .75em;
     font-family: $font-secondary;
     font-style: italic;
 }
 
-.recaptcha_area {
+#recaptcha_widget_div {
+    
+    font-size:16px;
 
-    img {
-        width: auto;
-        height: auto;
-    }
+    .recaptcha_area {
+
+        img {
+            //width: auto;
+            //height: auto;
+        }
+    }    
+
 }
+
+

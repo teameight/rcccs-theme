@@ -10,7 +10,9 @@ get_header(); ?>
         $history = get_field('history');
         $args = array(
             'post_type' => 'staff',
-            'numberposts' => -1
+            'posts_per_page' => -1,
+            'orderby' =>   'menu_order',
+            'order' =>      'ASC'
         );
         $staff = get_posts($args);
     ?>

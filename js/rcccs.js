@@ -164,6 +164,7 @@
         if($header.length){
             //$header.after('<div id="readout"></div>');
             $window.scroll(function(){
+
                 var $headheight;
                 $dscrollTop = $doc.scrollTop();
                 
@@ -376,7 +377,7 @@
             boxes.last().addClass('edge').after(aboutWrap);
         }
 
-
+        var $head_height = 60;
         $(window).smartresize(function () {
             var w = wrapper.outerWidth(true),
                 rebreakat = Math.floor(w / boxSize),
@@ -395,6 +396,13 @@
                 }
         });
 
+        // stop animated scroll if user scrolls
+        $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
+            if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel"){
+                $("html,body").stop();
+            }
+        })
+
         $('.staff-img').click(function () {
             var $this = $(this),
                 clone = $this.children('.about-staff').clone(),
@@ -407,7 +415,7 @@
                     .children().slideToggle("fast", function(){
                         $(this).remove();
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 220
+                            scrollTop: $this.offset().top - $head_height
                         }, 500);
                     });
                 $this.removeClass('open').siblings().removeClass('fade');
@@ -431,7 +439,7 @@
                                 $('.clone').removeClass('clone');
                                 aboutActive.children().first().remove();
                                 $('html, body').animate({
-                                    scrollTop: $this.offset().top - 220
+                                    scrollTop: $this.offset().top - $head_height
                                 }, 500);
                             });
                     }
@@ -444,7 +452,7 @@
                         clone.show();
                         $this.addClass('open').next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 220
+                                scrollTop: $this.offset().top - $head_height
                             }, 500);
                         });
                     }
@@ -463,7 +471,7 @@
                             $('.clone').removeClass('clone');
                             aboutActive.children().first().remove();
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 220
+                                scrollTop: $this.offset().top - $head_height
                             }, 500);
                         });
                 }
@@ -479,14 +487,14 @@
                         clone.show();
                         $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 220
+                                scrollTop: $this.offset().top - $head_height
                             }, 500);
                         });
                     } else {
                         clone.show();
                         $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                             $('html, body').animate({
-                                scrollTop: $this.offset().top - 220
+                                scrollTop: $this.offset().top - $head_height
                             }, 500);
                         });
                     }
@@ -503,14 +511,14 @@
                     clone.show();
                     $this.next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 220
+                            scrollTop: $this.offset().top - $head_height
                         }, 500);
                     });
                 } else {
                     clone.show();
                     $this.nextAll('.edge').first().next('.about-wrapper').addClass('active').append(clone).slideToggle(700, function() {
                         $('html, body').animate({
-                            scrollTop: $this.offset().top - 220
+                            scrollTop: $this.offset().top - $head_height
                         }, 500);
                     });
                 }

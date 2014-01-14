@@ -82,6 +82,16 @@ function rcccs_customize($wp_customize) {
         'title'          => 'Contact Info'
     ) );
 
+    $wp_customize->add_setting( 'contact_text', array(
+        'default'        => 'We’re here to answer any questions you have. Send us an email or give us a call.',
+    ) );
+
+    $wp_customize->add_control( 'contact_text', array(
+        'label'   => 'Contact Text',
+        'section' => 'contact_settings',
+        'type'    => 'text'
+    ) );
+
     $wp_customize->add_setting( 'email_address', array(
         'default'        => 'hello@rivercityccs.com',
     ) );

@@ -85,6 +85,11 @@
                     .animate({height: $selector.data('nHeight')},400)
                     .removeClass('show');
                 $('.nolink').removeClass('show');
+                
+                var cPadTop = parseInt($('#content').css('paddingTop'));
+                cPadTop = cPadTop - $selector.data('oHeight');
+                $('#content').animate({paddingTop: cPadTop},400)
+               // console.log($selector.data('nHeight'));
             }
             else
             {
@@ -96,7 +101,12 @@
                     .animate({height: $selector.data('nHeight')},400)
                     .addClass('show');
                 $('.nolink').addClass('show');
-            }
+                
+                var cPadTop = parseInt($('#content').css('paddingTop'));
+                cPadTop = cPadTop + $selector.data('nHeight');
+                $('#content').animate({paddingTop: cPadTop},400)
+               // console.log($selector.data('nHeight'));
+           }
 
         });
 
@@ -195,30 +205,47 @@
         $homeSlides = $('.home-slides');
 
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
-            //console.log
-(o);
+            //console.log(o);
             $winWidth = $window.width();
             $homeH = $homeSlides.css('height');
+            var $bp_med2 = 890,
+                $bp_med = 780,
+                $bp_small2 = 650,
+                $bp_small = 500,
+                $slide_width;
 
             // for full breakpoint
-            if ($winWidth >= 850) {
-                // subtract 850 from window
-                $extra = $winWidth - 850;
-                // divide that by 2
-                $offset = $extra / 2;
-                // apply that to carousel-offset for home-slides
-                o.carouselOffset = $offset;
-                //            o.fx = 'carousel';
-                //            o.slides = '> div';
-                $pagerLeft.css({
-                    'left': $offset
-                }).fadeIn();
-                $pagerRight.css({
-                    'left': $offset + 775
-                }).fadeIn();
-
+            if ($winWidth >= $bp_med2 ) {
+                $slide_width = 850;
             }
             // for med breakpoint
+            if ($winWidth >= $bp_med && $winWidth < $bp_med2 ) {
+                $slide_width = 700;
+            }
+            if ($winWidth >= $bp_small2 && $winWidth < $bp_med ) {
+                $slide_width = 600;
+            }
+            if ($winWidth >= $bp_small && $winWidth < $bp_small2 ) {
+                $slide_width = 500;
+            }
+            if ($winWidth < $bp_small ) {
+                $slide_width = 300;
+            }
+
+            // subtract slide from window
+            $extra = $winWidth - $slide_width;
+            // divide that by 2
+            $offset = $extra / 2;
+            // apply that to carousel-offset for home-slides
+            o.carouselOffset = $offset;
+            //            o.fx = 'carousel';
+            //            o.slides = '> div';
+            $pagerLeft.css({
+                'left': $offset
+            }).fadeIn();
+            $pagerRight.css({
+                'left': $slide_width + $offset - 75
+            }).fadeIn();
 
             // for sm breakpoint
         });
@@ -232,8 +259,7 @@
         });
 
         $homeSlides.on('cycle-next', function(e, o) {
-            //console.log
-(o.currSlide);
+            //console.log(o.currSlide);
         });
 
         $(window).load(function() {
@@ -318,8 +344,7 @@
                 var id = $(this).attr('id').replace("note-","");
                 if( $('#ref-'+id).closest('.toggle_container').is(":hidden") ) {
                     $(this).hide();
-                    //console.log
-($(this).html());
+                    //console.log($(this).html());
                 }
             });
         }

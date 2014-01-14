@@ -43,6 +43,9 @@ header {
     .show {
         height: auto;
     }
+    .wrap{
+        padding: $pad-double 0;
+    }
 }
 
 .nav-toggle {
@@ -59,11 +62,9 @@ header {
 }
 
 .search-form {
-	max-height: 0;
 
 	@media all and (min-width: $bp-med) {
 		float: right;
-		max-height: none;
 	}
 }
 

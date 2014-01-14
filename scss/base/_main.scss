@@ -6,9 +6,6 @@ body {
 	color: $gray-dark;
     height: 100%;
 
-    @media screen and (max-width: $bp-small-2) {
-        font-size: 15px;
-    }
 }
 
 html, .g-half, .gi {

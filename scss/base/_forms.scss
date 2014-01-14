@@ -130,8 +130,8 @@ input[type="search"]::-webkit-search-decoration {
 /* Search Form */
 .search-field {
     padding: .5em;
-    margin: .5em 0;
-}
+    margin: 0 0 .5em 0;
+} 
 .inline-form .search-submit {
     background: none;
     padding: 0.78em 1em;
@@ -145,27 +145,66 @@ form > div, .gform_fields, .gfield, .gfield_label {
     float: left;
 }
 
-.gfield {
-    width: 100%;
-    position: relative;
+form > .gform_heading,
+form > .gform_body {
+    padding-left:45px;
+    width: 100%;    
+    margin:0;
 }
 
-.gfield_label {
-    padding-top: .5em;
-    font-weight: 300;
-    width: 25%;
+.wrap .gform_wrapper ul.gform_fields {
+    width: 100%;  
 }
-
-.ginput_container {
-    float: right;
-    width: 75%;
-    margin-bottom: 1em;
-
-
-    .gfield:last-child & {
-        width: 100%;
-        background: $offwhite;
+.wrap .gform_wrapper .top_label {
+    
+    ul.gform_fields {
+      width: 100%;    
     }
+
+    .gfield {
+        width: 100%;
+        position: relative;
+    }
+    .gfield_required {
+        color: $offwhite;
+    }
+
+    .gfield_label {
+        padding-top: .35em;
+        font-weight: 300;
+        width: 25%;
+        margin: 0;
+    }
+
+    input, textarea, select {
+        padding:$pad/2;
+        font-size: .8em;
+        width: 100%;    
+   }
+
+    .ginput_container {
+        float: right;
+        width: 75%;
+        margin-bottom: 1em;
+
+
+        .gfield:last-child & {
+            width: 100%;
+            background: $offwhite;
+        }
+    }    
+
+}
+
+.gform_wrapper form .gform_footer {
+    padding:0 0 0 45px;
+    margin:0;
+    width: 100%;   
+
+    input {
+        float:right;
+        font-weight: 300;
+    } 
 }
 
 .gsection {

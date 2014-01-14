@@ -297,6 +297,16 @@
 
 	}
 }
+.archive .g-3-1 {
+	>.g1 {
+
+		@media all and (max-width: $bp-med) {
+			width: 100%;
+			padding-left: 0;
+		}
+
+	}
+}
 
 @media all and (max-width: $bp-med) {
 	#tertiary {

@@ -63,7 +63,7 @@ the_post();
         <div class="wrap">
             <div class="g-half">
                 <div class="gi whoweare">
-                    <?php the_field('who_we_are'); ?>
+                    <div class="blck-desc"><?php the_field('who_we_are'); ?></div>
                     <p>
                         <?php 
                         $attachment_id = get_field('staff_image');

@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 <?php while(have_posts()) : the_post(); ?>
-    <div class="subhead bg">
+    <div class="subhead bg"<?php
+        $heading_color = get_field('heading_color');
+        if($heading_color){
+            $h_font_color = "";
+            if( $heading_color == '696C6F' || $heading_color == '8C8384'){
+                $h_font_color =  " color:#f9faee;";
+            }
+            echo ' style="background-color:#' . $heading_color. ';' . $h_font_color . '"';
+        }
+    ?>>
         <div class="wrap">
             <h1><?php the_title(); ?></h1>
             <h4 class="font-secondary"><?php echo the_field('subheading'); ?></h4>

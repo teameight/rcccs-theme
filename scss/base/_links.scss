@@ -12,7 +12,7 @@ a {
     &.more, &.cat {
         font-size: .7368em;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
         letter-spacing: 1px;
     }
 
@@ -43,6 +43,11 @@ a {
             float: left;
             clear: left;
             margin-bottom: $space/2;
+
+            @media all and (max-width: $bp-med) {
+                margin-right: $space/2;
+                clear:none;
+            }
         }
     }
 
@@ -61,7 +66,7 @@ a {
     margin-bottom: $space;
 
     &.btn {
-        font-weight: 700;
+        font-weight: 600;
     }
 
     footer & {

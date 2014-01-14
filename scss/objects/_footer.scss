@@ -13,6 +13,14 @@ footer {
         padding: $pad $pad 0;
     }
 
+    h4 a {
+        color:$offwhite;
+
+        &:hover, &:focus {
+            color: $tan;
+        }
+    }
+
     .gi:nth-of-type(odd) {
         border-right: 1px solid darken($gray-dark, 5%) !important;
         
@@ -23,13 +31,11 @@ footer {
     }
 
     .contact-links.rt {
-         margin-top: 2rem;
+        margin-top: $space*4.5;
+        @media screen and (max-width: $bp-small) {
+            margin-top: $space-double
+        }
     }
-    
-    @media screen and (max-width: $bp-small-2) {
-        font-size:1.2em;
-    }
-
 
 }
 

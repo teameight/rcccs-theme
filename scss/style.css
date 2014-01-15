@@ -232,23 +232,24 @@ header, footer, nav, section, article, hgroup, figure {
 body {
   background: white;
   font: 19px "Source Sans Pro", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
   line-height: 1.2;
   -webkit-text-size-adjust: 100%;
   color: #696c6f;
   height: 100%;
 }
 
-/* line 11, base/_main.scss */
+/* line 12, base/_main.scss */
 html, .g-half, .gi {
   height: 100%;
 }
 
-/* line 15, base/_main.scss */
+/* line 16, base/_main.scss */
 div {
   position: relative;
 }
 
-/* line 19, base/_main.scss */
+/* line 20, base/_main.scss */
 #content {
   background: #96b5be;
 }
@@ -1096,21 +1097,30 @@ form > .gform_body,
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  border: 1px solid #84868d;
+  border: 0;
   width: 100%;
+  font-size: .8em;
 }
 
-/* line 10, base/_tables.scss */
+/* line 11, base/_tables.scss */
 th {
   text-align: left;
   border: 1px solid #84868d;
   padding: 0.2em;
 }
 
-/* line 15, base/_tables.scss */
+/* line 16, base/_tables.scss */
 td {
-  border: 1px solid #84868d;
-  padding: 0.2em;
+  border-top: 1px solid #84868d;
+  border-bottom: 1px solid #84868d;
+  border-left: 0;
+  border-right: 0;
+  padding: 0.75em;
+}
+
+/* line 23, base/_tables.scss */
+tr td:first-child {
+  border-right: 1px dotted #a3adb8;
 }
 
 /* line 1, base/_animation.scss */

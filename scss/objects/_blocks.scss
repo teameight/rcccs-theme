@@ -149,19 +149,20 @@
 	li {
 		list-style: none;
 		padding: .75em 0;
+        border-top: 1px solid $tan;
+		
+		&:last-child {
+		            
+        	border-bottom: 1px solid $tan;
 
+            @media screen and (max-width: $bp-small-2) {
+                border-bottom: none;
+            }
+        }
 
         .subnav & {
-            border-top: 1px solid $tan;
 
-            &:last-child {
             
-            	border-bottom: 1px solid $tan;
-
-                @media screen and (max-width: $bp-small-2) {
-                    border-bottom: none;
-                }
-            }
 
             a * {
                 color: #a0a2a5;

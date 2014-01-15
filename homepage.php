@@ -75,7 +75,7 @@ the_post();
                         // height = $image[2];
                         ?>
                         <img class="alignleft size-thumbnail" src="<?php echo $image[0]; ?>" />
-                        <a href="" class="more"><?php the_field('link_text'); ?> >></a>
+                        <a href="" class="more"><?php the_field('link_text'); ?> ></a>
                     </p>
                 </div>
                 <div class="gi blogroll">

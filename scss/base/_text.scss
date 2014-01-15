@@ -18,7 +18,7 @@ hr {
 	border: 0;
     height: 1px;
     background: $gray-light;
-    margin: 0 0 $space*4 0;
+    margin: $space-double 0;
 
     &.light {
         background: $offwhite;
@@ -35,6 +35,6 @@ time {
     font-style: italic;
     font-size: 0.9em;
 }
-.blck-desc {
+.blck-desc p {
     font-size: 1.25em;
 }

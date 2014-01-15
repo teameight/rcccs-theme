@@ -544,7 +544,7 @@ hr {
   border: 0;
   height: 1px;
   background: #a3adb8;
-  margin: 0 0 4rem 0;
+  margin: 2rem 0;
 }
 /* line 23, base/_text.scss */
 hr.light {
@@ -565,7 +565,7 @@ time {
 }
 
 /* line 38, base/_text.scss */
-.blck-desc {
+.blck-desc p {
   font-size: 1.25em;
 }
 
@@ -1582,9 +1582,10 @@ header {
   overflow: hidden;
   padding: 0;
   margin: 0;
+  z-index: 10;
 }
 
-/* line 35, objects/_header.scss */
+/* line 36, objects/_header.scss */
 .subnav {
   height: 0;
   position: absolute;
@@ -1593,16 +1594,16 @@ header {
   z-index: 1;
   overflow: auto;
 }
-/* line 43, objects/_header.scss */
+/* line 44, objects/_header.scss */
 .subnav .show {
   height: auto;
 }
-/* line 46, objects/_header.scss */
+/* line 47, objects/_header.scss */
 .subnav .wrap {
   padding: 2rem 0;
 }
 
-/* line 51, objects/_header.scss */
+/* line 52, objects/_header.scss */
 .nav-toggle {
   float: right;
   display: block;
@@ -1612,89 +1613,89 @@ header {
   border-left: 1px solid #dbdbdb;
 }
 @media all and (min-width: 800px) {
-  /* line 51, objects/_header.scss */
+  /* line 52, objects/_header.scss */
   .nav-toggle {
     display: none;
   }
 }
 
 @media all and (min-width: 800px) {
-  /* line 64, objects/_header.scss */
+  /* line 65, objects/_header.scss */
   .search-form {
     float: right;
   }
 }
 
-/* line 71, objects/_header.scss */
+/* line 72, objects/_header.scss */
 .subhead {
   text-align: center;
   padding: 4rem 0;
 }
-/* line 75, objects/_header.scss */
+/* line 76, objects/_header.scss */
 .page .subhead {
   padding: 8rem 0;
 }
-/* line 79, objects/_header.scss */
+/* line 80, objects/_header.scss */
 .subhead.stories {
   background-color: #a3adb8;
 }
-/* line 82, objects/_header.scss */
+/* line 83, objects/_header.scss */
 .subhead.news {
   background-color: #8c8384;
   color: #f9faee;
 }
-/* line 86, objects/_header.scss */
+/* line 87, objects/_header.scss */
 .subhead.resources {
   background-color: #84868d;
 }
-/* line 89, objects/_header.scss */
+/* line 90, objects/_header.scss */
 .subhead.staff {
   background-color: #8c9685;
   color: #f9faee;
 }
-/* line 96, objects/_header.scss */
+/* line 97, objects/_header.scss */
 .subhead.careers {
   background-color: #696c6f;
   color: #f9faee;
 }
-/* line 100, objects/_header.scss */
+/* line 101, objects/_header.scss */
 .subhead.careers a {
   color: #f9faee;
 }
-/* line 103, objects/_header.scss */
+/* line 104, objects/_header.scss */
 .subhead.careers a:hover {
   color: #a3adb8;
 }
 
-/* line 111, objects/_header.scss */
+/* line 112, objects/_header.scss */
 h2.stories, time.stories {
   color: #a3adb8;
 }
-/* line 114, objects/_header.scss */
+/* line 115, objects/_header.scss */
 a h2.stories:hover, a time.stories:hover {
   color: #6b7a8a;
 }
-/* line 118, objects/_header.scss */
+/* line 119, objects/_header.scss */
 h2.news, time.news {
   color: #8c8384;
 }
-/* line 121, objects/_header.scss */
+/* line 122, objects/_header.scss */
 a h2.news:hover, a time.news:hover {
   color: #585152;
 }
-/* line 125, objects/_header.scss */
+/* line 126, objects/_header.scss */
 h2.resources, time.resources {
   color: #84868d;
 }
-/* line 128, objects/_header.scss */
+/* line 129, objects/_header.scss */
 a h2.resources:hover, a time.resources:hover {
   color: #525459;
 }
-/* line 132, objects/_header.scss */
+/* line 133, objects/_header.scss */
 h2.staff, time.staff {
   color: #8c9685;
 }
-/* line 135, objects/_header.scss */
+/* line 136, objects/_header.scss */
 a h2.staff:hover, a time.staff:hover {
   color: #596154;
 }
@@ -1813,6 +1814,15 @@ a h2.staff:hover, a time.staff:hover {
 /* line 13, objects/_main.scss */
 .main h2 {
   letter-spacing: .02em;
+}
+/* line 17, objects/_main.scss */
+.main.about {
+  padding-bottom: 0;
+}
+/* line 19, objects/_main.scss */
+.main.about .wrap {
+  border-bottom: 1px solid #a3adb8;
+  padding-bottom: 4rem;
 }
 
 /*------------------------------------*\
@@ -2403,56 +2413,53 @@ div.icon.twi {
 .services li {
   list-style: none;
   padding: .75em 0;
-}
-/* line 154, objects/_blocks.scss */
-.subnav .services li {
   border-top: 1px solid #d7d6cf;
 }
-/* line 157, objects/_blocks.scss */
-.subnav .services li:last-child {
+/* line 154, objects/_blocks.scss */
+.services li:last-child {
   border-bottom: 1px solid #d7d6cf;
 }
 @media screen and (max-width: 650px) {
-  /* line 157, objects/_blocks.scss */
-  .subnav .services li:last-child {
+  /* line 154, objects/_blocks.scss */
+  .services li:last-child {
     border-bottom: none;
   }
 }
-/* line 166, objects/_blocks.scss */
+/* line 167, objects/_blocks.scss */
 .subnav .services li a * {
   color: #a0a2a5;
 }
-/* line 169, objects/_blocks.scss */
+/* line 170, objects/_blocks.scss */
 .subnav .services li a * :hover {
   color: #696c6f;
 }
-/* line 174, objects/_blocks.scss */
+/* line 175, objects/_blocks.scss */
 .subnav .services li a:hover * {
   color: #696c6f;
 }
 
 /* Map */
-/* line 182, objects/_blocks.scss */
+/* line 183, objects/_blocks.scss */
 .map {
   width: 100%;
   height: 50%;
   overflow: hidden;
 }
 
-/* line 188, objects/_blocks.scss */
+/* line 189, objects/_blocks.scss */
 .acf-map {
   width: 100%;
   height: 650px;
 }
 
 /* Locations */
-/* line 194, objects/_blocks.scss */
+/* line 195, objects/_blocks.scss */
 .location {
   float: left;
   width: 100%;
 }
 
-/* line 199, objects/_blocks.scss */
+/* line 200, objects/_blocks.scss */
 .address {
   float: left;
   margin-left: 1rem;
@@ -2850,7 +2857,7 @@ div.icon.twi {
 
 /* line 1, objects/_sections.scss */
 section {
-  padding: 0 0 4rem 0;
+  padding: 4rem 0;
   height: auto;
   background: white;
 }

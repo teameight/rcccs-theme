@@ -21,7 +21,7 @@ get_header(); ?>
             <h3><?php echo $mission; ?></h3>
         </div>
     </div>
-    <div class="main">
+    <div class="main about">
         <div class="wrap">
             <div class="g-2up">
                 <div class="gi">
@@ -35,7 +35,6 @@ get_header(); ?>
     </div><!-- end main -->
     <section>
         <div class="wrap">
-            <hr />
             <h2>Who We Are</h2>
             <ul class="who-we-are">
             <?php

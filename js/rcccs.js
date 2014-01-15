@@ -70,13 +70,95 @@
                 $(this).addClass('clicked');
             }
         });
-//    SERVICES SUBNAV ANIMATION
+//    HEADER ANIMATION
+        var $header, $window, $doc, $nav, $navwrap, $navul, $logo, $logomini, 
+            $dscrollTop, $homeSlides, $offset, $winWidth, $extra, $pagerLeft, $pagerRight, 
+            $pointer, $homeH, $wpadminbar;
+
+        $header = $('header'),
+        $window = $(window),
+        $doc = $(document),
+        $nav = $('#nav'),
+        $navwrap = $('#nav-wrap'),
+        $navul = $('nav ul'),
+        $logo = $('.logo'),
+        $logomini = $('.logo-mini'),
+        $pagerLeft = $('.pager-left'),
+        $pagerRight = $('.pager-right'),
+        $pointer = $('.nolink::after'),
+        $wpadminbar = $('#wpadminbar');
+
+        var $head_full_height, $trigger, $trigger2, $head_anim_speed;
+        $head_full_height = $header.height();
+        $trigger = $nav.offset().top + 1;
+        if($wpadminbar.length && $window.width() > 781 ) $trigger -= $wpadminbar.height();
+        $trigger2 = $trigger + 15;
+        $head_anim_speed = 300;
+
         var $selector = $('.subnav');
 
+        //    SERVICES SUBNAV ANIMATION
         $('.nolink a').click(function(e){
             e.preventDefault();
-            if ( $selector.hasClass('show') )
-            {
+            
+            var cPadTop = parseInt($('#content').css('paddingTop'));
+            
+            if ( $selector.hasClass('show') ) {
+                set_subnav_heights('hide');
+                $('.nolink').removeClass('show');
+                
+                cPadTop = cPadTop - $selector.data('oHeight');
+            } else {
+                var $win_height, $sn_height;
+                $win_height = $window.height(),
+                
+                set_subnav_heights($sn_height);
+
+                $sn_height = $selector.data('nHeight');
+                $sn_offset = $head_full_height;
+                
+                if( $nav.hasClass('condensed') ){
+                    $sn_offset = $head_full_height - $trigger2;
+                }
+
+             /*   console.log( '$win_height:' + $win_height 
+                            + ' $sn_height:' + $sn_height 
+                            + ' $head_full_height:' + $head_full_height 
+                            + ' $trigger2:' + $trigger2 
+                            + ' $sn_offset:' + $sn_offset );
+            */
+
+                if( $win_height < $sn_offset + $sn_height && $window.width() >= 500 ){
+            
+                    $selector
+                        .animate({height: $win_height - $sn_offset },400)
+                        .addClass('show'); 
+
+                } else {
+
+                    set_subnav_heights('show');
+
+                }
+                
+                $('.nolink').addClass('show');
+                
+                cPadTop = cPadTop + $selector.data('nHeight');
+               // console.log($selector.data('nHeight'));
+           }
+            $('#content').animate({paddingTop: cPadTop},400);
+
+        });
+        
+        // subnav functions
+        function set_subnav_heights(anim) {
+            if(anim == 'show'){
+
+                $selector
+                    .animate({height: $selector.data('nHeight')},400)
+                    .addClass('show');
+
+            } else if(anim == 'hide'){
+
                 $selector
                     .data('oHeight',$selector.height())
                     .css('height', 0)
@@ -84,51 +166,20 @@
                     .height($selector.data('oHeight'))
                     .animate({height: $selector.data('nHeight')},400)
                     .removeClass('show');
-                $('.nolink').removeClass('show');
-                
-                var cPadTop = parseInt($('#content').css('paddingTop'));
-                cPadTop = cPadTop - $selector.data('oHeight');
-                $('#content').animate({paddingTop: cPadTop},400)
-               // console.log($selector.data('nHeight'));
-            }
-            else
-            {
+
+            } else {
+
                 $selector
-                    .data('oHeight',$selector.height())
+                    .data('oHeight',anim)
                     .css('height','auto')
                     .data('nHeight',$selector.height())
-                    .height($selector.data('oHeight'))
-                    .animate({height: $selector.data('nHeight')},400)
-                    .addClass('show');
-                $('.nolink').addClass('show');
-                
-                var cPadTop = parseInt($('#content').css('paddingTop'));
-                cPadTop = cPadTop + $selector.data('nHeight');
-                $('#content').animate({paddingTop: cPadTop},400)
-               // console.log($selector.data('nHeight'));
-           }
+                    .height($selector.data('oHeight'));
 
-        });
+            }
+        }
 
 
-//    HEADER ANIMATION
-        var $header, $window, $doc, $nav, $logo, $dscrollTop, $navul, $homeSlides, $offset, $winWidth, $extra, $pagerLeft, $pagerRight, $homeH;
-        $header = $('header');
-        $window = $(window);
-        $doc = $(document);
-        $nav = $('#nav');
-        $navwrap = $('#nav-wrap');
-        $navul = $('nav ul');
-        $logo = $('.logo');
-        $logomini = $('.logo-mini');
-        $pagerLeft = $('.pager-left');
-        $pagerRight = $('.pager-right');
 
-        var $head_full_height, $trigger, $trigger2, $head_anim_speed;
-        $head_full_height = $header.height();
-        $trigger = $nav.offset().top + 1;
-        $trigger2 = $trigger + 15;
-        $head_anim_speed = 300;
 
         // ANIMATE HEADER
 
@@ -161,44 +212,41 @@
             $header.data('size', 2);
         }
 
-        if($header.length){
+        if( $header.length ){
             //$header.after('<div id="readout"></div>');
             $window.scroll(function(){
-
-                var $headheight;
-                $dscrollTop = $doc.scrollTop();
-                
-                if( $dscrollTop < $trigger && $header.data('stage') ){
+                if($window.width() > 500){
+                    var $headheight;
+                    $dscrollTop = $doc.scrollTop();
                     
-                    $header.data('stage', 0);
-                    $header.css({'position' : 'relative', marginTop : '0' });
-                    $('#content').css({paddingTop : '0'});
-                    $logomini.hide();
-                    $nav.removeClass('condensed').stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
+                    if( $dscrollTop < $trigger && $header.data('stage') ){
+                        
+                        $header.data('stage', 0);
+                        $header.css({'position' : 'relative', marginTop : '0' });
+                        $('#content').css({paddingTop : '0'});
+                        $logomini.hide();
+                        $nav.removeClass('condensed').stop().animate({paddingBottom: '1rem'}, $head_anim_speed);
 
-                } else if( $header.data('stage') < 2 ){
-                    headanim_stage1( $dscrollTop );
+                    } else if( $header.data('stage') < 2 ){
+                        headanim_stage1( $dscrollTop );
+                    }                    
                 }
 
             });
             $window.resize(function(){
+                if($window.width() > 500){
 
-                $head_full_height = $header.height();
-                $trigger = $navwrap.position().top + $nav.position().top + 1;
-                $trigger2 = $trigger + 15;
-                $header.data('stage', 0);
-                
-                $dscrollTop = $doc.scrollTop();
-                headanim_stage1( $dscrollTop );
+                    $head_full_height = $header.height();
+                    $trigger = $navwrap.position().top + $nav.position().top + 1;
+                    $trigger2 = $trigger + 15;
+                    $header.data('stage', 0);
+                    
+                    $dscrollTop = $doc.scrollTop();
+                    headanim_stage1( $dscrollTop );
+                }
 
            });
-        }// if if header (no-touch)
-
-        $('.mininav select').change(function() {
-            if($(this).val() != 'null') {
-                window.location.href = $(this).val();
-            }
-        });
+        }
 
 //  HOME SLIDER POSITIONING
 

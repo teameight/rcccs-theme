@@ -4,7 +4,7 @@
         $heading_color = get_field('heading_color');
         if($heading_color){
             $h_font_color = "";
-            if( $heading_color == '696C6F' || $heading_color == '8C8384'){
+            if( $heading_color == '696C6F' || $heading_color == '8C8384'  || $heading_color == '8C9685'   || $heading_color == '84868D'){
                 $h_font_color =  " color:#f9faee;";
             }
             echo ' style="background-color:#' . $heading_color. ';' . $h_font_color . '"';

@@ -148,38 +148,31 @@
 
 	li {
 		list-style: none;
-		border-top: 1px solid #d7d6cf;
 		padding: .75em 0;
 
-		&:last-child {
-			border-bottom: 1px solid #d7d6cf;
-		}
 
         .subnav & {
-            border-top: 1px solid #84868d;
-
-            &:first-child {
-                border-top: none;
-            }
+            border-top: 1px solid $tan;
 
             &:last-child {
-                border-bottom: 1px solid #84868d;
+            
+            	border-bottom: 1px solid $tan;
 
-                @media screen and (min-width: $bp-large) {
+                @media screen and (max-width: $bp-small-2) {
                     border-bottom: none;
                 }
             }
 
             a * {
-                color: #84868d;
+                color: #a0a2a5;
 
                 :hover {
-                    color: #696c6f;
+                    color: $gray-dark;
                 }
             }
 
             a:hover * {
-                color: #696c6f;
+                color: $gray-dark;
             }
         }
 	}

@@ -59,71 +59,18 @@
 		text-align:center;
 
 		ul {
-			display: none;
-			position: absolute;
 			padding: $space/2;
-			background: $blue;
-			right: 0;
-			top: 40px;
 		}
 
 		li {
 			text-align: center;
-			width: 100%;
-			margin: 0;
-		}
-
-		#menu-icon {
-			display:inline-block;
+			margin: 0 20%;
+			width:60%;
 		}
 
 	}
 }
 
-@media screen and (max-width: $bp-small) {
-
-	.nav:hover ul {
-		display: block;
-		z-index: 100;
-		width: 100%;
-	}
-
-}
-#menu-icon {
-	display: none;
-	margin: $space 0 0;
-}
-
-@media screen and (max-width: $bp-small-2) {
-	.nav.condensed {
-
-		float:right;
-
-		ul {
-			display: none;
-			position: absolute;
-			padding: $space/2;
-			background: $blue;
-			right: 0;
-			top: 40px;
-		}
-
-		li {
-			text-align: center;
-			width: 100%;
-			margin: 0;
-		}
-
-		#menu-icon {
-			display:inline-block;
-		}
-
-		&:hover ul {
-			display: block;
-			width: auto;
-		}
-	}
-}
 
 //Pagination
 .pagination {

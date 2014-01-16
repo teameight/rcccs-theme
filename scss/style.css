@@ -689,20 +689,26 @@ img.attachment-blog-feat {
 }
 
 /* line 32, base/_media.scss */
+.post-list img.attachment-blog-feat {
+  width: 100%;
+  height: auto;
+}
+
+/* line 37, base/_media.scss */
 iframe {
   margin-bottom: 1rem;
 }
 
-/* line 36, base/_media.scss */
+/* line 41, base/_media.scss */
 figure {
   margin-bottom: 1rem;
 }
-/* line 38, base/_media.scss */
+/* line 43, base/_media.scss */
 figure img {
   margin-bottom: 0.25rem;
 }
 
-/* line 42, base/_media.scss */
+/* line 47, base/_media.scss */
 figcaption {
   font-style: italic;
 }

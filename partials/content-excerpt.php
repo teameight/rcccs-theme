@@ -5,6 +5,14 @@
         <a href="<?php echo get_category_link($cat); ?>" class="cat <?php echo $cat->slug; ?>"><?php echo $cat->name; ?></a>
         <a href="<?php the_permalink(); ?>"><h2 class="alpha <?php echo $cat->slug; ?>"><?php the_title(); ?></h2></a>
     </div>
-    <?php the_excerpt(); ?>
+    <?php 
+    
+	    if ( has_post_thumbnail() ) {
+			the_post_thumbnail('blog-feat');
+		} 
+
+		the_excerpt(); 
+	
+	?>
     <a href="<?php the_permalink(); ?>" class="more">Read More &gt;&gt;</a>
 </li>

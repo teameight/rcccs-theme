@@ -281,6 +281,14 @@
 			width: 100%;
 		}
 
+		> .post-list {
+			width:80%;
+
+			@media all and (max-width: $bp-med) {
+				width: 100%;
+			}
+		}
+
 	}
 	>.g1 {
 		float: right;
@@ -304,6 +312,7 @@
 		@media all and (max-width: $bp-med) {
 			width: 100%;
 			padding-left: 0;
+			margin-top:$space*4;
 		}
 
 	}

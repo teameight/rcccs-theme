@@ -18,7 +18,7 @@
     <div class="main">
         <div class="wrap">
             <div class="g-3-1">
-                <div class="gi g3">
+                <div class="gi g3 service cf">
                     <?php get_template_part('partials/content', 'service'); ?>
 
                     <?php 

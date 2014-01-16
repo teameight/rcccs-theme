@@ -41,6 +41,8 @@ add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 
 function rcccs_extra_setup() {
     register_nav_menu('primary', 'Main Nav');
+    add_image_size( 'blog-feat', 635, 9999 );
+    add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'rcccs_extra_setup' );
 

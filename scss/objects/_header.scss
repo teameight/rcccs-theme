@@ -11,6 +11,11 @@ header {
 	width: 40%;
 	margin: 50px auto $space;
 
+    img {
+        width:100%;
+        height:auto;
+    }
+
 	@media all and (max-width: $bp-large) {
         margin: $space auto;
 	}

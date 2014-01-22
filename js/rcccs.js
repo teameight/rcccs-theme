@@ -252,6 +252,7 @@
 
         // calculate window width
         $homeSlides = $('.home-slides');
+        var $slides = $('.home-slides .cycle-slide a');
 
         $doc.on('cycle-post-initialize', '.home-slides', function(e, o){
             //console.log(o);
@@ -293,10 +294,22 @@
                 'left': $offset
             }).fadeIn();
             $pagerRight.css({
-                'left': $slide_width + $offset - 75
+                'left': $slide_width + $offset - 150
             }).fadeIn();
 
             // for sm breakpoint
+            
+             //disable clickthru on inactive slides
+        $('.cycle-slide a').click(function(e) {
+           if($(this).parent().hasClass('cycle-slide-active')) {
+               // allow click
+               alert('allow');
+              
+           } else {
+               alert('prevent');
+               e.preventDefault();
+           }
+        });
         });
 
         $homeSlides.cycle({
@@ -322,6 +335,7 @@
         $pagerRight.click(function() {
             $homeSlides.cycle('next');
         });
+        
 
         // resize, uses smartresize
         $window.smartresize(function() {

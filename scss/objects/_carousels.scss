@@ -52,8 +52,8 @@
     position: absolute;
     display: block;
     height: 478px;
-    width: 75px;
-    background-position: center;
+    width: 150px;
+    background-position: 25px;
     background-repeat: no-repeat;
     z-index: 500;
     cursor:pointer;
@@ -61,6 +61,10 @@
 
     &.pager-left:hover {
         background-image: url('../images/pager-left.png');
+    }
+
+    &.pager-right {
+        background-position: 100px;
     }
     &.pager-right:hover {
         background-image: url('../images/pager-right.png');

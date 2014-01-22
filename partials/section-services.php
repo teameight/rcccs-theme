@@ -3,7 +3,8 @@
         $args = array(
             'post_type' => 'service',
             'numberposts' => '-1',
-            'order' => 'ASC'
+            'order' => 'ASC',
+            'orderby' => 'menu_order'
         );
         $services = get_posts($args);
 

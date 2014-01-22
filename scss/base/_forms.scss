@@ -208,7 +208,7 @@ form > .gform_body,
 
     }
 
-    input.medium, input, textarea, select,
+    input.medium, input[type=text], textarea, select,
     .ginput_complex .ginput_full input[type=text] {
         padding:$pad/2;
         font-size: .8em;
@@ -382,6 +382,16 @@ form > .gform_body,
         }
     }    
 
+}
+
+.captcha {
+    label {
+        display: none;
+    }
+
+    .ginput_container {
+        width: 100% !important;
+    }
 }
 
 

@@ -80,7 +80,7 @@ the_post();
                 </div>
                 <div class="gi blogroll">
                     <h2>The Community Blog</h2>
-                    <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true">
+                    <ul class="post-list cycle-slideshow" data-cycle-slides="li" data-cycle-fx="scrollHorz" data-cycle-easing="easeInOutQuint" data-cycle-speed="1000" data-cycle-pause-on-hover="true" data-cycle-auto-height="container">
                         <?php
                         $args = array(
                             'category_name'     => 'community',

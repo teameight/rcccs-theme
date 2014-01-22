@@ -71,6 +71,9 @@
 	
 	img {
 		display: block;
+        max-width: 100%;
+        height: auto;
+
 	}
 
 	@media all and (min-width: $bp-med) {
@@ -306,7 +309,9 @@
 	}
 }
 .archive .g-3-1,
-.single .g-3-1 {
+.single .g-3-1,
+.search .g-3-1,
+.page .g-3-1 {
 	>.g1 {
 
 		@media all and (max-width: $bp-med) {

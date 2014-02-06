@@ -16,7 +16,8 @@
     ?>
     <div class="gi">
         <?php foreach($firsthalf as $service) :
-            $link = get_post_permalink($service->ID);
+            $id = $service->ID;
+            $link = (get_field('external_link_radio', $id) ? get_field('link_url', $id) : get_post_permalink($id));
             ?>
             <li>
                 <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4>
@@ -26,7 +27,8 @@
     </div>
     <div class="gi">
         <?php foreach($secondhalf as $service) :
-            $link = get_post_permalink($service->ID);
+            $id = $service->ID;
+            $link = (get_field('external_link_radio', $id) ? get_field('link_url', $id) : get_post_permalink($id));
             ?>
             <li>
                 <a href="<?php echo $link; ?>"><h4><?php echo $service->post_title; ?></h4>

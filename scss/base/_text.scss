@@ -2,6 +2,15 @@
 p {
 	margin-bottom: 1.2em;
     font-weight: 300;
+
+    a {
+        color: #262829;
+        text-decoration: underline;
+
+        &:hover {
+            color: #696c6f;
+        }
+    }
 }
 .post, .page, .service {
     p {

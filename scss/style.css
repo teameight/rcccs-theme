@@ -528,14 +528,23 @@ p {
   margin-bottom: 1.2em;
   font-weight: 300;
 }
+/* line 6, base/_text.scss */
+p a {
+  color: #262829;
+  text-decoration: underline;
+}
+/* line 10, base/_text.scss */
+p a:hover {
+  color: #696c6f;
+}
 
-/* line 7, base/_text.scss */
+/* line 16, base/_text.scss */
 .post p, .page p, .service p {
   line-height: 1.4;
 }
 
 /* Blockquote */
-/* line 13, base/_text.scss */
+/* line 22, base/_text.scss */
 blockquote {
   font-style: italic;
   border-left: 1px solid #84868d;
@@ -545,32 +554,32 @@ blockquote {
 }
 
 /* Horizontal Rule */
-/* line 22, base/_text.scss */
+/* line 31, base/_text.scss */
 hr {
   border: 0;
   height: 1px;
   background: #a3adb8;
   margin: 2rem 0;
 }
-/* line 28, base/_text.scss */
+/* line 37, base/_text.scss */
 hr.light {
   background: #f9faee;
 }
 
-/* line 33, base/_text.scss */
+/* line 42, base/_text.scss */
 abbr {
   border-bottom: 1px dotted #84868d;
   cursor: help;
 }
 
-/* line 38, base/_text.scss */
+/* line 47, base/_text.scss */
 time {
   font-family: "Radley", Times, "Times New Roman", serif;
   font-style: italic;
   font-size: 0.9em;
 }
 
-/* line 43, base/_text.scss */
+/* line 52, base/_text.scss */
 .blck-desc p {
   font-size: 1.25em;
 }
@@ -1921,13 +1930,13 @@ footer h4 a:hover, footer h4 a:focus {
   color: #d7d6cf;
 }
 /* line 24, objects/_footer.scss */
-footer .gi:nth-of-type(odd) {
-  border-right: 1px solid #5d5f62 !important;
+footer .gi:nth-of-type(even) {
+  border-left: 1px solid #5d5f62 !important;
 }
 @media screen and (max-width: 500px) {
   /* line 24, objects/_footer.scss */
-  footer .gi:nth-of-type(odd) {
-    border-right: none !important;
+  footer .gi:nth-of-type(even) {
+    border-left: none !important;
     border-bottom: 1px solid #5d5f62;
   }
 }

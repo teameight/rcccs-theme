@@ -303,10 +303,10 @@
         $('.cycle-slide a').click(function(e) {
            if($(this).parent().hasClass('cycle-slide-active')) {
                // allow click
-               alert('allow');
+//               alert('allow');
               
            } else {
-               alert('prevent');
+//               alert('prevent');
                e.preventDefault();
            }
         });

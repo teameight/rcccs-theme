@@ -20,7 +20,7 @@
             </div>
             <div class="gi">
                 <?php if(is_page('contact')) { ?>
-                <h4><a href="<?php echo get_bloginfo('url'); ?>/referral"><div class="icon referral contact"></div><span>Submit a Referral</span></a></h4>
+                <h4><a href="<?php echo get_bloginfo('url'); ?>/referral"><div class="icon referral contact M-l"></div><span>Submit a Referral</span></a></h4>
                 <?php } ?>
                 <div class="contact-links rt">
                     <?php if(is_page('contact')) { ?>

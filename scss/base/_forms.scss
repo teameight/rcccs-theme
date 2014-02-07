@@ -151,6 +151,10 @@ form > .gform_body,
     padding-left:45px;
     width: 100%;    
     margin:0;
+
+    @media all and (max-width: $bp-small) {
+        padding-left: 0;
+    }
 }
 
 .wrap .gform_wrapper div.validation_error {

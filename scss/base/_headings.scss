@@ -5,6 +5,10 @@ h1, .alpha   {
 	font-size: 1.84em;
 	font-weight: 600;
 	letter-spacing: 0.02em;
+
+    @media all and (min-width: $bp-small) {
+        font-size: 1.682em;
+    }
 }
 
 h2, .beta    { 
@@ -30,6 +34,10 @@ h2, .beta    {
 	.home-slides & {
 		line-height: 1.4;
 	}
+
+    @media all and (min-width: $bp-small) {
+        font-size: 1.653em;
+    }
 }
 
 h3, .gamma, .subhead h1   { 
@@ -55,11 +63,19 @@ h4, .delta   {
     .contact {
         margin-right: 10px;
     }
+
+    .subnav & {
+        font-size: 0.752em;
+    }
 }
 
 h5, .epsilon { 
 	font-size: .773em;
 	font-weight: 400;
+
+    &.subheading {
+        font-size: 0.6773em;
+    }
 }
 
 h6, .zeta    { 

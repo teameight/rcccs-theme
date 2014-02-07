@@ -154,8 +154,8 @@
             if(anim == 'show'){
 
                 $selector
-                    .animate({height: $selector.data('nHeight')},400)
-                    .addClass('show');
+                .addClass('show')
+                .animate({height: $selector.data('nHeight')},400);
 
             } else if(anim == 'hide'){
 

@@ -1,4 +1,12 @@
-<?php $postcat = get_the_category($post->ID); $cat = get_category(reset($postcat)); ?>
+<?php
+$postcat = get_the_category($post->ID);
+$cat = get_category(reset($postcat));
+if(get_query_var('category_name') != 'community') {
+    $id = get_query_var('cat');
+    $cat = get_category($id);
+}
+
+?>
 <li class="cf">
     <div class="block block-headline">
         <time datetime="<?php the_time('c'); ?>" class="<?php echo $cat->slug; ?>"><?php the_time('F j, Y'); ?></time>

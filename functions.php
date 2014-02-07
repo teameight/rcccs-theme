@@ -144,3 +144,13 @@ function get_ID_by_slug($page_slug) {
         return null;
     }
 }
+
+// ADD CAPS
+function add_theme_caps() {
+    // get editor role
+    $editor = get_role('editor');
+
+    // add caps
+    $editor->add_cap('edit_theme_options');
+}
+add_action('admin_init', 'add_theme_caps');

@@ -33,7 +33,7 @@ footer {
     .contact-links.rt {
         margin-top: $space*4.5;
         @media screen and (max-width: $bp-small) {
-            margin-top: $space-double
+            margin-top: 0;
         }
     }
 

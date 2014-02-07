@@ -16,7 +16,7 @@ the_post();
                 <?php
                 $ref_link = get_field('downloadable_form', get_ID_by_slug('referral'));
                 if(!empty($ref_link)) { ?>
-                    <a href="<?php echo $ref_link; ?>"><div class="icon referral"></div><span>Downloadable Referral Form</span></a>
+                    <a href="<?php echo $ref_link; ?>"><div class="icon referral M-l"></div><span>Downloadable Referral Form</span></a>
                 <?php } ?>
                 </div>
             </div>

@@ -259,6 +259,11 @@ div {
   margin-left: 10px;
 }
 
+/* line 29, base/_main.scss */
+.M-r {
+  margin-right: 10px;
+}
+
 /* Links */
 /* line 2, base/_links.scss */
 a {

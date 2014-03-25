@@ -5,8 +5,5 @@
 <h2 class="alpha <?php echo $cat; ?>"><?php the_title(); ?></h2>
 
 <?php
-if ( has_post_thumbnail() ) {
-	the_post_thumbnail('blog-feat');
-} 
 the_content();
 ?>

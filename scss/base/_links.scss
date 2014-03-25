@@ -25,7 +25,8 @@ a {
         clear: right;
         font-size: .7em;
         letter-spacing: 1px;
-
+        margin-right: 10px;
+        
         &.stories {
             @include category(stories);
         }

@@ -129,9 +129,13 @@ function rcccs_customize($wp_customize) {
 
     $wp_customize->add_control( 'twitter', array(
         'label'   => 'Twitter URL',
-        'section' => 'contact_settings',
+        'section' => 'trg_hours',
         'type'    => 'text'
     ) );
+    $wp_customize->add_section( 'trg_hours' , array(
+    'title'      => __( 'Hours', 'trg' ),
+    'priority'   => 30,
+) );
 
 }
 

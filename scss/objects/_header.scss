@@ -52,7 +52,7 @@ header {
     .wrap{
         padding: $pad-double 0;
 
-        @media all and (min-width: $bp-small) {
+        @media all and (max-width: $bp-small) {
             padding: 0;
         }
     }

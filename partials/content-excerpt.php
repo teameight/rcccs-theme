@@ -6,6 +6,7 @@ if(get_query_var('category_name') != 'community') {
     $cat = get_category($id);
 }
 
+
 ?>
 <li class="cf">
     <div class="block block-headline">

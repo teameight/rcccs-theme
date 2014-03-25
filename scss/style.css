@@ -293,8 +293,9 @@ a.cat {
   clear: right;
   font-size: .7em;
   letter-spacing: 1px;
+  margin-right: 10px;
 }
-/* line 29, base/_links.scss */
+/* line 30, base/_links.scss */
 a.cat.stories {
   background-color: #a3adb8;
 }
@@ -302,7 +303,7 @@ a.cat.stories {
 a.cat.stories:hover {
   background-color: #8693a2;
 }
-/* line 32, base/_links.scss */
+/* line 33, base/_links.scss */
 a.cat.news {
   background-color: #8c8384;
 }
@@ -310,7 +311,7 @@ a.cat.news {
 a.cat.news:hover {
   background-color: #726a6b;
 }
-/* line 35, base/_links.scss */
+/* line 36, base/_links.scss */
 a.cat.resources {
   background-color: #84868d;
 }
@@ -318,7 +319,7 @@ a.cat.resources {
 a.cat.resources:hover {
   background-color: #6b6d73;
 }
-/* line 38, base/_links.scss */
+/* line 39, base/_links.scss */
 a.cat.staff {
   background-color: #8c9685;
 }
@@ -326,27 +327,27 @@ a.cat.staff {
 a.cat.staff:hover {
   background-color: #727d6b;
 }
-/* line 42, base/_links.scss */
+/* line 43, base/_links.scss */
 .g1 > a.cat {
   float: left;
   clear: left;
   margin-bottom: 0.5rem;
 }
 @media all and (max-width: 800px) {
-  /* line 42, base/_links.scss */
+  /* line 43, base/_links.scss */
   .g1 > a.cat {
     margin-right: 0.5rem;
     clear: none;
   }
 }
-/* line 54, base/_links.scss */
+/* line 55, base/_links.scss */
 a.more, dl, .side-matter-text, .pagination li {
   margin-top: 1.5rem;
   display: block;
   float: left;
 }
 
-/* line 60, base/_links.scss */
+/* line 61, base/_links.scss */
 .contact-links a {
   display: block;
   float: left;
@@ -355,40 +356,40 @@ a.more, dl, .side-matter-text, .pagination li {
   width: 100%;
   margin-bottom: 1rem;
 }
-/* line 68, base/_links.scss */
+/* line 69, base/_links.scss */
 .contact-links a.btn {
   font-weight: 600;
 }
-/* line 72, base/_links.scss */
+/* line 73, base/_links.scss */
 footer .contact-links a {
   color: #f9faee;
 }
-/* line 75, base/_links.scss */
+/* line 76, base/_links.scss */
 footer .contact-links a:hover {
   color: #545658;
 }
-/* line 79, base/_links.scss */
+/* line 80, base/_links.scss */
 footer .contact-links a span {
   font-size: .8em;
   padding: 0.5rem 0 0 0.5rem;
 }
-/* line 85, base/_links.scss */
+/* line 86, base/_links.scss */
 .contact-links a:hover {
   color: #696c6f;
 }
-/* line 89, base/_links.scss */
+/* line 90, base/_links.scss */
 .contact-links a:hover div.icon {
   -ms-background-position-y: -34px;
   background-position-y: -34px;
 }
-/* line 94, base/_links.scss */
+/* line 95, base/_links.scss */
 .contact-links a span {
   display: block;
   padding: 0.22rem 0 0 0.5rem;
   float: left;
 }
 
-/* line 101, base/_links.scss */
+/* line 102, base/_links.scss */
 .nolink::after {
   content: '';
   width: 0;
@@ -402,24 +403,24 @@ footer .contact-links a span {
   display: none;
   transition: margin-top .4s ease-in-out;
 }
-/* line 114, base/_links.scss */
+/* line 115, base/_links.scss */
 .condensed .nolink::after {
   margin-top: -5px;
 }
 
 @media all and (min-width: 800px) {
-  /* line 119, base/_links.scss */
+  /* line 120, base/_links.scss */
   .nolink.show::after {
     display: block;
   }
 }
 
-/* line 125, base/_links.scss */
+/* line 126, base/_links.scss */
 .shrink .nolink::after {
   margin-top: -5px;
 }
 
-/* line 128, base/_links.scss */
+/* line 129, base/_links.scss */
 .about-staff a {
   font-family: "Radley", Times, "Times New Roman", serif;
   font-style: italic;
@@ -499,23 +500,27 @@ h4, .delta {
 h4 .contact, .delta .contact {
   margin-right: 10px;
 }
-/* line 67, base/_headings.scss */
-.subnav h4, .subnav .delta {
-  font-size: 0.752em;
+@media all and (max-width: 500px) {
+  /* line 67, base/_headings.scss */
+  .subnav h4, .subnav .delta {
+    font-size: 0.752em;
+  }
 }
 
-/* line 72, base/_headings.scss */
+/* line 73, base/_headings.scss */
 h5, .epsilon {
   font-size: .773em;
   font-weight: 400;
 }
-/* line 76, base/_headings.scss */
-h5.subheading, .epsilon.subheading {
-  font-size: 0.6773em;
+@media all and (max-width: 500px) {
+  /* line 78, base/_headings.scss */
+  h5.subheading, .epsilon.subheading {
+    font-size: 0.6773em;
+  }
 }
 
 /* Subheadings */
-/* line 86, base/_headings.scss */
+/* line 89, base/_headings.scss */
 .subheading {
   font-family: "Radley", Times, "Times New Roman", serif;
   font-weight: normal;
@@ -523,7 +528,7 @@ h5.subheading, .epsilon.subheading {
 }
 
 /*toggle*/
-/* line 93, base/_headings.scss */
+/* line 96, base/_headings.scss */
 h4.trigger {
   margin: 0px !important;
   padding: 1rem 0 1rem 2rem;
@@ -537,14 +542,14 @@ h4.trigger {
   letter-spacing: 0.02em;
 }
 
-/* line 106, base/_headings.scss */
+/* line 109, base/_headings.scss */
 h4.active {
   background-image: url("../images/toggle-minus.png") !important;
   background-position: 0px center;
   background-repeat: no-repeat;
 }
 
-/* line 111, base/_headings.scss */
+/* line 114, base/_headings.scss */
 .toggle_container {
   overflow: hidden;
   padding: 1rem 0 4rem 2rem;
@@ -559,12 +564,12 @@ p {
   font-weight: 300;
 }
 /* line 6, base/_text.scss */
-p a {
+.post p a {
   color: #262829;
   text-decoration: underline;
 }
 /* line 10, base/_text.scss */
-p a:hover {
+.post p a:hover {
   color: #696c6f;
 }
 
@@ -732,22 +737,30 @@ img.attachment-blog-feat {
   width: 100%;
   height: auto;
 }
+@media all and (min-width: 500px) {
+  /* line 32, base/_media.scss */
+  .post-list img.attachment-blog-feat {
+    width: 45%;
+    float: left;
+    margin: 0 5% 5% 0;
+  }
+}
 
-/* line 37, base/_media.scss */
+/* line 43, base/_media.scss */
 iframe {
   margin-bottom: 1rem;
 }
 
-/* line 41, base/_media.scss */
+/* line 47, base/_media.scss */
 figure {
   margin-bottom: 1rem;
 }
-/* line 43, base/_media.scss */
+/* line 49, base/_media.scss */
 figure img {
   margin-bottom: 0.25rem;
 }
 
-/* line 47, base/_media.scss */
+/* line 53, base/_media.scss */
 figcaption {
   font-style: italic;
 }
@@ -1726,7 +1739,7 @@ header {
 .subnav .wrap {
   padding: 2rem 0;
 }
-@media all and (min-width: 500px) {
+@media all and (max-width: 500px) {
   /* line 52, objects/_header.scss */
   .subnav .wrap {
     padding: 0;
@@ -1845,7 +1858,7 @@ a h2.staff:hover, a time.staff:hover {
 }
 /* line 13, objects/_nav.scss */
 .nav .current-menu-item a, .nav .current-menu-parent a {
-  color: #84868d;
+  color: #696c6f;
 }
 /* line 17, objects/_nav.scss */
 .nav a {
@@ -1858,36 +1871,37 @@ a h2.staff:hover, a time.staff:hover {
 }
 /* line 25, objects/_nav.scss */
 .nav a:hover, .nav a:active {
-  color: #84868d;
+  color: #696c6f;
 }
 @media screen and (max-width: 650px) {
   /* line 17, objects/_nav.scss */
   .nav a {
     padding: 1rem 0.5rem;
+    font-weight: 600;
   }
 }
 @media screen and (max-width: 500px) {
   /* line 17, objects/_nav.scss */
   .nav a {
     padding: .52em;
-    font-size: 9px;
+    font-size: 10px;
   }
 }
-/* line 38, objects/_nav.scss */
+/* line 39, objects/_nav.scss */
 .nav.active {
   max-height: 40em;
 }
-/* line 42, objects/_nav.scss */
+/* line 43, objects/_nav.scss */
 .nav ul {
   display: inline-block;
   text-align: center;
   margin: 1rem 0 0;
 }
-/* line 47, objects/_nav.scss */
+/* line 48, objects/_nav.scss */
 .nav ul li {
   float: left;
 }
-/* line 51, objects/_nav.scss */
+/* line 52, objects/_nav.scss */
 .nav ul a {
   border: 0;
 }
@@ -1897,12 +1911,12 @@ a h2.staff:hover, a time.staff:hover {
     text-align: center;
     padding-bottom: 0;
   }
-  /* line 62, objects/_nav.scss */
+  /* line 63, objects/_nav.scss */
   .nav ul {
     padding: 0;
     margin: .5rem 0;
   }
-  /* line 67, objects/_nav.scss */
+  /* line 68, objects/_nav.scss */
   .nav li {
     text-align: center;
     margin: 0;
@@ -1910,24 +1924,24 @@ a h2.staff:hover, a time.staff:hover {
   }
 }
 
-/* line 78, objects/_nav.scss */
+/* line 79, objects/_nav.scss */
 .pagination {
   overflow: hidden;
   margin: 0;
 }
-/* line 82, objects/_nav.scss */
+/* line 83, objects/_nav.scss */
 .pagination li {
   float: left;
 }
-/* line 87, objects/_nav.scss */
+/* line 88, objects/_nav.scss */
 .pagination li.label {
   margin-right: 1rem;
 }
-/* line 92, objects/_nav.scss */
+/* line 93, objects/_nav.scss */
 .pagination a {
   padding: 0.25rem;
 }
-/* line 96, objects/_nav.scss */
+/* line 97, objects/_nav.scss */
 .pagination span.current {
   color: black;
 }
@@ -2625,6 +2639,18 @@ div.icon.twi {
 .home-slides .cycle-slide.cycle-slide-active {
   opacity: 1 !important;
 }
+/* line 19, objects/_carousels.scss */
+.home-slides .cycle-slide.block-slide-img .slide {
+  background: #696c6f;
+}
+/* line 20, objects/_carousels.scss */
+.home-slides .cycle-slide.block-slide-img .slide .slide-text {
+  font-size: 1.25em;
+}
+/* line 24, objects/_carousels.scss */
+.home-slides .cycle-slide.block-slide-img .slide img {
+  opacity: 0.7;
+}
 @media all and (max-width: 900px) {
   /* line 7, objects/_carousels.scss */
   .home-slides .cycle-slide {
@@ -2655,18 +2681,14 @@ div.icon.twi {
     height: 169px;
     font-size: .6em;
   }
-  /* line 40, objects/_carousels.scss */
-  .home-slides .cycle-slide .slide-thumb {
+  /* line 51, objects/_carousels.scss */
+  .home-slides .cycle-slide .slide-thumb,
+  .home-slides .cycle-slide .slide > img {
     display: none;
-  }
-  /* line 43, objects/_carousels.scss */
-  .home-slides .cycle-slide .slide-text {
-    width: 100%;
-    padding: 5% 0;
   }
 }
 
-/* line 51, objects/_carousels.scss */
+/* line 58, objects/_carousels.scss */
 .pager {
   position: absolute;
   display: block;
@@ -2678,83 +2700,85 @@ div.icon.twi {
   cursor: pointer;
   background-image: none;
 }
-/* line 62, objects/_carousels.scss */
+/* line 69, objects/_carousels.scss */
 .pager.pager-left:hover {
   background-image: url("../images/pager-left.png");
 }
-/* line 66, objects/_carousels.scss */
+/* line 73, objects/_carousels.scss */
 .pager.pager-right {
   background-position: 100px;
 }
-/* line 69, objects/_carousels.scss */
+/* line 76, objects/_carousels.scss */
 .pager.pager-right:hover {
   background-image: url("../images/pager-right.png");
 }
 @media all and (max-width: 900px) {
-  /* line 51, objects/_carousels.scss */
+  /* line 58, objects/_carousels.scss */
   .pager {
     height: 394px;
   }
 }
 @media all and (max-width: 800px) {
-  /* line 51, objects/_carousels.scss */
+  /* line 58, objects/_carousels.scss */
   .pager {
     height: 338px;
   }
 }
 @media all and (max-width: 650px) {
-  /* line 51, objects/_carousels.scss */
+  /* line 58, objects/_carousels.scss */
   .pager {
     height: 281px;
   }
 }
 @media all and (max-width: 500px) {
-  /* line 51, objects/_carousels.scss */
+  /* line 58, objects/_carousels.scss */
   .pager {
     height: 169px;
   }
 }
 
 /* Slide Image */
-/* line 91, objects/_carousels.scss */
+/* line 98, objects/_carousels.scss */
 .block-slide-img {
   position: relative;
   width: 100%;
 }
-/* line 96, objects/_carousels.scss */
+/* line 103, objects/_carousels.scss */
 .block-slide-img .slide-thumb img {
   display: block;
 }
-/* line 101, objects/_carousels.scss */
+/* line 108, objects/_carousels.scss */
 .block-slide-img .slide-text {
   position: absolute;
   width: 100%;
   text-align: center;
   color: #f9faee;
-  padding: 0 10%;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
   white-space: normal;
+  padding: 5%;
 }
 @media all and (max-width: 500px) {
-  /* line 101, objects/_carousels.scss */
-  .block-slide-img .slide-text {
-    padding: 1.5rem;
-  }
-  /* line 120, objects/_carousels.scss */
+  /* line 118, objects/_carousels.scss */
   .block-slide-img .slide-text h2 {
     font-size: 1.2em;
   }
 }
+@media all and (min-width: 500px) {
+  /* line 108, objects/_carousels.scss */
+  .block-slide-img .slide-text {
+    padding: 0 10%;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
 
 /* Slide Text */
-/* line 132, objects/_carousels.scss */
+/* line 143, objects/_carousels.scss */
 .block-slide-txt {
   position: relative;
   display: table;
@@ -2762,11 +2786,11 @@ div.icon.twi {
   max-height: 483px;
   width: 100%;
 }
-/* line 139, objects/_carousels.scss */
+/* line 150, objects/_carousels.scss */
 .block-slide-txt .slide {
   height: 100%;
 }
-/* line 143, objects/_carousels.scss */
+/* line 154, objects/_carousels.scss */
 .block-slide-txt .slide-thumb {
   width: 50%;
   vertical-align: middle;
@@ -2774,11 +2798,11 @@ div.icon.twi {
   padding: 8% 10% 9% 0;
   float: left;
 }
-/* line 150, objects/_carousels.scss */
+/* line 161, objects/_carousels.scss */
 .block-slide-txt .slide-thumb img {
   border-radius: 50%;
 }
-/* line 155, objects/_carousels.scss */
+/* line 166, objects/_carousels.scss */
 .block-slide-txt .slide-text {
   position: relative;
   color: #84868d;
@@ -2788,7 +2812,14 @@ div.icon.twi {
   white-space: normal;
   height: 100%;
 }
-/* line 165, objects/_carousels.scss */
+@media all and (max-width: 500px) {
+  /* line 166, objects/_carousels.scss */
+  .block-slide-txt .slide-text {
+    width: 100%;
+    padding: 5% 0;
+  }
+}
+/* line 183, objects/_carousels.scss */
 .block-slide-txt .vcenter {
   width: 85%;
   padding: 0 10%;

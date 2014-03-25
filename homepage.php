@@ -25,7 +25,7 @@ the_post();
                                 </div>
                             </div>
                             <div class="slide-thumb">
-                                <img src="'.$img[sizes][thumbnail].'" alt="'.$img[alt].'">
+                                <img src="'.$img['sizes']['thumbnail'].'" alt="'.$img['alt'].'">
                             </div>
                         </div>
                     </a>
@@ -38,7 +38,7 @@ the_post();
                     echo '<div class="block block-slide-img">
                     <a href="'.get_sub_field('link').'" class="inner">
                         <div class="slide">
-                            <img src="'.$img[sizes][large].'" alt="'.$img[alt].'" />
+                            <img src="'.$img['sizes']['large'].'" alt="'.$img['alt'].'" />
                             <div class="slide-text">
                                 <h2 class="headline font-light">'.get_sub_field('text').'</h2>
                             </div>
@@ -88,7 +88,7 @@ the_post();
                         );
                         $query = new WP_Query($args);
                         if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
-                            get_template_part( 'partials/content', 'excerpt' );
+                            get_template_part( 'partials/content', 'homeexcerpt' );
                         endwhile; endif; wp_reset_query();
                         ?>
                     </ul>

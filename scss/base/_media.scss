@@ -32,6 +32,12 @@ img {
 .post-list img.attachment-blog-feat {
 	width: 100%;
 	height: auto;
+
+	@media all and (min-width: $bp-small) {
+		width: 45%;
+		float: left;
+		margin: 0 5% 5% 0;
+	}
 }
 
 iframe {

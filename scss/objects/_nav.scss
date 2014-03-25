@@ -11,7 +11,7 @@
     padding-bottom:15px;
 
     .current-menu-item a, .current-menu-parent a {
-        color: $gray;
+        color: $gray-dark;
     }
 
     a {
@@ -23,15 +23,16 @@
         letter-spacing: 2px;
 
 		&:hover, &:active {
-			color: $gray;
+			color: $gray-dark;
 		}
 
         @media screen and (max-width: $bp-small-2) {
              padding: $pad $pad/2;
+             font-weight:600;
        }
         @media screen and (max-width: $bp-small) {
             padding: .52em;
-            font-size: 9px;
+            font-size: 10px;
         }
 	}
 
